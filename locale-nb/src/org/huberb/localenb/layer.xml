@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="org-huberb-localenb-OpenLocaleTopComponentAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/localenb/images/locale-16x16.png"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="org-huberb-localenb-OpenLocaleTopComponentAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-localenb-OpenLocaleTopComponentAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="OptionsDialog">
+        <folder name="Advanced">
+            <file name="org-huberb-localenb-options-LocalenbAdvancedOption.instance"/>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="LocaleTopComponent.settings" url="LocaleTopComponent.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="output">
+                <file name="LocaleTopComponent.wstcref" url="LocaleTopComponent_1.xml"/>
+            </folder>
+        </folder>
+    </folder>
+    
+    <folder name="Services">
+        <folder name="JavaHelp">
+            <file name="localenb-helpset.xml" url="localenb-helpset.xml"/>
+        </folder>
+        <file name="org-huberb-localenb-options-LocaleOption.settings" url="options/LocaleOption.xml">
+            <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/localenb/images/locale-options16x16.png"/>
+        </file>
+    </folder>
+    <folder name="UI">
+        <folder name="Services">
+            <!-- Display the system option under the "Testing" category in Options. -->
+            <folder name="Tools">
+                <!-- Point to the real settings file (always on the system file system). -->
+                <file name="org-huberb-localenb-options-LocaleOption.shadow">
+                    <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/localenb/images/locale-options16x16.png"/>
+                    <attr name="originalFile" stringvalue="Services/org-huberb-localenb-options-LocaleOption.settings"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,154 @@
+<html>
+<head>
+    <title>About Choice</title>
+    <link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h2>About Choice</h2>
+<p>
+    The choice patterns details described below
+    are extracted from :
+</p>
+<object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+    <param name="content" value="http://java.sun.com/j2se/1.5.0/docs/api/java/text/ChoiceFormat.html">
+    <param name="text" value="<html><u>ChoiceFormat</html>">
+    <param name="textFontSize" value="medium">
+    <param name="textColor" value="blue">
+</object>
+
+<div>
+    <h4>Choice Format</h4>
+    <p>
+        A <code>ChoiceFormat</code> allows you to attach a format to a range of numbers.
+        It is generally used in a <code>MessageFormat</code> for handling plurals.
+        The choice is specified with an ascending list of doubles, where each item
+        specifies a half-open interval up to the next item:
+    </p>
+    <blockquote>
+        <pre>
+ X matches j if and only if limit[j] &lt;= X &lt; limit[j+1]
+        </pre>
+
+    </blockquote>
+    If there is no match, then either the first or last index is used, depending
+    on whether the number (X) is too low or too high.  If the limit array is not
+    in ascending order, the results of formatting will be incorrect.  ChoiceFormat
+    also accepts <code>&#92;u221E</code> as equivalent to infinity(INF).
+
+    <p>
+        <strong>Note:</strong>
+        <code>ChoiceFormat</code> differs from the other <code>Format</code>
+
+        classes in that you create a <code>ChoiceFormat</code> object with a
+        constructor (not with a <code>getInstance</code> style factory
+        method). The factory methods aren't necessary because <code>ChoiceFormat</code>
+        doesn't require any complex setup for a given locale. In fact,
+        <code>ChoiceFormat</code> doesn't implement any locale specific behavior.
+    </p>
+    <p>
+        When creating a <code>ChoiceFormat</code>, you must specify an array of formats
+        and an array of limits. The length of these arrays must be the same.
+        For example,
+    </p>
+    <ul>
+
+        <li>
+        <em>limits</em> = {1,2,3,4,5,6,7}<br>
+        <em>formats</em> = {"Sun","Mon","Tue","Wed","Thur","Fri","Sat"}
+        <li>
+        <em>limits</em> = {0, 1, ChoiceFormat.nextDouble(1)}<br>
+
+        <em>formats</em> = {"no files", "one file", "many files"}<br>
+        (<code>nextDouble</code> can be used to get the next higher double, to
+        make the half-open interval.)
+    </ul>
+
+    <p>
+        Here is a simple example that shows formatting and parsing:
+    </p>
+    <blockquote>
+
+        <pre>
+ double[] limits = {1,2,3,4,5,6,7};
+ String[] monthNames = {"Sun","Mon","Tue","Wed","Thur","Fri","Sat"};
+ ChoiceFormat form = new ChoiceFormat(limits, monthNames);
+ ParsePosition status = new ParsePosition(0);
+ for (double i = 0.0; i &lt;= 8.0; ++i) {
+     status.setIndex(0);
+     System.out.println(i + " -&gt; " + form.format(i) + " -&gt; "
+                              + form.parse(form.format(i),status));
+ }
+        </pre>
+    </blockquote>
+    Here is a more complex example, with a pattern format:
+    <blockquote>
+        <pre>
+
+ double[] filelimits = {0,1,2};
+ String[] filepart = {"are no files","is one file","are {2} files"};
+ ChoiceFormat fileform = new ChoiceFormat(filelimits, filepart);
+ Format[] testFormats = {fileform, null, NumberFormat.getInstance()};
+ MessageFormat pattform = new MessageFormat("There {0} on {1}");
+ pattform.setFormats(testFormats);
+ Object[] testArgs = {null, "ADisk", null};
+ for (int i = 0; i &lt; 4; ++i) {
+     testArgs[0] = new Integer(i);
+     testArgs[2] = testArgs[0];
+     System.out.println(pattform.format(testArgs));
+ }
+        </pre>
+    </blockquote>
+    <p>
+        Specifying a pattern for ChoiceFormat objects is fairly straightforward.
+        For example:
+    </p>
+    <blockquote>
+        <pre>
+ ChoiceFormat fmt = new ChoiceFormat(
+      "-1#is negative| 0#is zero or fraction | 1#is one |1.0&lt;is 1+ |2#is two |2&lt;is more than 2.");
+ System.out.println("Formatter Pattern : " + fmt.toPattern());
+
+ System.out.println("Format with -INF : " + fmt.format(Double.NEGATIVE_INFINITY));
+ System.out.println("Format with -1.0 : " + fmt.format(-1.0));
+ System.out.println("Format with 0 : " + fmt.format(0));
+ System.out.println("Format with 0.9 : " + fmt.format(0.9));
+ System.out.println("Format with 1.0 : " + fmt.format(1));
+ System.out.println("Format with 1.5 : " + fmt.format(1.5));
+ System.out.println("Format with 2 : " + fmt.format(2));
+ System.out.println("Format with 2.1 : " + fmt.format(2.1));
+ System.out.println("Format with NaN : " + fmt.format(Double.NaN));
+ System.out.println("Format with +INF : " + fmt.format(Double.POSITIVE_INFINITY));
+        </pre>
+
+    </blockquote>
+    And the output result would be like the following:
+    <pre>
+ <blockquote>
+   Format with -INF : is negative
+   Format with -1.0 : is negative
+   Format with 0 : is zero or fraction
+   Format with 0.9 : is zero or fraction
+   Format with 1.0 : is one
+   Format with 1.5 : is 1+
+   Format with 2 : is two
+   Format with 2.1 : is more than 2.
+   Format with NaN : is negative
+   Format with +INF : is more than 2.
+    </pre>
+    </blockquote>
+</div>
+</body>
+</html>
+<!--
+Tip: to create a link which will open in an external web browser, try:
+<object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+    <param name="content" value="http://www.netbeans.org/">
+    <param name="text" value="<html><u>http://www.netbeans.org/</u></html>">
+    <param name="textFontSize" value="medium">
+    <param name="textColor" value="blue">
+</object>
+To create a link to a help set from another module, you need to know the code name base and path, e.g.:
+<a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a>
+(This link will behave sanely if that module is disabled or missing.)
+-->

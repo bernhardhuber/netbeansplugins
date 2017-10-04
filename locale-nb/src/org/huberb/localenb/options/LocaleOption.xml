@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+    <module name="org.huberb.localenb" spec="1.0"/>
+    
+    <instanceof class="org.openide.options.SystemOption"/>
+    <instanceof class="org.huberb.localenb.options.LocaleOption"/>
+    <instance class="org.huberb.localenb.options.LocaleOption" method="getDefault"/>
+
+</settings>

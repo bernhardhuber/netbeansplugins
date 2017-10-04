@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+        
+        <title>About Locale-Formatting Testing</title><link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+    <body>
+        <h2>About Locale-Formatting Testing</h2>
+        <p>
+            The Locale-Formatting Testing module can format date, message, and number values
+            for the selected locale.
+        </p>
+        <p>
+            This module uses the <code>java.text</code> formatters, ie
+            <code>java.text.SimpleDateFormat</code>,
+            <code>java.text.MessageFormat</code>, or
+            <code>java.text.NumberFormat</code>
+            .
+        </p>
+        <p>
+            You can use this module for quickly testing a date, number, and message pattern.
+        </p>
+        
+        <!-- ************************************************************** -->
+        <h2>Usage</h2>
+        <p>
+            Using this module is simple.
+            Follow the steps described below:
+        </p>
+        <ol>
+            <li>Open the window <b>Window|Open Locale-FormattingTesting Window</b>
+            </li>
+            <li>Select the appropriate formatting tab, like
+                <b>DateFormatting</b>,
+                <b>MessageFormatting</b>,
+                <b>NumberFormatting</b>.
+            </li>
+            <li>Enter the value which shall get formatted
+            </li>
+            <li>Enter the format pattern
+            </li>
+            <li>Select the locale used for formatting
+            </li>
+            <li>Select the <b>Format</b> button
+            </li>
+            <li>Watch the formatted value in the line labeled as <b>...Formatted</b>
+            </li>
+        </ol>
+        <img src="screenshot-topcomponent.gif" alt="Locale-Formatting Testing window">
+        
+        <!-- ************************************************************** -->
+        <h2>Options</h2>
+        <p>
+            You can specify the formatting patterns available in the pattern combo boxes.
+        </p>
+        <p>
+            If you want to edit the message patterns, do the followings step:
+        </p>
+        <ol>
+            <li>Navigate to <b>Tools|Options|Miscellaneous|Locale-Formatting Testing</b>
+        </li></ol>
+        <img src="screenshot-options.gif" alt="Locale-Formatting Testing options">
+        
+        <h3>Pattern Templates</h3>
+        <p>
+            In the panel titled as 'Pattern Templates' you can add, edit, remove and reorder
+            formatting templates. 
+            In order to modify the template click the button on the right side
+            labeled as '...'.
+        </p>
+        <img src="screenshot-options-patterns.gif" alt="Locale-Formatting Testion options patterns">
+        <p>
+            These formatting templates are used in the combo boxes of the 
+            DateFormatting, MessageFormatting, and NumberFormatting tabs of 
+            the Locale-Formatting Testing window.
+        </p>
+        
+        <h3>Message Arguments Parse Pattern</h3>
+        <p>
+            In panel titled as 'Message Arguments Parse Pattern' you can define the 
+            date-, and message-pattern used in the MessageFormatting tab for
+            parsing the message arguments as Date, respectively as Number.
+        </p>
+        
+        <!-- ************************************************************** -->
+        <h2>Pattern Formats</h2>
+        <p>
+            You can read more about the supported format patterns :
+        </p>
+        <ul>
+            <li> <a href="date/localenb-date.html">Date</a>
+            </li><li> <a href="message/localenb-message.html">Message</a>
+            </li><li> <a href="number/localenb-number.html">Number</a>
+        </li></ul>
+        
+    <!--
+Tip: to create a link which will open in an external web browser, try:
+<object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+    <param name="content" value="http://www.netbeans.org/">
+    <param name="text" value="<html><u>http://www.netbeans.org/</u></html>">
+    <param name="textFontSize" value="medium">
+    <param name="textColor" value="blue">
+</object>
+To create a link to a help set from another module, you need to know the code name base and path, e.g.:
+<a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a>
+(This link will behave sanely if that module is disabled or missing.)
+-->
+</body></html>

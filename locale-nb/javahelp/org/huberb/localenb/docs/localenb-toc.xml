@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
+    <tocitem text="Locale-Formatting Testing">
+    <tocitem text="About Locale-Formatting Testing" target="org.huberb.localenb.about"/>
+    
+    <tocitem text="Date" target="org.huberb.localenb.date" />
+    <tocitem text="Message" target="org.huberb.localenb.message" />
+    <tocitem text="Number" target="org.huberb.localenb.number" />
+        
+    </tocitem>
+</toc>

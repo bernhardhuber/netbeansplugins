@@ -1,0 +1,304 @@
+<html>
+    <head>
+        <title>About Number Formatting</title>
+        <link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h2>About Number Formatting</h2>
+        <p>
+            In the tab 'NumberFormatting' you can specify the number format.
+        </p>
+        <img src="screenshot-number.gif" alt="Number Formatting">
+
+        <p>
+            The number patterns details described below
+            are extracted from :
+        </p>
+        <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+            <param name="content" value="http://java.sun.com/j2se/1.5.0/docs/api/java/text/DecimalFormat.html">
+            <param name="text" value="<html><u>DecimalFormat</html>">
+            <param name="textFontSize" value="medium">
+            <param name="textColor" value="blue">
+        </object>
+
+        <div>
+            <h4>Patterns</h4>
+            <p>
+                <code>DecimalFormat</code> patterns have the following syntax:
+            </p>
+            <blockquote><pre>
+      <i>Pattern:</i>
+      <i>PositivePattern</i>
+      <i>PositivePattern</i> ; <i>NegativePattern</i>
+
+      <i>PositivePattern:</i>
+      <i>Prefix<sub>opt</sub></i> <i>Number</i> <i>Suffix<sub>opt</sub></i>
+      <i>NegativePattern:</i>
+      <i>Prefix<sub>opt</sub></i> <i>Number</i> <i>Suffix<sub>opt</sub></i>
+
+      <i>Prefix:</i>
+      any Unicode characters except &#92;uFFFE, &#92;uFFFF, and special characters
+      <i>Suffix:</i>
+      any Unicode characters except &#92;uFFFE, &#92;uFFFF, and special characters
+      <i>Number:</i>
+      <i>Integer</i> <i>Exponent<sub>opt</sub></i>
+
+      <i>Integer</i> . <i>Fraction</i> <i>Exponent<sub>opt</sub></i>
+      <i>Integer:</i>
+      <i>MinimumInteger</i>
+      #
+      # <i>Integer</i>
+
+      # , <i>Integer</i>
+      <i>MinimumInteger:</i>
+      0
+      0 <i>MinimumInteger</i>
+      0 , <i>MinimumInteger</i>
+      <i>Fraction:</i>
+
+      <i>MinimumFraction<sub>opt</sub></i> <i>OptionalFraction<sub>opt</sub></i>
+      <i>MinimumFraction:</i>
+      0 <i>MinimumFraction<sub>opt</sub></i>
+      <i>OptionalFraction:</i>
+
+      # <i>OptionalFraction<sub>opt</sub></i>
+      <i>Exponent:</i>
+      E <i>MinimumExponent</i>
+      <i>MinimumExponent:</i>
+      0 <i>MinimumExponent<sub>opt</sub></i>
+
+            </pre></blockquote>
+
+            <p>
+                A <code>DecimalFormat</code> pattern contains a positive and negative
+                subpattern, for example, <code>"#,##0.00;(#,##0.00)"</code>.  Each
+                subpattern has a prefix, numeric part, and suffix. The negative subpattern
+                is optional; if absent, then the positive subpattern prefixed with the
+                localized minus sign (<code>'-'</code> in most locales) is used as the
+                negative subpattern. That is, <code>"0.00"</code> alone is equivalent to
+                <code>"0.00;-0.00"</code>.  If there is an explicit negative subpattern, it
+                serves only to specify the negative prefix and suffix; the number of digits,
+                minimal digits, and other characteristics are all the same as the positive
+                pattern. That means that <code>"#,##0.0#;(#)"</code> produces precisely
+                the same behavior as <code>"#,##0.0#;(#,##0.0#)"</code>.
+            </p>
+            <p>
+                The prefixes, suffixes, and various symbols used for infinity, digits,
+                thousands separators, decimal separators, etc. may be set to arbitrary
+                values, and they will appear properly during formatting.  However, care must
+                be taken that the symbols and strings do not conflict, or parsing will be
+                unreliable.  For example, either the positive and negative prefixes or the
+                suffixes must be distinct for <code>DecimalFormat.parse()</code> to be able
+                to distinguish positive from negative values.  (If they are identical, then
+                <code>DecimalFormat</code> will behave as if no negative subpattern was
+                specified.)  Another example is that the decimal separator and thousands
+                separator should be distinct characters, or parsing will be impossible.
+            </p>
+            <p>
+                The grouping separator is commonly used for thousands, but in some
+                countries it separates ten-thousands. The grouping size is a constant number
+                of digits between the grouping characters, such as 3 for 100,000,000 or 4 for
+                1,0000,0000.  If you supply a pattern with multiple grouping characters, the
+                interval between the last one and the end of the integer is the one that is
+                used. So <code>"#,##,###,####"</code> == <code>"######,####"</code> ==
+                <code>"##,####,####"</code>.
+            </p>
+            <h4>Special Pattern Characters</h4>
+
+            <p>
+                Many characters in a pattern are taken literally; they are matched during
+                parsing and output unchanged during formatting.  Special characters, on the
+                other hand, stand for other characters, strings, or classes of characters.
+                They must be quoted, unless noted otherwise, if they are to appear in the
+                prefix or suffix as literals.
+            </p>
+            <p>
+                The characters listed here are used in non-localized patterns.  Localized
+                patterns use the corresponding characters taken from this formatter's
+                <code>DecimalFormatSymbols</code> object instead, and these characters lose
+                their special status.  Two exceptions are the currency sign and quote, which
+                are not localized.
+            </p>
+
+            <blockquote>
+                <table border=0 cellspacing=3 cellpadding=0 summary="Chart showing symbol,
+                location, localized, and meaning.">
+                    <tr bgcolor="#ccccff">
+                    <th align=left>Symbol
+                    <th align=left>Location
+                    <th align=left>Localized?
+                    <th align=left>Meaning
+                    <tr valign=top>
+
+                    <td><code>0</code>
+                    <td>Number
+                    <td>Yes
+                    <td>Digit
+                    <tr valign=top bgcolor="#eeeeff">
+                    <td><code>#</code>
+                    <td>Number
+                    <td>Yes
+                    <td>Digit, zero shows as absent
+                    <tr valign=top>
+                    <td><code>.</code>
+
+                    <td>Number
+                    <td>Yes
+                    <td>Decimal separator or monetary decimal separator
+                    <tr valign=top bgcolor="#eeeeff">
+                    <td><code>-</code>
+                    <td>Number
+                    <td>Yes
+                    <td>Minus sign
+                    <tr valign=top>
+                    <td><code>,</code>
+                    <td>Number
+                    <td>Yes
+                    <td>Grouping separator
+                    <tr valign=top bgcolor="#eeeeff">
+
+                    <td><code>E</code>
+                    <td>Number
+                    <td>Yes
+                    <td>Separates mantissa and exponent in scientific notation.
+                    <em>Need not be quoted in prefix or suffix.</em>
+                    <tr valign=top>
+                    <td><code>;</code>
+                    <td>Subpattern boundary
+                    <td>Yes
+                    <td>Separates positive and negative subpatterns
+                    <tr valign=top bgcolor="#eeeeff">
+
+                    <td><code>%</code>
+                    <td>Prefix or suffix
+                    <td>Yes
+                    <td>Multiply by 100 and show as percentage
+                    <tr valign=top>
+                    <td><code>&#92;u2030</code>
+                    <td>Prefix or suffix
+                    <td>Yes
+                    <td>Multiply by 1000 and show as per mille value
+                    <tr valign=top bgcolor="#eeeeff">
+                    <td><code>&#164;</code> (<code>&#92;u00A4</code>)
+                    <td>Prefix or suffix
+                    <td>No
+                    <td>Currency sign, replaced by currency symbol.  If
+                    doubled, replaced by international currency symbol.
+                    If present in a pattern, the monetary decimal separator
+                    is used instead of the decimal separator.
+                    <tr valign=top>
+
+                    <td><code>'</code>
+                    <td>Prefix or suffix
+                    <td>No
+                    <td>Used to quote special characters in a prefix or suffix,
+                    for example, <code>"'#'#"</code> formats 123 to
+                    <code>"#123"</code>.  To create a single quote
+                    itself, use two in a row: <code>"# o''clock"</code>.
+                </table>
+            </blockquote>
+
+            <h4>Scientific Notation</h4>
+
+            <p>
+                Numbers in scientific notation are expressed as the product of a mantissa
+                and a power of ten, for example, 1234 can be expressed as 1.234 x 10^3.  The
+                mantissa is often in the range 1.0 <= x < 10.0, but it need not be.
+                <code>DecimalFormat</code> can be instructed to format and parse scientific
+                notation <em>only via a pattern</em>; there is currently no factory method
+                that creates a scientific notation format.  In a pattern, the exponent
+                character immediately followed by one or more digit characters indicates
+                scientific notation.  Example: <code>"0.###E0"</code> formats the number
+                1234 as <code>"1.234E3"</code>.
+            </p>
+            <ul>
+
+                <li>The number of digit characters after the exponent character gives the
+                minimum exponent digit count.  There is no maximum.  Negative exponents are
+                formatted using the localized minus sign, <em>not</em> the prefix and suffix
+                from the pattern.  This allows patterns such as <code>"0.###E0 m/s"</code>.
+
+                <li>The minimum and maximum number of integer digits are interpreted
+                together:
+
+                <ul>
+                    <li>If the maximum number of integer digits is greater than their minimum number
+                    and greater than 1, it forces the exponent to be a multiple of the maximum
+                    number of integer digits, and the minimum number of integer digits to be
+                    interpreted as 1.  The most common use of this is to generate
+                    <em>engineering notation</em>, in which the exponent is a multiple of three,
+                    e.g., <code>"##0.#####E0"</code>. Using this pattern, the number 12345
+                    formats to <code>"12.345E3"</code>, and 123456 formats to
+                    <code>"123.456E3"</code>.
+
+                    <li>Otherwise, the minimum number of integer digits is achieved by adjusting the
+                    exponent.  Example: 0.00123 formatted with <code>"00.###E0"</code> yields
+                    <code>"12.3E-4"</code>.
+                </ul>
+
+                <li>The number of significant digits in the mantissa is the sum of the
+                <em>minimum integer</em> and <em>maximum fraction</em> digits, and is
+                unaffected by the maximum integer digits.  For example, 12345 formatted with
+                <code>"##0.##E0"</code> is <code>"12.3E3"</code>. To show all digits, set
+                the significant digits count to zero.  The number of significant digits
+                does not affect parsing.
+
+                <li>Exponential patterns may not contain grouping separators.
+            </ul>
+
+            <h4>Rounding</h4>
+
+            <code>DecimalFormat</code> uses half-even rounding (see
+            <CODE>BigDecimal.ROUND_HALF_EVEN</CODE>) for
+            formatting.
+
+            <h4>Digits</h4>
+
+            For formatting, <code>DecimalFormat</code> uses the ten consecutive
+            characters starting with the localized zero digit defined in the
+            <code>DecimalFormatSymbols</code> object as digits. For parsing, these
+            digits as well as all Unicode decimal digits, as defined by
+            <CODE>Character.digit</CODE>, are recognized.
+
+            <h4>Special Values</h4>
+
+            <p>
+                <code>NaN</code> is formatted as a single character, typically
+                <code>&#92;uFFFD</code>.  This character is determined by the
+                <code>DecimalFormatSymbols</code> object.  This is the only value for which
+                the prefixes and suffixes are not used.
+            </p>
+            <p>
+                Infinity is formatted as a single character, typically
+                <code>&#92;u221E</code>, with the positive or negative prefixes and suffixes
+                applied.  The infinity character is determined by the
+                <code>DecimalFormatSymbols</code> object.
+            </p>
+            <p>
+                Negative zero (<code>"-0"</code>) parses to
+            </p>
+            <ul>
+                <li><code>BigDecimal(0)</code> if <code>isParseBigDecimal()</code> is
+                true,
+                <li><code>Long(0)</code> if <code>isParseBigDecimal()</code> is false
+                and <code>isParseIntegerOnly()</code> is true,
+                <li><code>Double(-0.0)</code> if both <code>isParseBigDecimal()</code>
+
+                and <code>isParseIntegerOnly()</code> are false.
+            </ul>
+        </div>
+    </body>
+</html>
+<!--
+Tip: to create a link which will open in an external web browser, try:
+<object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+    <param name="content" value="http://www.netbeans.org/">
+    <param name="text" value="<html><u>http://www.netbeans.org/</u></html>">
+    <param name="textFontSize" value="medium">
+    <param name="textColor" value="blue">
+</object>
+To create a link to a help set from another module, you need to know the code name base and path, e.g.:
+<a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a>
+(This link will behave sanely if that module is disabled or missing.)
+-->
