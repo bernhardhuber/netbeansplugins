@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="org-huberb-digestnb-DigestAction.instance">
+                <attr name="instanceClass" stringvalue="org.huberb.digestnb.DigestAction"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="org-huberb-digestnb-DigestAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-digestnb-DigestAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="DigestTopComponent.settings" url="DigestTopComponent.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="output">
+                <file name="DigestTopComponent.wstcref" url="DigestTopComponent_1.xml"/>
+            </folder>
+        </folder>
+    </folder>
+    
+    <folder name="Services">
+        <file name="org-huberb-digestnb-option-DigestOption.settings" url="option/DigestOption.xml"/>
+
+        <folder name="JavaHelp">
+            <file name="org-huberb-digestnb-helpset.xml" url="helpset.xml"/>
+            <attr name="org-netbeans-modules-usersguide-below-regular.txt/org-huberb-digestnb-helpset.xml" boolvalue="true"/>
+        </folder>
+    </folder>
+    
+    
+    <folder name="UI">
+        <folder name="Services">
+            <!-- Display the system option under the "Testing" category in Options. -->
+            <folder name="Tools">
+                <!-- Point to the real settings file (always on the system file system). -->
+                <file name="org-huberb-digestnb-option-DigestOption.shadow">
+                    <attr name="originalFile" stringvalue="Services/org-huberb-digestnb-option-DigestOption.settings"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+
+</filesystem>

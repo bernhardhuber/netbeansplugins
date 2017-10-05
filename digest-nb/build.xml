@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="org.huberb.digestnb" default="netbeans" basedir=".">
+    <description>Builds, tests, and runs the project org.huberb.digestnb.</description>
+    <import file="nbproject/build-impl.xml"/>
+    <property file="nbproject/project.properties" />
+    
+    <target name="javahelp-preview" description="Preview module javahelp">
+        <java  classname="sunw.demo.jhdemo.JHLauncher" fork="true">
+            <classpath>
+                <pathelement location="${jhall.jar}"/>
+                
+                <!-- enter path to hsviewer.jar below" -->
+                <pathelement location="C:\all_projects\projects\external-java-projects\javahelp-2_0_02\jh2.0\demos\bin/hsviewer.jar"/>
+            </classpath>
+            <arg value="-helpset" />
+            <arg value="javahelp/${javahelp.base}/${javahelp.hs}" />
+        </java>
+    </target>
+
+</project>
