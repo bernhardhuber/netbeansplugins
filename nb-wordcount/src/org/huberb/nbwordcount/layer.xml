@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="org-huberb-nbwordcount-WordCountingAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/nbwordcount/images/wordCounting.gif"/>
+                <attr name="instanceClass" stringvalue="org.huberb.nbwordcount.WordCountingAction"/>
+            </file>
+            <file name="org-huberb-nbwordcount-actions-ExportDataAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/nbwordcount/images/editcopy.png"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.nbwordcount.Bundle"/>
+            </file>
+        </folder>
+        <folder name="Window">
+            <file name="org-huberb-nbwordcount-WordCountAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/nbwordcount/images/wordCount.gif"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Loaders">
+        <folder name="text">
+            <folder name="x-java">
+                <folder name="Actions">
+                    <file name="org-huberb-nbwordcount-WordCountingAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-nbwordcount-WordCountingAction.instance"/>
+                    </file>
+                    <attr name="org-huberb-nbwordcount-WordCountingAction.shadow/java-project-separator-1.instance" boolvalue="true"/>
+                </folder>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="WordCountAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/org-huberb-nbwordcount-WordCountAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="WordCountTopComponent.settings" url="WordCountTopComponentSettings.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="rightSlidingSide">
+                <file name="WordCountTopComponent.wstcref" url="WordCountTopComponentWstcref.xml"/>
+            </folder>
+        </folder>
+    </folder>
+    
+    <folder name="Services">
+        <folder name="JavaHelp">
+            <file name="org-huberb-nbwordcount-helpset.xml" url="helpset.xml"/>
+            <attr name="org-netbeans-modules-usersguide-below-regular.txt/org-huberb-nbwordcount-helpset.xml" boolvalue="true"/>
+        </folder>
+    </folder>
+</filesystem>
