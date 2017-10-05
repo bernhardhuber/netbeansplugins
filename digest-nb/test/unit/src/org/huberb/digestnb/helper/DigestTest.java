@@ -8,9 +8,6 @@
 package org.huberb.digestnb.helper;
 
 import junit.framework.*;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.logging.Logger;
 
 /**
  * TestCase for DigestTest
