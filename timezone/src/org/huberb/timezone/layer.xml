@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="org-huberb-timezone-TimeZoneAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/timezone/images/timezone.png"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="org-huberb-timezone-TimeZoneAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-timezone-TimeZoneAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Services">
+        <folder name="JavaHelp">
+            <file name="timezone-helpset.xml" url="timezone-helpset.xml"/>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="TimeZoneTopComponent.settings" url="TimeZoneTopComponentSettings.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="output">
+                <file name="TimeZoneTopComponent.wstcref" url="TimeZoneTopComponentWstcref.xml"/>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

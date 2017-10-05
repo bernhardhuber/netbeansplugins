@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.huberb.timezone/1
+OpenIDE-Module-Implementation-Version: 10
+OpenIDE-Module-Layer: org/huberb/timezone/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/huberb/timezone/Bundle.properties
+OpenIDE-Module-Requires: org.netbeans.api.javahelp.Help
+
