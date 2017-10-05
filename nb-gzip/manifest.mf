@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.huberb.nbgzip/1
+OpenIDE-Module-Implementation-Version: 10
+OpenIDE-Module-Layer: org/huberb/nbgzip/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/huberb/nbgzip/Bundle.properties
+
+Name: org/huberb/nbgzip/GzipNodeAction.class
+OpenIDE-Module-Class: Action
