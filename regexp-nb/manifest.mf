@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.huberb.regexpnb/1
+OpenIDE-Module-Implementation-Version: 10
+OpenIDE-Module-Layer: org/huberb/regexpnb/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/huberb/regexpnb/Bundle.properties
+

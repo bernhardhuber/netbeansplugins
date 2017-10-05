@@ -1,0 +1,30 @@
+(.*) - (.*) \[(.*)\] \"(.*) (.*) (.*)\" (\d{3}) (\d+|-) \"(.*)\" \"(.*)\" (.*) (\d+)
+
+matchesResult: true, hasAnchoringBounds: true, hasTransparentBounds: false
+groupSummary: 213.228.0.12 - - [14/Aug/2005:04:18:38 -0700] "GET /favicon.ico HTTP/1.0" 301 437 "http://del.icio.us/inbox/digitalmonkey/libraries" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.10) Gecko/20050716 Firefox/1.0.6" simple-log.dev.java.net 0, groupCount: 12
+groupDetail 0: 213.228.0.12 - - [14/Aug/2005:04:18:38 -0700] "GET /favicon.ico HTTP/1.0" 301 437 "http://del.icio.us/inbox/digitalmonkey/libraries" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.10) Gecko/20050716 Firefox/1.0.6" simple-log.dev.java.net 0
+groupDetail 1: 213.228.0.12
+groupDetail 2: -
+groupDetail 3: 14/Aug/2005:04:18:38 -0700
+groupDetail 4: GET
+groupDetail 5: /favicon.ico
+groupDetail 6: HTTP/1.0
+groupDetail 7: 301
+groupDetail 8: 437
+groupDetail 9: http://del.icio.us/inbox/digitalmonkey/libraries
+groupDetail 10: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.10) Gecko/20050716 Firefox/1.0.6
+groupDetail 11: simple-log.dev.java.net
+groupDetail 12: 0
+
+67.121.107.98 - - [13/Aug/2005:23:10:39 -0700] "GET / HTTP/1.1" 301 426 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; AT&T CSM6.0; AT&T CSM 6; Q312461; YPC 3.0.0; SV1; .NET CLR 1.1.4322)" simple-log.dev.java.net 0
+67.121.107.98 - - [13/Aug/2005:23:33:05 -0700] "GET / HTTP/1.1" 301 426 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; AT&T CSM6.0; AT&T CSM 6; Q312461; YPC 3.0.0; SV1; .NET CLR 1.1.4322)" simple-log.dev.java.net 0
+83.251.4.112 - - [14/Aug/2005:01:42:10 -0700] "GET / HTTP/1.1" 301 426 "-" "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.10) Gecko/20050716 Firefox/1.0.6" simple-log.dev.java.net 0
+213.228.0.12 - - [14/Aug/2005:04:18:38 -0700] "GET /favicon.ico HTTP/1.0" 301 437 "http://del.icio.us/inbox/digitalmonkey/libraries" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.10) Gecko/20050716 Firefox/1.0.6" simple-log.dev.java.net 0
+213.228.0.12 - - [14/Aug/2005:04:19:33 -0700] "GET /favicon.ico HTTP/1.0" 301 437 "http://del.icio.us/inbox/digitalmonkey/libraries" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.10) Gecko/20050716 Firefox/1.0.6" simple-log.dev.java.net 0
+213.228.0.12 - - [14/Aug/2005:06:09:22 -0700] "GET /favicon.ico HTTP/1.0" 301 437 "http://del.icio.us/inbox/digitalmonkey/libraries" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.10) Gecko/20050716 Firefox/1.0.6" simple-log.dev.java.net 0
+220.171.206.51 - - [14/Aug/2005:08:05:25 -0700] "GET /favicon.ico HTTP/1.1" 301 437 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Maxthon; mxie)" simple-log.dev.java.net 0
+220.171.206.51 - - [14/Aug/2005:08:05:39 -0700] "GET /favicon.ico HTTP/1.1" 301 437 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Maxthon; mxie)" simple-log.dev.java.net 0
+213.118.70.25 - - [14/Aug/2005:11:56:19 -0700] "GET /release/simple-log-1.7.zip HTTP/1.0" 301 452 "https://simple-log.dev.java.net/release" "LeechGet 2004 (www.leechget.net)" simple-log.dev.java.net 0
+213.118.70.25 - - [14/Aug/2005:11:56:19 -0700] "GET //release/https://simple-log.dev.java.net/release/simple-log-1.7.zip HTTP/1.0" 301 493 "http://simple-log.dev.java.net//release/https://simple-log.dev.java.net/release" "LeechGet 2004 (www.leechget.net)" simple-log.dev.java.net 0
+213.118.70.25 - - [14/Aug/2005:11:56:20 -0700] "GET ///release/https://simple-log.dev.java.net/release/https://simple-log.dev.java.net//release/https://simple-log.dev.java.net/release/simple-log-1.7.zip HTTP/1.0" 301 575 "http://simple-log.dev.java.net///release/https://simple-log.dev.java.net/release/https://simple-log.dev.java.net//release/https://simple-log.dev.java.net/release" "LeechGet 2004 (www.leechget.net)" simple-log.dev.java.net 0
+213.118.70.25 - - [14/Aug/2005:11:56:20 -0700] "GET ////release/https://simple-log.dev.java.net/release/https://simple-log.dev.java.net//release/https://simple-log.dev.java.net/release/https://simple-log.dev.java.net///release/https://simple-log.dev.java.net/release/https://simple-log.dev.java.net//release/https://simple-log.dev.java.net/release/simple-log-1.7.zip HTTP/1.0" 301 739 "http://simple-log.dev.java.net////release/https://simple-log.dev.java.net/release/https://simple-log.dev.java.net//release/https://simple-log.dev.java.net/release/https://simple-log.dev.java.net///release/https://simple-log.dev.java.net/release/https://simple-log.dev.java.net//release/https://simple-log.dev.java.net/release" "LeechGet 2004 (www.leechget.net)" simple-log.dev.java.net 0
