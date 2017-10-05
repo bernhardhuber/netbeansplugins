@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 OpenIDE-Module: org.huberb.localenb/3
-OpenIDE-Module-Implementation-Version: 7
+OpenIDE-Module-Implementation-Version: 10
 OpenIDE-Module-Layer: org/huberb/localenb/layer.xml
 OpenIDE-Module-Localizing-Bundle: org/huberb/localenb/Bundle.properties
 OpenIDE-Module-Requires: org.netbeans.api.javahelp.Help

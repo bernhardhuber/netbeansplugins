@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import org.openide.ErrorManager;
+import org.openide.util.ImageUtilities;
 import org.openide.util.NbBundle;
-import org.openide.util.Utilities;
 import org.openide.windows.TopComponent;
 import org.openide.windows.WindowManager;
 
@@ -21,7 +21,7 @@ public class OpenLocaleTopComponentAction extends AbstractAction {
      */
     public OpenLocaleTopComponentAction() {
         putValue(NAME, NbBundle.getMessage(OpenLocaleTopComponentAction.class, "CTL_LocaleAction"));
-        putValue(SMALL_ICON, new ImageIcon(Utilities.loadImage(ICON_RESOURCE, true)));
+        putValue(SMALL_ICON, new ImageIcon(ImageUtilities.loadImage(ICON_RESOURCE, true)));
     }
     
     public void actionPerformed(ActionEvent evt) {
