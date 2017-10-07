@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+        
+        <title>About javadoc-templates</title><link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+    <body>
+
+        <h2>About javadoc-templates</h2>
+        <p>
+            The javadoc-templates module offers following templates.
+        </p>
+        <ul>
+            <li><code>overview.html</code> templates - documentation of the entire application, the set of packages
+            </li>
+            <li><code>package.html</code> templates - documentation of a single package
+            </li>
+            <li><code>javadoc.css</code> templates - style sheet of the generated javadoc html pages
+            </li>
+        </ul>
+        <p>
+            The templates are installed in <b>Templates|Javadoc</b>.
+        </p>
+
+        <h2>Usage</h2>
+        <p>
+            Create your javadoc template by doing following steps:
+        </p>
+
+        <ol>
+            <li>Select a destination directory in the explorer view
+            </li>
+            <li>Select the menu <b>File|New&nbsp;File..|Javadoc</b>, alternatively
+                you can select from the popup menu <b>New|File/Folder...|Javadoc</b>
+            </li>
+            <li>Select the appropriate javadoc template file
+            </li>
+            <li>Choose the name, of the file you want to create.
+            </li>
+            <li>Edit the created file</li>
+        </ol>
+        <p>
+            The screen shot below shows the Javadoc template dialog:
+        </p>
+        <img src="javadoc-template-new.gif" alt="Javadoc Template">
+
+        <p>
+            Usually following names are appropriate:
+        </p>
+        <ul>
+            <li><code>package</code> for a package html file
+            </li>
+            <li><code>overview</code> for a overview html file
+            </li>
+            <li><code>javadoc</code> for a javadoc style sheet file
+            </li>
+        </ul>
+
+        <h2>Building Javadoc</h2>
+        <p>
+            The <code>javadoc</code> tool accepts files named <code>package.html</code> automatically
+            as package documentation. Thus no extra configuration is necessary for including
+            the package documentation in the javadoc generated html pages.
+        </p>
+        <p>
+            For the other javadoc file types the following sections describe, how-to
+            configure the javadoc tool.
+        </p>
+
+        <h3>Overview Document</h3>
+        <p>
+            If you create an overview documentation you have tell javadoc to use
+            your overview document.
+            <br>
+            In Ant's build.xml augment the
+            javadoc task by specifying the overview file, like:
+            </p><blockquote>
+                <code>&lt;javadoc...<br>overview="${path-to-overview}/overview.html"...<br>&gt;</code>
+            </blockquote>
+
+            Alternatively specify in your project
+            <b>Properties|Documenting</b> the overview document in the
+            field <b>Additional javadoc options</b>, like:
+            <blockquote>
+                <code>-overview=${basedir}/${src.dir}/overview.html</code>
+            </blockquote>
+        <p></p>
+
+        <h3>Style sheet File</h3>
+        <p>
+            If you create a javadoc style sheet you have to tell javadoc to use
+            your style sheet file.
+            <br>
+            In Ant's build.xml augment the
+            javadoc task by specifying the style sheet file, like:
+            </p><blockquote>
+                <code>&lt;javadoc...<br>stylesheetfile="${path-to-javadoc-style sheet}/javadoc.css"<br>...<br>&gt;</code>
+            </blockquote>
+
+            Alternatively specify in your project
+            <b>Properties|Documenting</b> the style sheet file in the
+            field <b>Additional javadoc options</b>, like:
+            <blockquote>
+                <code>-stylesheetfile=${basedir}/${src.dir}/stylesheet.css</code>
+            </blockquote>
+        <p></p>
+
+        <ul class="note">
+            <li>
+                Don't forget to exclude the javadoc files from copying into the build directory.
+
+                Simply add them to field <b>Exclude From Jar File</b> in the project properties dialog <b>Build|Packaging</b>, like:
+                <blockquote>
+                    <code>**/*.java,**/*.form,**/package.html,overview.html,javadoc.css</code>
+                </blockquote>
+            </li>
+        </ul>
+
+        <p>
+            Read more about writing javadoc documentation:
+        </p>
+        <p>
+            <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+                <param name="content" value="http://java.sun.com/j2se/javadoc/index.jsp">
+                <param name="text" value="&lt;html&gt;&lt;u&gt;Javadoc Home Page&lt;/u&gt;&lt;/html&gt;">
+                <param name="textFontSize" value="medium">
+                <param name="textColor" value="blue">
+            </object>
+            <br>
+            <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+                <param name="content" value="http://java.sun.com/j2se/javadoc/writingdoccomments/index.html">
+                <param name="text" value="&lt;html&gt;&lt;u&gt;How to Write Doc Comments for Javadoc&lt;/u&gt;&lt;/html&gt;">
+                <param name="textFontSize" value="medium">
+                <param name="textColor" value="blue">
+            </object>
+        </p>
+    <!--
+Tip: to create a link which will open in an external web browser, try:
+<object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+    <param name="content" value="http://www.netbeans.org/">
+    <param name="text" value="<html><u>http://www.netbeans.org/</u></html>">
+    <param name="textFontSize" value="medium">
+    <param name="textColor" value="blue">
+</object>
+To create a link to a help set from another module, you need to know the code name base and path, e.g.:
+<a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a>
+(This link will behave sanely if that module is disabled or missing.)
+-->
+</body></html>

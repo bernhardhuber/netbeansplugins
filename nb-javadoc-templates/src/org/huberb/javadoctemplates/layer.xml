@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Services">
+        <folder name="JavaHelp">
+            <file name="javadoctemplates-helpset.xml" url="javadoctemplates-helpset.xml"/>
+        </folder>
+    </folder>
+    <folder name="Templates">
+        <folder name="Javadoc">
+            <!-- package.html templates
+            -->
+            <file name="package.html" url="templates/packages/packageTemplate.html">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.javadoctemplates.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/huberb/javadoctemplates/templates/packages/packageTemplateHelp.html"/>
+            </file>
+            <file name="package1.html" url="templates/packages/packageTemplate_1.html">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.javadoctemplates.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/huberb/javadoctemplates/templates/packages/packageTemplate_1Help.html"/>
+            </file>
+            <file name="package2.html" url="templates/packages/packageTemplate_2.html">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.javadoctemplates.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/huberb/javadoctemplates/templates/packages/packageTemplate_2Help.html"/>
+            </file>
+            
+            <!-- overview.html templates
+            -->
+            <file name="overview.html" url="templates/overviews/overviewTemplate.html">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.javadoctemplates.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/huberb/javadoctemplates/templates/overviews/overviewTemplateHelp.html"/>
+            </file>
+            
+            <!-- javadoc.css templates
+            -->
+            <file name="javadoc.css" url="templates/styles/javadocTemplate.css">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.javadoctemplates.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/huberb/javadoctemplates/templates/styles/javadocTemplateHelp.html"/>
+            </file>
+            <file name="javadoc_1.css" url="templates/styles/javadocTemplate_1.css">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.javadoctemplates.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/huberb/javadoctemplates/templates/styles/javadocTemplate_1Help.html"/>
+            </file>
+            <file name="javadoc_2.css" url="templates/styles/javadocTemplate_2.css">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.javadoctemplates.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/huberb/javadoctemplates/templates/styles/javadocTemplate_2Help.html"/>
+            </file>
+            <file name="javadoc_3.css" url="templates/styles/javadocTemplate_3.css">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.javadoctemplates.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/huberb/javadoctemplates/templates/styles/javadocTemplate_3Help.html"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>
