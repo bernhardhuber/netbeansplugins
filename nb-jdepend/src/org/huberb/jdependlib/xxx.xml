@@ -1,0 +1,1679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDepend>
+<Packages>
+    <Stats name="Default">
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="SplitTest.java">SplitTest</Class>
+        <Class sourceFile="Splitting.java">Splitting</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy/>
+    </Package>
+    <error name="at.mobilkom.asmp.brian">No stats available: package referenced, but not analyzed.</error>
+    </Package>
+    <error name="at.mobilkom.asmp.brian.isp">No stats available: package referenced, but not analyzed.</error>
+    </Package>
+    <error name="com.mindprod.csv">No stats available: package referenced, but not analyzed.</error>
+    </Package>
+    <Stats name="com.o3sis.www.wsdl._1_1.AccountManagement_1_2">
+        <TotalClasses>19</TotalClasses>
+        <ConcreteClasses>17</ConcreteClasses>
+        <AbstractClasses>2</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>0.11</A>
+        <I>0</I>
+        <D>0.89</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="AccountManagement.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.AccountManagement</Class>
+        <Class sourceFile="AccountManagement_12.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.AccountManagement_12</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="AccountManagementImpl.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.AccountManagementImpl</Class>
+        <Class sourceFile="AccountManagementStub.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.AccountManagementStub</Class>
+        <Class sourceFile="AccountManagementStubTest.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.AccountManagementStubTest</Class>
+        <Class sourceFile="AccountManagement_12Locator.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.AccountManagement_12Locator</Class>
+        <Class sourceFile="Exception.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.Exception</Class>
+        <Class sourceFile="O3sisHttpTransport.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.O3sisHttpTransport</Class>
+        <Class sourceFile="OTAPCharacteristicType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.OTAPCharacteristicType</Class>
+        <Class sourceFile="OTAPDeviceInfoType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.OTAPDeviceInfoType</Class>
+        <Class sourceFile="OTAPItemType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.OTAPItemType</Class>
+        <Class sourceFile="ParameterType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.ParameterType</Class>
+        <Class sourceFile="ProfileItemOutType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.ProfileItemOutType</Class>
+        <Class sourceFile="ProfileItemType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.ProfileItemType</Class>
+        <Class sourceFile="PropertyItemType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.PropertyItemType</Class>
+        <Class sourceFile="SubscriberItemType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.SubscriberItemType</Class>
+        <Class sourceFile="SyncMLAnchorType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.SyncMLAnchorType</Class>
+        <Class sourceFile="SyncMLProfileType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.SyncMLProfileType</Class>
+        <Class sourceFile="TrashBinDeletionIntervalItemType.java">com.o3sis.www.wsdl._1_1.AccountManagement_1_2.TrashBinDeletionIntervalItemType</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab">
+        <TotalClasses>4</TotalClasses>
+        <ConcreteClasses>3</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>13</Ca>
+        <Ce>3</Ce>
+        <A>0.25</A>
+        <I>0.19</I>
+        <D>0.56</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="Misc.java">com.unisys.at.vab.Misc</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="Pair.java">com.unisys.at.vab.Pair</Class>
+        <Class sourceFile="VabValidationRules.java">com.unisys.at.vab.VabValidationRules</Class>
+        <Class sourceFile="VabValidationRulesTest.java">com.unisys.at.vab.VabValidationRulesTest</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception.address</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception.address</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.business.service.address">
+        <TotalClasses>21</TotalClasses>
+        <ConcreteClasses>17</ConcreteClasses>
+        <AbstractClasses>4</AbstractClasses>
+        <Ca>4</Ca>
+        <Ce>11</Ce>
+        <A>0.19</A>
+        <I>0.73</I>
+        <D>0.08</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="AddressServiceIF.java">com.unisys.at.vab.business.service.address.AddressServiceIF</Class>
+        <Class sourceFile="AddressWebServiceIF.java">com.unisys.at.vab.business.service.address.AddressWebServiceIF</Class>
+        <Class sourceFile="Exporter.java">com.unisys.at.vab.business.service.address.Exporter</Class>
+        <Class sourceFile="Importer.java">com.unisys.at.vab.business.service.address.Importer</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="AddressEvent.java">com.unisys.at.vab.business.service.address.AddressEvent</Class>
+        <Class sourceFile="AddressEventConsumer.java">com.unisys.at.vab.business.service.address.AddressEventConsumer</Class>
+        <Class sourceFile="AddressServiceImpl.java">com.unisys.at.vab.business.service.address.AddressServiceImpl</Class>
+        <Class sourceFile="AddressServicePointcut.java">com.unisys.at.vab.business.service.address.AddressServicePointcut</Class>
+        <Class sourceFile="AddressWebServiceImpl.java">com.unisys.at.vab.business.service.address.AddressWebServiceImpl</Class>
+        <Class sourceFile="Csv1Exporter.java">com.unisys.at.vab.business.service.address.Csv1Exporter</Class>
+        <Class sourceFile="Csv1Importer.java">com.unisys.at.vab.business.service.address.Csv1Importer</Class>
+        <Class sourceFile="Csv1ImporterTest.java">com.unisys.at.vab.business.service.address.Csv1ImporterTest</Class>
+        <Class sourceFile="Csv2Exporter.java">com.unisys.at.vab.business.service.address.Csv2Exporter</Class>
+        <Class sourceFile="Csv2Importer.java">com.unisys.at.vab.business.service.address.Csv2Importer</Class>
+        <Class sourceFile="CsvReaderTest.java">com.unisys.at.vab.business.service.address.CsvReaderTest</Class>
+        <Class sourceFile="LdifExporter.java">com.unisys.at.vab.business.service.address.LdifExporter</Class>
+        <Class sourceFile="LdifImporter.java">com.unisys.at.vab.business.service.address.LdifImporter</Class>
+        <Class sourceFile="MessageSourceLocale.java">com.unisys.at.vab.business.service.address.MessageSourceLocale</Class>
+        <Class sourceFile="MessageSourceLocaleTest.java">com.unisys.at.vab.business.service.address.MessageSourceLocaleTest</Class>
+        <Class sourceFile="VcardExporter.java">com.unisys.at.vab.business.service.address.VcardExporter</Class>
+        <Class sourceFile="VcardImporter.java">com.unisys.at.vab.business.service.address.VcardImporter</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.mindprod.csv</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.address</Package>
+        <Package>com.unisys.at.vab.exception.dao.ldap</Package>
+        <Package>com.unisys.at.vab.exception.dao.sms</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.business.service.customercare">
+        <TotalClasses>3</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>10</Ce>
+        <A>0.33</A>
+        <I>0.91</I>
+        <D>0.24</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="CustomerCareServiceIF.java">com.unisys.at.vab.business.service.customercare.CustomerCareServiceIF</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="CustomerCareServiceImpl.java">com.unisys.at.vab.business.service.customercare.CustomerCareServiceImpl</Class>
+        <Class sourceFile="ErSender.java">com.unisys.at.vab.business.service.customercare.ErSender</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.customercare</Package>
+        <Package>com.unisys.at.vab.exception.dao.xml</Package>
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.exception.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.business.service.messaging">
+        <TotalClasses>5</TotalClasses>
+        <ConcreteClasses>3</ConcreteClasses>
+        <AbstractClasses>2</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>12</Ce>
+        <A>0.4</A>
+        <I>0.92</I>
+        <D>0.32</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="MessagingServiceIF.java">com.unisys.at.vab.business.service.messaging.MessagingServiceIF</Class>
+        <Class sourceFile="MessagingWebServiceIF.java">com.unisys.at.vab.business.service.messaging.MessagingWebServiceIF</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="ErSender.java">com.unisys.at.vab.business.service.messaging.ErSender</Class>
+        <Class sourceFile="MessagingServiceImpl.java">com.unisys.at.vab.business.service.messaging.MessagingServiceImpl</Class>
+        <Class sourceFile="SmsSender.java">com.unisys.at.vab.business.service.messaging.SmsSender</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.address</Package>
+        <Package>com.unisys.at.vab.exception.dao.er</Package>
+        <Package>com.unisys.at.vab.exception.dao.sms</Package>
+        <Package>com.unisys.at.vab.exception.dao.xml</Package>
+        <Package>com.unisys.at.vab.exception.messaging</Package>
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.business.service.notification">
+        <TotalClasses>6</TotalClasses>
+        <ConcreteClasses>4</ConcreteClasses>
+        <AbstractClasses>2</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>10</Ce>
+        <A>0.33</A>
+        <I>0.91</I>
+        <D>0.24</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="NotificationServiceIF.java">com.unisys.at.vab.business.service.notification.NotificationServiceIF</Class>
+        <Class sourceFile="NotificationWebServiceIF.java">com.unisys.at.vab.business.service.notification.NotificationWebServiceIF</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="ErSender.java">com.unisys.at.vab.business.service.notification.ErSender</Class>
+        <Class sourceFile="NotificationServiceImpl.java">com.unisys.at.vab.business.service.notification.NotificationServiceImpl</Class>
+        <Class sourceFile="NotificationWebServiceImpl.java">com.unisys.at.vab.business.service.notification.NotificationWebServiceImpl</Class>
+        <Class sourceFile="SmsSender.java">com.unisys.at.vab.business.service.notification.SmsSender</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.dao.sms</Package>
+        <Package>com.unisys.at.vab.exception.dao.xml</Package>
+        <Package>com.unisys.at.vab.exception.notification</Package>
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.persistence</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.business.service.provisioning">
+        <TotalClasses>6</TotalClasses>
+        <ConcreteClasses>4</ConcreteClasses>
+        <AbstractClasses>2</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>14</Ce>
+        <A>0.33</A>
+        <I>0.88</I>
+        <D>0.21</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="ProvisioningServiceIF.java">com.unisys.at.vab.business.service.provisioning.ProvisioningServiceIF</Class>
+        <Class sourceFile="ProvisioningWebServiceIF.java">com.unisys.at.vab.business.service.provisioning.ProvisioningWebServiceIF</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="CommonOperations.java">com.unisys.at.vab.business.service.provisioning.CommonOperations</Class>
+        <Class sourceFile="ErSender.java">com.unisys.at.vab.business.service.provisioning.ErSender</Class>
+        <Class sourceFile="ProvisionSyncResult.java">com.unisys.at.vab.business.service.provisioning.ProvisionSyncResult</Class>
+        <Class sourceFile="ProvisioningServiceImpl.java">com.unisys.at.vab.business.service.provisioning.ProvisioningServiceImpl</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.dao.asmp</Package>
+        <Package>com.unisys.at.vab.exception.dao.ldap</Package>
+        <Package>com.unisys.at.vab.exception.dao.sms</Package>
+        <Package>com.unisys.at.vab.exception.dao.xml</Package>
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.exception.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.business.service.synchronize">
+        <TotalClasses>10</TotalClasses>
+        <ConcreteClasses>7</ConcreteClasses>
+        <AbstractClasses>3</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>13</Ce>
+        <A>0.3</A>
+        <I>0.87</I>
+        <D>0.17</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="PushSyncDelayStorage.java">com.unisys.at.vab.business.service.synchronize.PushSyncDelayStorage</Class>
+        <Class sourceFile="SynchronizeServiceIF.java">com.unisys.at.vab.business.service.synchronize.SynchronizeServiceIF</Class>
+        <Class sourceFile="SynchronizeWebServiceIF.java">com.unisys.at.vab.business.service.synchronize.SynchronizeWebServiceIF</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="ErSender.java">com.unisys.at.vab.business.service.synchronize.ErSender</Class>
+        <Class sourceFile="HashMapPushSyncDelayStorage.java">com.unisys.at.vab.business.service.synchronize.HashMapPushSyncDelayStorage</Class>
+        <Class sourceFile="HashtablePushSyncDelayStorage.java">com.unisys.at.vab.business.service.synchronize.HashtablePushSyncDelayStorage</Class>
+        <Class sourceFile="SmsSender.java">com.unisys.at.vab.business.service.synchronize.SmsSender</Class>
+        <Class sourceFile="SyncTriggeringJob.java">com.unisys.at.vab.business.service.synchronize.SyncTriggeringJob</Class>
+        <Class sourceFile="SynchronizeServiceDummyImpl.java">com.unisys.at.vab.business.service.synchronize.SynchronizeServiceDummyImpl</Class>
+        <Class sourceFile="SynchronizeServiceImpl.java">com.unisys.at.vab.business.service.synchronize.SynchronizeServiceImpl</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.dao.sms</Package>
+        <Package>com.unisys.at.vab.exception.dao.xml</Package>
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.exception.synchronize</Package>
+        <Package>com.unisys.at.vab.exception.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.business.service.syncservermanagement">
+        <TotalClasses>3</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>3</Ca>
+        <Ce>7</Ce>
+        <A>0.33</A>
+        <I>0.7</I>
+        <D>0.03</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="SyncServerManagementServiceIF.java">com.unisys.at.vab.business.service.syncservermanagement.SyncServerManagementServiceIF</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="SyncServerManagementServiceDummy.java">com.unisys.at.vab.business.service.syncservermanagement.SyncServerManagementServiceDummy</Class>
+        <Class sourceFile="SyncServerManagementServiceImpl.java">com.unisys.at.vab.business.service.syncservermanagement.SyncServerManagementServiceImpl</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.o3sis.www.wsdl._1_1.AccountManagement_1_2</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.exception.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.persistence</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.dao.brian">
+        <TotalClasses>7</TotalClasses>
+        <ConcreteClasses>5</ConcreteClasses>
+        <AbstractClasses>2</AbstractClasses>
+        <Ca>4</Ca>
+        <Ce>4</Ce>
+        <A>0.29</A>
+        <I>0.5</I>
+        <D>0.21</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="SenderHandler.java">com.unisys.at.vab.dao.brian.SenderHandler</Class>
+        <Class sourceFile="SenderHandlerFactory.java">com.unisys.at.vab.dao.brian.SenderHandlerFactory</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="ADSVCSenderHandler.java">com.unisys.at.vab.dao.brian.ADSVCSenderHandler</Class>
+        <Class sourceFile="BrianConfig.java">com.unisys.at.vab.dao.brian.BrianConfig</Class>
+        <Class sourceFile="CHSVCSenderHandler.java">com.unisys.at.vab.dao.brian.CHSVCSenderHandler</Class>
+        <Class sourceFile="DESVCSenderHandler.java">com.unisys.at.vab.dao.brian.DESVCSenderHandler</Class>
+        <Class sourceFile="Msisdn.java">com.unisys.at.vab.dao.brian.Msisdn</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>at.mobilkom.asmp.brian.isp</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.exception.dao.asmp</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.test.other</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.dao.implementation">
+        <TotalClasses>19</TotalClasses>
+        <ConcreteClasses>19</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>17</Ce>
+        <A>0</A>
+        <I>0.89</I>
+        <D>0.11</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="AsmpDaoImpl.java">com.unisys.at.vab.dao.implementation.AsmpDaoImpl</Class>
+        <Class sourceFile="AsmpDaoInterceptor.java">com.unisys.at.vab.dao.implementation.AsmpDaoInterceptor</Class>
+        <Class sourceFile="AsmpDummyDaoImpl.java">com.unisys.at.vab.dao.implementation.AsmpDummyDaoImpl</Class>
+        <Class sourceFile="CommonsHttpSenderDaoImpl.java">com.unisys.at.vab.dao.implementation.CommonsHttpSenderDaoImpl</Class>
+        <Class sourceFile="DbDaoImpl.java">com.unisys.at.vab.dao.implementation.DbDaoImpl</Class>
+        <Class sourceFile="ErDaoImpl.java">com.unisys.at.vab.dao.implementation.ErDaoImpl</Class>
+        <Class sourceFile="ErDaoInterceptor.java">com.unisys.at.vab.dao.implementation.ErDaoInterceptor</Class>
+        <Class sourceFile="ErDummyDaoImpl.java">com.unisys.at.vab.dao.implementation.ErDummyDaoImpl</Class>
+        <Class sourceFile="HttpSenderDaoImpl.java">com.unisys.at.vab.dao.implementation.HttpSenderDaoImpl</Class>
+        <Class sourceFile="LdapDaoImpl.java">com.unisys.at.vab.dao.implementation.LdapDaoImpl</Class>
+        <Class sourceFile="LdapDaoInterceptor.java">com.unisys.at.vab.dao.implementation.LdapDaoInterceptor</Class>
+        <Class sourceFile="LdapLatencyGenerator.java">com.unisys.at.vab.dao.implementation.LdapLatencyGenerator</Class>
+        <Class sourceFile="LdapVAB164DaoInterceptor.java">com.unisys.at.vab.dao.implementation.LdapVAB164DaoInterceptor</Class>
+        <Class sourceFile="ReportingDaoImpl.java">com.unisys.at.vab.dao.implementation.ReportingDaoImpl</Class>
+        <Class sourceFile="SmsDaoImpl.java">com.unisys.at.vab.dao.implementation.SmsDaoImpl</Class>
+        <Class sourceFile="SmsDaoImplTest.java">com.unisys.at.vab.dao.implementation.SmsDaoImplTest</Class>
+        <Class sourceFile="SmsDaoInterceptor.java">com.unisys.at.vab.dao.implementation.SmsDaoInterceptor</Class>
+        <Class sourceFile="SmsDummyDaoImpl.java">com.unisys.at.vab.dao.implementation.SmsDummyDaoImpl</Class>
+        <Class sourceFile="SyncDbDaoImpl.java">com.unisys.at.vab.dao.implementation.SyncDbDaoImpl</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>at.mobilkom.asmp.brian</Package>
+        <Package>at.mobilkom.asmp.brian.isp</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.dao.asmp</Package>
+        <Package>com.unisys.at.vab.exception.dao.ldap</Package>
+        <Package>com.unisys.at.vab.exception.dao.sms</Package>
+        <Package>com.unisys.at.vab.exception.dao.xml</Package>
+        <Package>com.unisys.at.vab.persistence</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.xmlbinding.er</Package>
+        <Package>com.unisys.at.xmlbinding.er.types</Package>
+        <Package>com.unisys.at.xmlbinding.sms</Package>
+        <Package>com.unisys.at.xmlbinding.sms.types</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.test.dao</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.dao.implementation.ldapvab164">
+        <TotalClasses>7</TotalClasses>
+        <ConcreteClasses>7</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="LdapRWCheckBean.java">com.unisys.at.vab.dao.implementation.ldapvab164.LdapRWCheckBean</Class>
+        <Class sourceFile="LdapRWCheckBeanTest.java">com.unisys.at.vab.dao.implementation.ldapvab164.LdapRWCheckBeanTest</Class>
+        <Class sourceFile="LdapRWCheckStrategy.java">com.unisys.at.vab.dao.implementation.ldapvab164.LdapRWCheckStrategy</Class>
+        <Class sourceFile="LdapRWCheckStrategyTest.java">com.unisys.at.vab.dao.implementation.ldapvab164.LdapRWCheckStrategyTest</Class>
+        <Class sourceFile="LdapVAB164DaoInterceptor.java">com.unisys.at.vab.dao.implementation.ldapvab164.LdapVAB164DaoInterceptor</Class>
+        <Class sourceFile="LdapVAB164LdapTemplateInterceptor.java">com.unisys.at.vab.dao.implementation.ldapvab164.LdapVAB164LdapTemplateInterceptor</Class>
+        <Class sourceFile="MyLdapTemplate.java">com.unisys.at.vab.dao.implementation.ldapvab164.MyLdapTemplate</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.domain</Package>
+    </DependsUpon>
+    
+    <UsedBy/>
+    </Package>
+    <Stats name="com.unisys.at.vab.dao.lnterface">
+        <TotalClasses>8</TotalClasses>
+        <ConcreteClasses>0</ConcreteClasses>
+        <AbstractClasses>8</AbstractClasses>
+        <Ca>11</Ca>
+        <Ce>9</Ce>
+        <A>1</A>
+        <I>0.45</I>
+        <D>0.45</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="AsmpDaoIF.java">com.unisys.at.vab.dao.lnterface.AsmpDaoIF</Class>
+        <Class sourceFile="DbDaoIF.java">com.unisys.at.vab.dao.lnterface.DbDaoIF</Class>
+        <Class sourceFile="ErDaoIF.java">com.unisys.at.vab.dao.lnterface.ErDaoIF</Class>
+        <Class sourceFile="HttpSenderDaoIF.java">com.unisys.at.vab.dao.lnterface.HttpSenderDaoIF</Class>
+        <Class sourceFile="LdapDaoIF.java">com.unisys.at.vab.dao.lnterface.LdapDaoIF</Class>
+        <Class sourceFile="ReportingDaoIF.java">com.unisys.at.vab.dao.lnterface.ReportingDaoIF</Class>
+        <Class sourceFile="SmsDaoIF.java">com.unisys.at.vab.dao.lnterface.SmsDaoIF</Class>
+        <Class sourceFile="SyncDbDaoIF.java">com.unisys.at.vab.dao.lnterface.SyncDbDaoIF</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses/>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.dao.asmp</Package>
+        <Package>com.unisys.at.vab.exception.dao.ldap</Package>
+        <Package>com.unisys.at.vab.exception.dao.sms</Package>
+        <Package>com.unisys.at.vab.exception.dao.xml</Package>
+        <Package>com.unisys.at.vab.persistence</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+        <Package>com.unisys.at.vab.test.dao</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.domain">
+        <TotalClasses>15</TotalClasses>
+        <ConcreteClasses>15</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>13</Ca>
+        <Ce>5</Ce>
+        <A>0</A>
+        <I>0.28</I>
+        <D>0.72</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="Book.java">com.unisys.at.vab.domain.Book</Class>
+        <Class sourceFile="Contact.java">com.unisys.at.vab.domain.Contact</Class>
+        <Class sourceFile="ContactData.java">com.unisys.at.vab.domain.ContactData</Class>
+        <Class sourceFile="ContactVCardTest.java">com.unisys.at.vab.domain.ContactVCardTest</Class>
+        <Class sourceFile="ContactYearTest.java">com.unisys.at.vab.domain.ContactYearTest</Class>
+        <Class sourceFile="ErPackage.java">com.unisys.at.vab.domain.ErPackage</Class>
+        <Class sourceFile="ErPackageSubscriptionData.java">com.unisys.at.vab.domain.ErPackageSubscriptionData</Class>
+        <Class sourceFile="ErSubscription.java">com.unisys.at.vab.domain.ErSubscription</Class>
+        <Class sourceFile="Group.java">com.unisys.at.vab.domain.Group</Class>
+        <Class sourceFile="Profile.java">com.unisys.at.vab.domain.Profile</Class>
+        <Class sourceFile="Settings.java">com.unisys.at.vab.domain.Settings</Class>
+        <Class sourceFile="Status.java">com.unisys.at.vab.domain.Status</Class>
+        <Class sourceFile="Store.java">com.unisys.at.vab.domain.Store</Class>
+        <Class sourceFile="Subscriber.java">com.unisys.at.vab.domain.Subscriber</Class>
+        <Class sourceFile="SyncEvent.java">com.unisys.at.vab.domain.SyncEvent</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.mindprod.csv</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.exception.dao.sms</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.implementation.ldapvab164</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.exception.address</Package>
+        <Package>com.unisys.at.vab.persistence</Package>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception">
+        <TotalClasses>5</TotalClasses>
+        <ConcreteClasses>5</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>8</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>0.11</I>
+        <D>0.89</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="DataInconsistencyException.java">com.unisys.at.vab.exception.DataInconsistencyException</Class>
+        <Class sourceFile="ErException.java">com.unisys.at.vab.exception.ErException</Class>
+        <Class sourceFile="MalformedResponseException.java">com.unisys.at.vab.exception.MalformedResponseException</Class>
+        <Class sourceFile="NoResponseException.java">com.unisys.at.vab.exception.NoResponseException</Class>
+        <Class sourceFile="SenderInactiveException.java">com.unisys.at.vab.exception.SenderInactiveException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.address">
+        <TotalClasses>11</TotalClasses>
+        <ConcreteClasses>11</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>4</Ca>
+        <Ce>2</Ce>
+        <A>0</A>
+        <I>0.33</I>
+        <D>0.67</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="AddressServiceException.java">com.unisys.at.vab.exception.address.AddressServiceException</Class>
+        <Class sourceFile="GroupFullException.java">com.unisys.at.vab.exception.address.GroupFullException</Class>
+        <Class sourceFile="InvalidContactException.java">com.unisys.at.vab.exception.address.InvalidContactException</Class>
+        <Class sourceFile="InvalidGroupException.java">com.unisys.at.vab.exception.address.InvalidGroupException</Class>
+        <Class sourceFile="InvalidObjectException.java">com.unisys.at.vab.exception.address.InvalidObjectException</Class>
+        <Class sourceFile="MalformedPropertiesException.java">com.unisys.at.vab.exception.address.MalformedPropertiesException</Class>
+        <Class sourceFile="NoSuchContactException.java">com.unisys.at.vab.exception.address.NoSuchContactException</Class>
+        <Class sourceFile="NoSuchGroupException.java">com.unisys.at.vab.exception.address.NoSuchGroupException</Class>
+        <Class sourceFile="StoreFullException.java">com.unisys.at.vab.exception.address.StoreFullException</Class>
+        <Class sourceFile="ValidationException.java">com.unisys.at.vab.exception.address.ValidationException</Class>
+        <Class sourceFile="ValidationExceptionEntry.java">com.unisys.at.vab.exception.address.ValidationExceptionEntry</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.customercare">
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="CustomerCareServiceException.java">com.unisys.at.vab.exception.customercare.CustomerCareServiceException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.dao.asmp">
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>4</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="AsmpException.java">com.unisys.at.vab.exception.dao.asmp.AsmpException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.dao.er">
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="NotEnoughCreditException.java">com.unisys.at.vab.exception.dao.er.NotEnoughCreditException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.dao.ldap">
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>4</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="DuplicitGroupNameException.java">com.unisys.at.vab.exception.dao.ldap.DuplicitGroupNameException</Class>
+        <Class sourceFile="NoProfileException.java">com.unisys.at.vab.exception.dao.ldap.NoProfileException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.dao.sms">
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>8</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="MessageTooLongException.java">com.unisys.at.vab.exception.dao.sms.MessageTooLongException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.dao.xml">
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>7</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="CommunicationException.java">com.unisys.at.vab.exception.dao.xml.CommunicationException</Class>
+        <Class sourceFile="ParseException.java">com.unisys.at.vab.exception.dao.xml.ParseException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.messaging">
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="MessagingServiceException.java">com.unisys.at.vab.exception.messaging.MessagingServiceException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.notification">
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="NotificationServiceException.java">com.unisys.at.vab.exception.notification.NotificationServiceException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.provisioning">
+        <TotalClasses>7</TotalClasses>
+        <ConcreteClasses>7</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>7</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>0.12</I>
+        <D>0.88</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="AlreadyProvisionedException.java">com.unisys.at.vab.exception.provisioning.AlreadyProvisionedException</Class>
+        <Class sourceFile="ForbiddenUserSyncStatusException.java">com.unisys.at.vab.exception.provisioning.ForbiddenUserSyncStatusException</Class>
+        <Class sourceFile="InvalidInputException.java">com.unisys.at.vab.exception.provisioning.InvalidInputException</Class>
+        <Class sourceFile="NotProvisionedException.java">com.unisys.at.vab.exception.provisioning.NotProvisionedException</Class>
+        <Class sourceFile="NotSyncProvisionedException.java">com.unisys.at.vab.exception.provisioning.NotSyncProvisionedException</Class>
+        <Class sourceFile="NotVcardProvisionedException.java">com.unisys.at.vab.exception.provisioning.NotVcardProvisionedException</Class>
+        <Class sourceFile="ProvisioningServiceException.java">com.unisys.at.vab.exception.provisioning.ProvisioningServiceException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.purchasepermission">
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="PurchasePermissionCheckException.java">com.unisys.at.vab.exception.purchasepermission.PurchasePermissionCheckException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy/>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.synchronize">
+        <TotalClasses>3</TotalClasses>
+        <ConcreteClasses>3</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="PushSyncForbiddenException.java">com.unisys.at.vab.exception.synchronize.PushSyncForbiddenException</Class>
+        <Class sourceFile="SyncSuspendedException.java">com.unisys.at.vab.exception.synchronize.SyncSuspendedException</Class>
+        <Class sourceFile="SynchronizeServiceException.java">com.unisys.at.vab.exception.synchronize.SynchronizeServiceException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.exception.syncservermanagement">
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>4</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="SyncServerManagementServiceException.java">com.unisys.at.vab.exception.syncservermanagement.SyncServerManagementServiceException</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.persistence">
+        <TotalClasses>14</TotalClasses>
+        <ConcreteClasses>8</ConcreteClasses>
+        <AbstractClasses>6</AbstractClasses>
+        <Ca>6</Ca>
+        <Ce>2</Ce>
+        <A>0.43</A>
+        <I>0.25</I>
+        <D>0.32</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="AbstractNotifcontact.java">com.unisys.at.vab.persistence.AbstractNotifcontact</Class>
+        <Class sourceFile="AbstractNotificationType.java">com.unisys.at.vab.persistence.AbstractNotificationType</Class>
+        <Class sourceFile="AbstractReporting.java">com.unisys.at.vab.persistence.AbstractReporting</Class>
+        <Class sourceFile="AbstractSyncStatistics.java">com.unisys.at.vab.persistence.AbstractSyncStatistics</Class>
+        <Class sourceFile="AbstractVabuser.java">com.unisys.at.vab.persistence.AbstractVabuser</Class>
+        <Class sourceFile="AbstractVabuserNotif.java">com.unisys.at.vab.persistence.AbstractVabuserNotif</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="Notifcontact.java">com.unisys.at.vab.persistence.Notifcontact</Class>
+        <Class sourceFile="NotifcontactKey.java">com.unisys.at.vab.persistence.NotifcontactKey</Class>
+        <Class sourceFile="NotificationType.java">com.unisys.at.vab.persistence.NotificationType</Class>
+        <Class sourceFile="Reporting.java">com.unisys.at.vab.persistence.Reporting</Class>
+        <Class sourceFile="SyncStatistics.java">com.unisys.at.vab.persistence.SyncStatistics</Class>
+        <Class sourceFile="Vabuser.java">com.unisys.at.vab.persistence.Vabuser</Class>
+        <Class sourceFile="VabuserNotif.java">com.unisys.at.vab.persistence.VabuserNotif</Class>
+        <Class sourceFile="VabuserNotifKey.java">com.unisys.at.vab.persistence.VabuserNotifKey</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab.test.dao</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.support">
+        <TotalClasses>34</TotalClasses>
+        <ConcreteClasses>34</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>19</Ca>
+        <Ce>3</Ce>
+        <A>0</A>
+        <I>0.14</I>
+        <D>0.86</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="Action.java">com.unisys.at.vab.support.Action</Class>
+        <Class sourceFile="BrianReturnCode.java">com.unisys.at.vab.support.BrianReturnCode</Class>
+        <Class sourceFile="DisplayNameFormats.java">com.unisys.at.vab.support.DisplayNameFormats</Class>
+        <Class sourceFile="EROperation.java">com.unisys.at.vab.support.EROperation</Class>
+        <Class sourceFile="ERReturnCode.java">com.unisys.at.vab.support.ERReturnCode</Class>
+        <Class sourceFile="EmailValidator.java">com.unisys.at.vab.support.EmailValidator</Class>
+        <Class sourceFile="ImportExportFormat.java">com.unisys.at.vab.support.ImportExportFormat</Class>
+        <Class sourceFile="InParam.java">com.unisys.at.vab.support.InParam</Class>
+        <Class sourceFile="LDIFProperties.java">com.unisys.at.vab.support.LDIFProperties</Class>
+        <Class sourceFile="LDIFPropertiesTest.java">com.unisys.at.vab.support.LDIFPropertiesTest</Class>
+        <Class sourceFile="LastSyncAccess.java">com.unisys.at.vab.support.LastSyncAccess</Class>
+        <Class sourceFile="Log.java">com.unisys.at.vab.support.Log</Class>
+        <Class sourceFile="MyInteger.java">com.unisys.at.vab.support.MyInteger</Class>
+        <Class sourceFile="NoOpEntityResolver.java">com.unisys.at.vab.support.NoOpEntityResolver</Class>
+        <Class sourceFile="NotificationTypeEnum.java">com.unisys.at.vab.support.NotificationTypeEnum</Class>
+        <Class sourceFile="NotificationsAllowed.java">com.unisys.at.vab.support.NotificationsAllowed</Class>
+        <Class sourceFile="ProfileKeys.java">com.unisys.at.vab.support.ProfileKeys</Class>
+        <Class sourceFile="PushSyncSetting.java">com.unisys.at.vab.support.PushSyncSetting</Class>
+        <Class sourceFile="Rep.java">com.unisys.at.vab.support.Rep</Class>
+        <Class sourceFile="SMSGWReturnCode.java">com.unisys.at.vab.support.SMSGWReturnCode</Class>
+        <Class sourceFile="SearchOption.java">com.unisys.at.vab.support.SearchOption</Class>
+        <Class sourceFile="Service.java">com.unisys.at.vab.support.Service</Class>
+        <Class sourceFile="StringConstant.java">com.unisys.at.vab.support.StringConstant</Class>
+        <Class sourceFile="SyncServerProfileItem.java">com.unisys.at.vab.support.SyncServerProfileItem</Class>
+        <Class sourceFile="SyncServerReturnCode.java">com.unisys.at.vab.support.SyncServerReturnCode</Class>
+        <Class sourceFile="SyncSettings.java">com.unisys.at.vab.support.SyncSettings</Class>
+        <Class sourceFile="TwoEntryStack.java">com.unisys.at.vab.support.TwoEntryStack</Class>
+        <Class sourceFile="UseCase.java">com.unisys.at.vab.support.UseCase</Class>
+        <Class sourceFile="UserStatus.java">com.unisys.at.vab.support.UserStatus</Class>
+        <Class sourceFile="UserSyncStatus.java">com.unisys.at.vab.support.UserSyncStatus</Class>
+        <Class sourceFile="UserSyncStatusTest.java">com.unisys.at.vab.support.UserSyncStatusTest</Class>
+        <Class sourceFile="VcardAllowed.java">com.unisys.at.vab.support.VcardAllowed</Class>
+        <Class sourceFile="VcardFormat.java">com.unisys.at.vab.support.VcardFormat</Class>
+        <Class sourceFile="WSReturnCode.java">com.unisys.at.vab.support.WSReturnCode</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.persistence</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>Default</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.business.service.synchronize</Package>
+        <Package>com.unisys.at.vab.business.service.syncservermanagement</Package>
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.persistence</Package>
+        <Package>com.unisys.at.vab.test.business.service</Package>
+        <Package>com.unisys.at.vab.test.dao</Package>
+        <Package>com.unisys.at.vab.test.other</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.vab.test.business.service">
+        <TotalClasses>5</TotalClasses>
+        <ConcreteClasses>5</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>11</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="AddressServiceImplTest.java">com.unisys.at.vab.test.business.service.AddressServiceImplTest</Class>
+        <Class sourceFile="CustomerCareServiceImplTest.java">com.unisys.at.vab.test.business.service.CustomerCareServiceImplTest</Class>
+        <Class sourceFile="MessagingServiceImplTest.java">com.unisys.at.vab.test.business.service.MessagingServiceImplTest</Class>
+        <Class sourceFile="NotificationServiceImplTest.java">com.unisys.at.vab.test.business.service.NotificationServiceImplTest</Class>
+        <Class sourceFile="ProvisioningServiceImplTest.java">com.unisys.at.vab.test.business.service.ProvisioningServiceImplTest</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.business.service.address</Package>
+        <Package>com.unisys.at.vab.business.service.customercare</Package>
+        <Package>com.unisys.at.vab.business.service.messaging</Package>
+        <Package>com.unisys.at.vab.business.service.notification</Package>
+        <Package>com.unisys.at.vab.business.service.provisioning</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab.exception.address</Package>
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy/>
+    </Package>
+    <Stats name="com.unisys.at.vab.test.dao">
+        <TotalClasses>3</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>4</Ce>
+        <A>0.33</A>
+        <I>1</I>
+        <D>0.33</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses>
+        <Class sourceFile="DbDaoTest.java">com.unisys.at.vab.test.dao.DbDaoTest</Class>
+    </AbstractClasses>
+    
+    <ConcreteClasses>
+        <Class sourceFile="DbDaoTestImpl.java">com.unisys.at.vab.test.dao.DbDaoTestImpl</Class>
+        <Class sourceFile="ReportingDaoImplTestCase.java">com.unisys.at.vab.test.dao.ReportingDaoImplTestCase</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.dao.lnterface</Package>
+        <Package>com.unisys.at.vab.persistence</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </DependsUpon>
+    
+    <UsedBy/>
+    </Package>
+    <Stats name="com.unisys.at.vab.test.other">
+        <TotalClasses>6</TotalClasses>
+        <ConcreteClasses>6</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>5</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="IDGeneratorTest.java">com.unisys.at.vab.test.other.IDGeneratorTest</Class>
+        <Class sourceFile="JaxbTest.java">com.unisys.at.vab.test.other.JaxbTest</Class>
+        <Class sourceFile="MsisdnTest.java">com.unisys.at.vab.test.other.MsisdnTest</Class>
+        <Class sourceFile="NotificationsAllowedTest.java">com.unisys.at.vab.test.other.NotificationsAllowedTest</Class>
+        <Class sourceFile="UserSyncStatusTest.java">com.unisys.at.vab.test.other.UserSyncStatusTest</Class>
+        <Class sourceFile="VcardAllowedTest.java">com.unisys.at.vab.test.other.VcardAllowedTest</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.xmlbinding.er</Package>
+        <Package>com.unisys.at.xmlbinding.sms</Package>
+        <Package>com.unisys.at.xmlbinding.sms.types</Package>
+    </DependsUpon>
+    
+    <UsedBy/>
+    </Package>
+    <Stats name="com.unisys.at.xmlbinding.er">
+        <TotalClasses>114</TotalClasses>
+        <ConcreteClasses>114</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>0.33</I>
+        <D>0.67</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="Amount.java">com.unisys.at.xmlbinding.er.Amount</Class>
+        <Class sourceFile="AmountDescriptor.java">com.unisys.at.xmlbinding.er.AmountDescriptor</Class>
+        <Class sourceFile="AuthBasic.java">com.unisys.at.xmlbinding.er.AuthBasic</Class>
+        <Class sourceFile="AuthBasicDescriptor.java">com.unisys.at.xmlbinding.er.AuthBasicDescriptor</Class>
+        <Class sourceFile="CheckOnly.java">com.unisys.at.xmlbinding.er.CheckOnly</Class>
+        <Class sourceFile="CheckOnlyDescriptor.java">com.unisys.at.xmlbinding.er.CheckOnlyDescriptor</Class>
+        <Class sourceFile="CustomerId.java">com.unisys.at.xmlbinding.er.CustomerId</Class>
+        <Class sourceFile="CustomerIdDescriptor.java">com.unisys.at.xmlbinding.er.CustomerIdDescriptor</Class>
+        <Class sourceFile="Duration.java">com.unisys.at.xmlbinding.er.Duration</Class>
+        <Class sourceFile="DurationDescriptor.java">com.unisys.at.xmlbinding.er.DurationDescriptor</Class>
+        <Class sourceFile="ERPackage.java">com.unisys.at.xmlbinding.er.ERPackage</Class>
+        <Class sourceFile="ERPackageDescriptor.java">com.unisys.at.xmlbinding.er.ERPackageDescriptor</Class>
+        <Class sourceFile="ERPackageItem.java">com.unisys.at.xmlbinding.er.ERPackageItem</Class>
+        <Class sourceFile="ERPackageItemDescriptor.java">com.unisys.at.xmlbinding.er.ERPackageItemDescriptor</Class>
+        <Class sourceFile="ERSubscription.java">com.unisys.at.xmlbinding.er.ERSubscription</Class>
+        <Class sourceFile="ERSubscriptionDescriptor.java">com.unisys.at.xmlbinding.er.ERSubscriptionDescriptor</Class>
+        <Class sourceFile="ERSubscriptionItem.java">com.unisys.at.xmlbinding.er.ERSubscriptionItem</Class>
+        <Class sourceFile="ERSubscriptionItemDescriptor.java">com.unisys.at.xmlbinding.er.ERSubscriptionItemDescriptor</Class>
+        <Class sourceFile="ERWrap.java">com.unisys.at.xmlbinding.er.ERWrap</Class>
+        <Class sourceFile="ERWrapChoice.java">com.unisys.at.xmlbinding.er.ERWrapChoice</Class>
+        <Class sourceFile="ERWrapChoiceDescriptor.java">com.unisys.at.xmlbinding.er.ERWrapChoiceDescriptor</Class>
+        <Class sourceFile="ERWrapChoiceItem.java">com.unisys.at.xmlbinding.er.ERWrapChoiceItem</Class>
+        <Class sourceFile="ERWrapChoiceItemDescriptor.java">com.unisys.at.xmlbinding.er.ERWrapChoiceItemDescriptor</Class>
+        <Class sourceFile="ERWrapDescriptor.java">com.unisys.at.xmlbinding.er.ERWrapDescriptor</Class>
+        <Class sourceFile="ExpireRecurringSubscriptionRequest.java">com.unisys.at.xmlbinding.er.ExpireRecurringSubscriptionRequest</Class>
+        <Class sourceFile="ExpireRecurringSubscriptionRequestDescriptor.java">com.unisys.at.xmlbinding.er.ExpireRecurringSubscriptionRequestDescriptor</Class>
+        <Class sourceFile="ExpireRecurringSubscriptionRequestItem.java">com.unisys.at.xmlbinding.er.ExpireRecurringSubscriptionRequestItem</Class>
+        <Class sourceFile="ExpireRecurringSubscriptionRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.ExpireRecurringSubscriptionRequestItemDescriptor</Class>
+        <Class sourceFile="ExpireRecurringSubscriptionResult.java">com.unisys.at.xmlbinding.er.ExpireRecurringSubscriptionResult</Class>
+        <Class sourceFile="ExpireRecurringSubscriptionResultDescriptor.java">com.unisys.at.xmlbinding.er.ExpireRecurringSubscriptionResultDescriptor</Class>
+        <Class sourceFile="GetBalancesRequest.java">com.unisys.at.xmlbinding.er.GetBalancesRequest</Class>
+        <Class sourceFile="GetBalancesRequestDescriptor.java">com.unisys.at.xmlbinding.er.GetBalancesRequestDescriptor</Class>
+        <Class sourceFile="GetBalancesRequestItem.java">com.unisys.at.xmlbinding.er.GetBalancesRequestItem</Class>
+        <Class sourceFile="GetBalancesRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.GetBalancesRequestItemDescriptor</Class>
+        <Class sourceFile="GetBalancesResult.java">com.unisys.at.xmlbinding.er.GetBalancesResult</Class>
+        <Class sourceFile="GetBalancesResultDescriptor.java">com.unisys.at.xmlbinding.er.GetBalancesResultDescriptor</Class>
+        <Class sourceFile="GetPackagesForServiceRequest.java">com.unisys.at.xmlbinding.er.GetPackagesForServiceRequest</Class>
+        <Class sourceFile="GetPackagesForServiceRequestDescriptor.java">com.unisys.at.xmlbinding.er.GetPackagesForServiceRequestDescriptor</Class>
+        <Class sourceFile="GetPackagesForServiceRequestItem.java">com.unisys.at.xmlbinding.er.GetPackagesForServiceRequestItem</Class>
+        <Class sourceFile="GetPackagesForServiceRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.GetPackagesForServiceRequestItemDescriptor</Class>
+        <Class sourceFile="GetPackagesForServiceResult.java">com.unisys.at.xmlbinding.er.GetPackagesForServiceResult</Class>
+        <Class sourceFile="GetPackagesForServiceResultDescriptor.java">com.unisys.at.xmlbinding.er.GetPackagesForServiceResultDescriptor</Class>
+        <Class sourceFile="GetPaymentProvidersRequest.java">com.unisys.at.xmlbinding.er.GetPaymentProvidersRequest</Class>
+        <Class sourceFile="GetPaymentProvidersRequestDescriptor.java">com.unisys.at.xmlbinding.er.GetPaymentProvidersRequestDescriptor</Class>
+        <Class sourceFile="GetPaymentProvidersRequestItem.java">com.unisys.at.xmlbinding.er.GetPaymentProvidersRequestItem</Class>
+        <Class sourceFile="GetPaymentProvidersRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.GetPaymentProvidersRequestItemDescriptor</Class>
+        <Class sourceFile="GetPaymentProvidersResult.java">com.unisys.at.xmlbinding.er.GetPaymentProvidersResult</Class>
+        <Class sourceFile="GetPaymentProvidersResultDescriptor.java">com.unisys.at.xmlbinding.er.GetPaymentProvidersResultDescriptor</Class>
+        <Class sourceFile="GetSubscriptionsRequest.java">com.unisys.at.xmlbinding.er.GetSubscriptionsRequest</Class>
+        <Class sourceFile="GetSubscriptionsRequestDescriptor.java">com.unisys.at.xmlbinding.er.GetSubscriptionsRequestDescriptor</Class>
+        <Class sourceFile="GetSubscriptionsRequestItem.java">com.unisys.at.xmlbinding.er.GetSubscriptionsRequestItem</Class>
+        <Class sourceFile="GetSubscriptionsRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.GetSubscriptionsRequestItemDescriptor</Class>
+        <Class sourceFile="GetSubscriptionsResult.java">com.unisys.at.xmlbinding.er.GetSubscriptionsResult</Class>
+        <Class sourceFile="GetSubscriptionsResultDescriptor.java">com.unisys.at.xmlbinding.er.GetSubscriptionsResultDescriptor</Class>
+        <Class sourceFile="InactivateSubscriptionRequest.java">com.unisys.at.xmlbinding.er.InactivateSubscriptionRequest</Class>
+        <Class sourceFile="InactivateSubscriptionRequestDescriptor.java">com.unisys.at.xmlbinding.er.InactivateSubscriptionRequestDescriptor</Class>
+        <Class sourceFile="InactivateSubscriptionRequestItem.java">com.unisys.at.xmlbinding.er.InactivateSubscriptionRequestItem</Class>
+        <Class sourceFile="InactivateSubscriptionRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.InactivateSubscriptionRequestItemDescriptor</Class>
+        <Class sourceFile="InactivateSubscriptionResult.java">com.unisys.at.xmlbinding.er.InactivateSubscriptionResult</Class>
+        <Class sourceFile="InactivateSubscriptionResultDescriptor.java">com.unisys.at.xmlbinding.er.InactivateSubscriptionResultDescriptor</Class>
+        <Class sourceFile="IsRepurchase.java">com.unisys.at.xmlbinding.er.IsRepurchase</Class>
+        <Class sourceFile="IsRepurchaseDescriptor.java">com.unisys.at.xmlbinding.er.IsRepurchaseDescriptor</Class>
+        <Class sourceFile="ModifySubscriptionChargingMethodRequest.java">com.unisys.at.xmlbinding.er.ModifySubscriptionChargingMethodRequest</Class>
+        <Class sourceFile="ModifySubscriptionChargingMethodRequestDescriptor.java">com.unisys.at.xmlbinding.er.ModifySubscriptionChargingMethodRequestDescriptor</Class>
+        <Class sourceFile="ModifySubscriptionChargingMethodRequestItem.java">com.unisys.at.xmlbinding.er.ModifySubscriptionChargingMethodRequestItem</Class>
+        <Class sourceFile="ModifySubscriptionChargingMethodRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.ModifySubscriptionChargingMethodRequestItemDescriptor</Class>
+        <Class sourceFile="ModifySubscriptionChargingMethodResult.java">com.unisys.at.xmlbinding.er.ModifySubscriptionChargingMethodResult</Class>
+        <Class sourceFile="ModifySubscriptionChargingMethodResultDescriptor.java">com.unisys.at.xmlbinding.er.ModifySubscriptionChargingMethodResultDescriptor</Class>
+        <Class sourceFile="NoAutoCommit.java">com.unisys.at.xmlbinding.er.NoAutoCommit</Class>
+        <Class sourceFile="NoAutoCommitDescriptor.java">com.unisys.at.xmlbinding.er.NoAutoCommitDescriptor</Class>
+        <Class sourceFile="PackagePrice.java">com.unisys.at.xmlbinding.er.PackagePrice</Class>
+        <Class sourceFile="PackagePriceDescriptor.java">com.unisys.at.xmlbinding.er.PackagePriceDescriptor</Class>
+        <Class sourceFile="PaymentProvider.java">com.unisys.at.xmlbinding.er.PaymentProvider</Class>
+        <Class sourceFile="PaymentProviderDescriptor.java">com.unisys.at.xmlbinding.er.PaymentProviderDescriptor</Class>
+        <Class sourceFile="PurchasePackageRequest.java">com.unisys.at.xmlbinding.er.PurchasePackageRequest</Class>
+        <Class sourceFile="PurchasePackageRequestDescriptor.java">com.unisys.at.xmlbinding.er.PurchasePackageRequestDescriptor</Class>
+        <Class sourceFile="PurchasePackageRequestItem.java">com.unisys.at.xmlbinding.er.PurchasePackageRequestItem</Class>
+        <Class sourceFile="PurchasePackageRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.PurchasePackageRequestItemDescriptor</Class>
+        <Class sourceFile="PurchasePackageResult.java">com.unisys.at.xmlbinding.er.PurchasePackageResult</Class>
+        <Class sourceFile="PurchasePackageResultDescriptor.java">com.unisys.at.xmlbinding.er.PurchasePackageResultDescriptor</Class>
+        <Class sourceFile="PurchasePackageResultItem.java">com.unisys.at.xmlbinding.er.PurchasePackageResultItem</Class>
+        <Class sourceFile="PurchasePackageResultItemDescriptor.java">com.unisys.at.xmlbinding.er.PurchasePackageResultItemDescriptor</Class>
+        <Class sourceFile="Recurring.java">com.unisys.at.xmlbinding.er.Recurring</Class>
+        <Class sourceFile="RecurringDescriptor.java">com.unisys.at.xmlbinding.er.RecurringDescriptor</Class>
+        <Class sourceFile="RemainingCredits.java">com.unisys.at.xmlbinding.er.RemainingCredits</Class>
+        <Class sourceFile="RemainingCreditsDescriptor.java">com.unisys.at.xmlbinding.er.RemainingCreditsDescriptor</Class>
+        <Class sourceFile="RequestOutput.java">com.unisys.at.xmlbinding.er.RequestOutput</Class>
+        <Class sourceFile="RequestOutputDescriptor.java">com.unisys.at.xmlbinding.er.RequestOutputDescriptor</Class>
+        <Class sourceFile="ResourceBalance.java">com.unisys.at.xmlbinding.er.ResourceBalance</Class>
+        <Class sourceFile="ResourceBalanceDescriptor.java">com.unisys.at.xmlbinding.er.ResourceBalanceDescriptor</Class>
+        <Class sourceFile="Response.java">com.unisys.at.xmlbinding.er.Response</Class>
+        <Class sourceFile="ResponseChoice.java">com.unisys.at.xmlbinding.er.ResponseChoice</Class>
+        <Class sourceFile="ResponseChoiceDescriptor.java">com.unisys.at.xmlbinding.er.ResponseChoiceDescriptor</Class>
+        <Class sourceFile="ResponseChoiceItem.java">com.unisys.at.xmlbinding.er.ResponseChoiceItem</Class>
+        <Class sourceFile="ResponseChoiceItemDescriptor.java">com.unisys.at.xmlbinding.er.ResponseChoiceItemDescriptor</Class>
+        <Class sourceFile="ResponseDescriptor.java">com.unisys.at.xmlbinding.er.ResponseDescriptor</Class>
+        <Class sourceFile="Status.java">com.unisys.at.xmlbinding.er.Status</Class>
+        <Class sourceFile="StatusDescriptor.java">com.unisys.at.xmlbinding.er.StatusDescriptor</Class>
+        <Class sourceFile="StatusItem.java">com.unisys.at.xmlbinding.er.StatusItem</Class>
+        <Class sourceFile="StatusItemDescriptor.java">com.unisys.at.xmlbinding.er.StatusItemDescriptor</Class>
+        <Class sourceFile="UsageCompleteRequest.java">com.unisys.at.xmlbinding.er.UsageCompleteRequest</Class>
+        <Class sourceFile="UsageCompleteRequestDescriptor.java">com.unisys.at.xmlbinding.er.UsageCompleteRequestDescriptor</Class>
+        <Class sourceFile="UsageCompleteRequestItem.java">com.unisys.at.xmlbinding.er.UsageCompleteRequestItem</Class>
+        <Class sourceFile="UsageCompleteRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.UsageCompleteRequestItemDescriptor</Class>
+        <Class sourceFile="UsageCompleteResult.java">com.unisys.at.xmlbinding.er.UsageCompleteResult</Class>
+        <Class sourceFile="UsageCompleteResultDescriptor.java">com.unisys.at.xmlbinding.er.UsageCompleteResultDescriptor</Class>
+        <Class sourceFile="UsageRequest.java">com.unisys.at.xmlbinding.er.UsageRequest</Class>
+        <Class sourceFile="UsageRequestDescriptor.java">com.unisys.at.xmlbinding.er.UsageRequestDescriptor</Class>
+        <Class sourceFile="UsageRequestItem.java">com.unisys.at.xmlbinding.er.UsageRequestItem</Class>
+        <Class sourceFile="UsageRequestItemDescriptor.java">com.unisys.at.xmlbinding.er.UsageRequestItemDescriptor</Class>
+        <Class sourceFile="UsageResult.java">com.unisys.at.xmlbinding.er.UsageResult</Class>
+        <Class sourceFile="UsageResultDescriptor.java">com.unisys.at.xmlbinding.er.UsageResultDescriptor</Class>
+        <Class sourceFile="UsageResultItem.java">com.unisys.at.xmlbinding.er.UsageResultItem</Class>
+        <Class sourceFile="UsageResultItemDescriptor.java">com.unisys.at.xmlbinding.er.UsageResultItemDescriptor</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.xmlbinding.er.types</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.test.other</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.xmlbinding.er.types">
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="CustomerIdTypeType.java">com.unisys.at.xmlbinding.er.types.CustomerIdTypeType</Class>
+        <Class sourceFile="CustomerIdTypeTypeDescriptor.java">com.unisys.at.xmlbinding.er.types.CustomerIdTypeTypeDescriptor</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.xmlbinding.er</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.xmlbinding.sms">
+        <TotalClasses>22</TotalClasses>
+        <ConcreteClasses>22</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>0.33</I>
+        <D>0.67</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="Message.java">com.unisys.at.xmlbinding.sms.Message</Class>
+        <Class sourceFile="MessageDescriptor.java">com.unisys.at.xmlbinding.sms.MessageDescriptor</Class>
+        <Class sourceFile="RecipientResult.java">com.unisys.at.xmlbinding.sms.RecipientResult</Class>
+        <Class sourceFile="RecipientResultDescriptor.java">com.unisys.at.xmlbinding.sms.RecipientResultDescriptor</Class>
+        <Class sourceFile="Request.java">com.unisys.at.xmlbinding.sms.Request</Class>
+        <Class sourceFile="RequestDescriptor.java">com.unisys.at.xmlbinding.sms.RequestDescriptor</Class>
+        <Class sourceFile="Response.java">com.unisys.at.xmlbinding.sms.Response</Class>
+        <Class sourceFile="ResponseDescriptor.java">com.unisys.at.xmlbinding.sms.ResponseDescriptor</Class>
+        <Class sourceFile="SendSm.java">com.unisys.at.xmlbinding.sms.SendSm</Class>
+        <Class sourceFile="SendSmDescriptor.java">com.unisys.at.xmlbinding.sms.SendSmDescriptor</Class>
+        <Class sourceFile="SendSmResult.java">com.unisys.at.xmlbinding.sms.SendSmResult</Class>
+        <Class sourceFile="SendSmResultDescriptor.java">com.unisys.at.xmlbinding.sms.SendSmResultDescriptor</Class>
+        <Class sourceFile="SmAck.java">com.unisys.at.xmlbinding.sms.SmAck</Class>
+        <Class sourceFile="SmAckDescriptor.java">com.unisys.at.xmlbinding.sms.SmAckDescriptor</Class>
+        <Class sourceFile="SmRecipient.java">com.unisys.at.xmlbinding.sms.SmRecipient</Class>
+        <Class sourceFile="SmRecipientDescriptor.java">com.unisys.at.xmlbinding.sms.SmRecipientDescriptor</Class>
+        <Class sourceFile="SmSender.java">com.unisys.at.xmlbinding.sms.SmSender</Class>
+        <Class sourceFile="SmSenderDescriptor.java">com.unisys.at.xmlbinding.sms.SmSenderDescriptor</Class>
+        <Class sourceFile="SmText.java">com.unisys.at.xmlbinding.sms.SmText</Class>
+        <Class sourceFile="SmTextDescriptor.java">com.unisys.at.xmlbinding.sms.SmTextDescriptor</Class>
+        <Class sourceFile="Smsgw.java">com.unisys.at.xmlbinding.sms.Smsgw</Class>
+        <Class sourceFile="SmsgwDescriptor.java">com.unisys.at.xmlbinding.sms.SmsgwDescriptor</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon>
+        <Package>com.unisys.at.xmlbinding.sms.types</Package>
+    </DependsUpon>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.test.other</Package>
+    </UsedBy>
+    </Package>
+    <Stats name="com.unisys.at.xmlbinding.sms.types">
+        <TotalClasses>16</TotalClasses>
+        <ConcreteClasses>16</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>3</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+        <V>1</V>
+    </Stats>
+    
+    <AbstractClasses/>
+    
+    <ConcreteClasses>
+        <Class sourceFile="SendSmAcknowledgeType.java">com.unisys.at.xmlbinding.sms.types.SendSmAcknowledgeType</Class>
+        <Class sourceFile="SendSmAcknowledgeTypeDescriptor.java">com.unisys.at.xmlbinding.sms.types.SendSmAcknowledgeTypeDescriptor</Class>
+        <Class sourceFile="SendSmImmediateType.java">com.unisys.at.xmlbinding.sms.types.SendSmImmediateType</Class>
+        <Class sourceFile="SendSmImmediateTypeDescriptor.java">com.unisys.at.xmlbinding.sms.types.SendSmImmediateTypeDescriptor</Class>
+        <Class sourceFile="SendSmPriorityType.java">com.unisys.at.xmlbinding.sms.types.SendSmPriorityType</Class>
+        <Class sourceFile="SendSmPriorityTypeDescriptor.java">com.unisys.at.xmlbinding.sms.types.SendSmPriorityTypeDescriptor</Class>
+        <Class sourceFile="SendSmReplaceType.java">com.unisys.at.xmlbinding.sms.types.SendSmReplaceType</Class>
+        <Class sourceFile="SendSmReplaceTypeDescriptor.java">com.unisys.at.xmlbinding.sms.types.SendSmReplaceTypeDescriptor</Class>
+        <Class sourceFile="SmAckStateType.java">com.unisys.at.xmlbinding.sms.types.SmAckStateType</Class>
+        <Class sourceFile="SmAckStateTypeDescriptor.java">com.unisys.at.xmlbinding.sms.types.SmAckStateTypeDescriptor</Class>
+        <Class sourceFile="SmRecipientTypeType.java">com.unisys.at.xmlbinding.sms.types.SmRecipientTypeType</Class>
+        <Class sourceFile="SmRecipientTypeTypeDescriptor.java">com.unisys.at.xmlbinding.sms.types.SmRecipientTypeTypeDescriptor</Class>
+        <Class sourceFile="SmSenderTypeType.java">com.unisys.at.xmlbinding.sms.types.SmSenderTypeType</Class>
+        <Class sourceFile="SmSenderTypeTypeDescriptor.java">com.unisys.at.xmlbinding.sms.types.SmSenderTypeTypeDescriptor</Class>
+        <Class sourceFile="SmTextConcatenatedType.java">com.unisys.at.xmlbinding.sms.types.SmTextConcatenatedType</Class>
+        <Class sourceFile="SmTextConcatenatedTypeDescriptor.java">com.unisys.at.xmlbinding.sms.types.SmTextConcatenatedTypeDescriptor</Class>
+    </ConcreteClasses>
+    
+    <DependsUpon/>
+    
+    <UsedBy>
+        <Package>com.unisys.at.vab.dao.implementation</Package>
+        <Package>com.unisys.at.vab.test.other</Package>
+        <Package>com.unisys.at.xmlbinding.sms</Package>
+    </UsedBy>
+    </Package>
+</Packages>
+<Cycles>
+    <Package Name="Default">
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab">
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.business.service.address">
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.business.service.customercare">
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.business.service.messaging">
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.business.service.notification">
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.business.service.provisioning">
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.business.service.synchronize">
+        <Package>com.unisys.at.vab.exception</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.business.service.syncservermanagement">
+        <Package>com.unisys.at.vab.exception.provisioning</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.dao.brian">
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.dao.implementation">
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.dao.implementation.ldapvab164">
+        <Package>com.unisys.at.vab.domain</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.dao.lnterface">
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.domain">
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.exception">
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.exception.address">
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.exception.provisioning">
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.persistence">
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.support">
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.test.business.service">
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.test.dao">
+        <Package>com.unisys.at.vab.persistence</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+    </Package>
+    <Package Name="com.unisys.at.vab.test.other">
+        <Package>com.unisys.at.vab.dao.brian</Package>
+        <Package>com.unisys.at.vab</Package>
+        <Package>com.unisys.at.vab.support</Package>
+        <Package>com.unisys.at.vab</Package>
+    </Package>
+</Cycles>
+</JDepend>

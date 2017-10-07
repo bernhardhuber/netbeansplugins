@@ -1,0 +1,75 @@
+	
+
+Betreff	Re: [Fwd: nbm keytool, cryptoservices]
+Von	Jan Lahoda <Jan.Lahoda@Sun.COM>
+Datum	Dienstag, März 28, 2006 7:06 pm
+An	berni_huber@a1.net
+Cc	gatekeepers@nbextras.org
+
+Hi Bernhard,
+     sorry it took so long to answer, but we are quite busy and the
+queue with module is quite long.
+
+Although I like the idea behind your modules (especially the keytool
+module), I am afraid I have to reject your modules in their current
+state. I will be glad to publish them if the following problems are fixed:
+1. Both modules do not have a license - there has to be license in the
+NBM that will be shown the the user. Sorry, but we cannot publish
+modules without license. You can use for example SPL or
+http://www.apache.org/licenses/LICENSE-2.0
+2. There are some quite big problems in the keytool module:
+a) If the keystore cannot be opened because of incorrect password (an
+exception "Keystore was tampered with, or password was incorrect"), no
+dialog is shown to the user (tested on NB5.0 final). I think that some
+nice dialog explaining that the password was probably incorrect is
+necessary.
+b) I did not find a way to provide an empty password while
+creating/opening a keystore.
+
+I see also a few problems, which I would like to see solved, but which
+are not blockers from my point of view:
+1. (continuing problem 2a)): Also not opening the KeyStore Window when
+an incorrect password was entered might be a good idea (it cannot show
+anything usefull anyway). Idealy allow the user to retype the password.
+2. The enablement logic of "Next" button in the New Keystore dialog is
+quite strange: when the IDE starts, open this dialog, go to /tmp and
+write "test" on the keyboard: the "Next" button is disabled. Press Enter
+and the "Next" button is magically enabled. I do understand that this is
+because the dialog incorporates the JFileChooser, but it feels really
+strange.
+
+Thanks for your support,
+     Jan
+
+> Hi,
+>
+> My name is bernhard huber, I'm from Austria.
+>
+> I'd like to contribute two netbeans modules which I have written.
+>
+> The modules are :
+>
+> keytool
+> Allows to open, save a keystore file, and you can create a new key store
+> entry.
+> It shall help users who needs to quickly check the content of a keystore.
+> Without this module the user has to run from the command line the
+> keytool commandline program.
+>
+> http://members.aon.at/bhuber14/nbm/org-huber-keytool.nbm,
+> http://members.aon.at/bhuber14/nbm/org.huber.keytool.zip
+>
+> cryptoservices
+> Displays the various cryptographic services available in the JVM, eg. for
+> SecureRandom it show SHA1PRNG.
+>
+> http://members.aon.at/bhuber14/nbm/org-huberb-cryptoservices.nbm,
+> http://members.aon.at/bhuber14/nbm/org.huberb.cryptoservices.zip
+> The message must contain the following information
+>
+> A very basic homepage:
+> http://members.aon.at/bhuber14/
+>
+> regards bernhard
+>
+

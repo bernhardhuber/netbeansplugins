@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Clone Implementation Rules</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Clone Implementation Rules</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+The Clone Implementation ruleset contains a collection of rules that find questionable usages of the clone() method.
+  </pre>
+<ul>
+<li>
+<a href="#ProperCloneImplementation::">ProperCloneImplementation::</a>
+</li>
+<li>
+<a href="#CloneThrowsCloneNotSupportedException::">CloneThrowsCloneNotSupportedException::</a>
+</li>
+<li>
+<a href="#CloneMethodMustImplementCloneable::">CloneMethodMustImplementCloneable::</a>
+</li>
+</ul>
+<a name="ProperCloneImplementation::"></a>
+<h2>Rule ProperCloneImplementation::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Object clone() should be implemented with super.clone().
+     </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Object clone() should be implemented with super.clone()</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/clone.html#ProperCloneImplementation</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>2</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+ 
+class Foo{
+    public Object clone(){
+        return new Foo(); // This is bad
+    }
+}
+
+     </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+         
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                 
+//MethodDeclarator
+[@Image = 'clone']
+[count(FormalParameters/*) = 0]
+[count(../Block//*[
+    (self::AllocationExpression) and
+    (./ClassOrInterfaceType/@Image = ancestor::
+ClassOrInterfaceDeclaration[1]/@Image)
+  ])&gt; 0
+]
+                
+             </pre>
+</dd>
+</dl>
+     
+<br>
+<a href="#toc">TOC</a><a name="CloneThrowsCloneNotSupportedException::"></a>
+<h2>Rule CloneThrowsCloneNotSupportedException::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+The method clone() should throw a CloneNotSupportedException.
+         </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>clone() method should throw CloneNotSupportedException</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/clone.html#CloneThrowsCloneNotSupportedException</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+             
+ public class MyClass implements Cloneable{
+     public Object clone() { // will cause an error
+          MyClass clone = (MyClass)super.clone();
+          return clone;
+     }
+ }
+    
+         </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+             
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                     
+//MethodDeclaration
+[
+MethodDeclarator/@Image = 'clone'
+and count(MethodDeclarator/FormalParameters/*) = 0
+and count(NameList/Name[contains
+(@Image,'CloneNotSupportedException')]) = 0
+]
+[
+../../../../ClassOrInterfaceDeclaration[@Final = 'false']
+]
+                     
+                 </pre>
+</dd>
+</dl>
+         
+<br>
+<a href="#toc">TOC</a><a name="CloneMethodMustImplementCloneable::"></a>
+<h2>Rule CloneMethodMustImplementCloneable::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+The method clone() should only be implemented if the class implements the Cloneable interface with the exception of a final method that only throws CloneNotSupportedException.
+        </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>clone() method should be implemented only if implementing Cloneable interface</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/clone.html#CloneMethodMustImplementCloneable</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+            
+public class MyClass {
+ public Object clone() throws CloneNotSupportedException {
+  return foo;
+ }
+}
+   
+        </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                    
+//ClassOrInterfaceDeclaration
+[not(./ImplementsList/ClassOrInterfaceType
+[@Image='Cloneable'])]
+/ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration
+[MethodDeclaration
+[MethodDeclarator[@Image
+= 'clone' and count(FormalParameters/*) = 0]]
+[not((../MethodDeclaration[@Final = 'true'])
+and Block[count(BlockStatement)=1]
+/BlockStatement/Statement/ThrowStatement/Expression
+/PrimaryExpression/PrimaryPrefix/AllocationExpression
+/ClassOrInterfaceType[@Image = 'CloneNotSupportedException'])]]
+
+                    
+                </pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

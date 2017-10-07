@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>About nb-pmd-rulesets</title>
+    <link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css"> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+    <body>
+        <h2>About nb-pmd-rulesets</h2> 
+        <p>
+            This module supports you in writing PMD's ruleset xml files.
+        </p>
+        <p>
+            You can define in your custom rulesets your own pmd rules.
+            Once you have defined your custom rules, and rulesets pass them on to
+            PMD.
+        </p>
+        <p>
+            The PMD netbeans integration module allows you specify rulesets used
+            by PMD in the netbeans integration options panel.
+        </p>
+        <p>
+            You can read more about PMD, and PMD's ruleset definition:
+        </p>
+        <p>
+            <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+                <param name="content" value="http://pmd.sourceforge.net/">
+                <param name="text" value="&lt;html&gt;&lt;u&gt;PMD&lt;/u&gt;&lt;/html&gt;">
+                <param name="textFontSize" value="medium">
+                <param name="textColor" value="blue">
+            </object>
+            <br>
+            <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+                <param name="content" value="http://pmd.sourceforge.net/howtomakearuleset.html">
+                <param name="text" value="&lt;html&gt;&lt;u&gt;How to make a ruleset&lt;/u&gt;&lt;/html&gt;">
+                <param name="textFontSize" value="medium">
+                <param name="textColor" value="blue">
+            </object>
+            <br>
+            <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+                <param name="content" value="http://pmd.sourceforge.net/xpathruletutorial.html">
+                <param name="text" value="&lt;html&gt;&lt;u&gt;Writing XPath rules&lt;/u&gt;&lt;/html&gt;">
+                <param name="textFontSize" value="medium">
+                <param name="textColor" value="blue">
+            </object>
+            <br>
+            <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+                <param name="content" value="http://pmd.sourceforge.net/howtowritearule.html">
+                <param name="text" value="&lt;html&gt;&lt;u&gt;How to write a rule&lt;/u&gt;&lt;/html&gt;">
+                <param name="textFontSize" value="medium">
+                <param name="textColor" value="blue">
+            </object>
+            
+        </p>
+        
+        <h2>Installation</h2>
+        <p>
+            The module itself does not require any special installation steps, beside
+            the usual Netbeans module installation.
+        </p>
+        <p>
+            If you want to invoke the PMD designer tool from within this module, you
+            need to specify the PMD installation directory in the module's <a href="#options">options dialog</a>.
+        </p>
+        
+        <h2>Usage</h2>
+        <p>
+            This modules supports you in writing PMD ruleset xml files, by providing:
+        </p>
+        <ol>
+            <li>a pmd ruleset xml template file
+            <li>a JavaHelp section describing all ruleset definition provided by PMD-3.9
+            <li>a xml catalog registry of the ruleset xml schema, and allowing you to validate ruleset xml file
+            <li>a menu entry for launching PMD's designer tool
+        </ol>
+        <h3>Ruleset Template</h3>
+        <p>
+            A ruleset template is available via
+            <b>New File|PMD|PMD SimpleRuleset</b>.
+            You can use this template to start writing you own PMD rulesets.            
+        </p>
+        <p>
+            Moreover you can store your own PMD ruleset templates in PMD template folder.
+        </p>
+        
+        <h3>Ruleset JavaHelp</h3>
+        <p>
+            You can browse the <a href="rulesets/index.html">rulesets delivered by PMD-3.9</a>, learning
+            the already provided rules, and rulesets.
+        </p>
+        
+        <h3>Ruleset XML Catalog</h3>
+        <p>
+            In the explorer tab 
+            <b>Runtime</b> the node <b>DTD and XML Schema Catalogs|PMD Ruleset Catalog</b> defines
+            the ruleset schema definition (<code>http://pmd.sf.net/ruleset/1.0.0</code>).
+        </p>
+        <p>
+            By defining the ruleset schema, you can validate your ruleset xml files via
+            the context menu entry <b>Validate XML</b>.
+        </p>
+        <p>
+            In Netbeans version 5.5.1 and above, xml code completion might work.
+        </p>
+        
+        <h3>PMD's designer tool</h3>
+        <p>
+            The the main menu the entry <b>Tools|PMD Designer</b> launches PMD's ruleset designer.
+            The designer helps you in writing proper xpath definitions.
+        </p>
+        <p>
+            Note: you have to specify the PMD's home directory before launching the designer, see the
+            section below.
+        </p>
+        
+        <a name="options"></a>
+        <h2>Options</h2>
+        <p>
+            You can find the option dialog by clicking the menu bar <b>Tools|Options|Miscellaneous|PMD Ruleset</b>.
+        </p>
+        <p>
+            The options dialog allows you to specify the home directory of the downloaded, and extracted 
+            PMD binary distribution.
+        </p>
+        <p>
+            The PMD's ruleset designer is launched by an internal ant script, defining the designer classpath
+            as <code>${pmd.home}/lib/*.jar</code>.
+        </p>
+        
+        <!-- Tip: to create a link which will open in an external web browser, 
+        try: 
+        <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+        <param name="content" value="http://www.netbeans.org/">
+        <param name="text" value="<html><u>http://www.netbeans.org/</u></html>">
+        <param name="textFontSize" value="medium"> 
+        <param name="textColor" value="blue"> 
+        </object> 
+        
+        To create a link to a help set from another module, you need to know the code name base and path, 
+        e.g.: 
+        <a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a> 
+        (This link will behave sanely if that module is disabled or missing.) 
+        --> 
+    </body>
+</html>

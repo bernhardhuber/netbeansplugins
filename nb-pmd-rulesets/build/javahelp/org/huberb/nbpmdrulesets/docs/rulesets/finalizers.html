@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Finalizer Rules</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Finalizer Rules</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+These rules deal with different problems that can occur with finalizers.
+  </pre>
+<ul>
+<li>
+<a href="#EmptyFinalizer::">EmptyFinalizer::</a>
+</li>
+<li>
+<a href="#FinalizeOnlyCallsSuperFinalize::">FinalizeOnlyCallsSuperFinalize::</a>
+</li>
+<li>
+<a href="#FinalizeOverloaded::">FinalizeOverloaded::</a>
+</li>
+<li>
+<a href="#FinalizeDoesNotCallSuperFinalize::">FinalizeDoesNotCallSuperFinalize::</a>
+</li>
+<li>
+<a href="#FinalizeShouldBeProtected::">FinalizeShouldBeProtected::</a>
+</li>
+<li>
+<a href="#AvoidCallingFinalize::">AvoidCallingFinalize::</a>
+</li>
+</ul>
+<a name="EmptyFinalizer::"></a>
+<h2>Rule EmptyFinalizer::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+If the finalize() method is empty, then it does not need to exist.
+       </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid empty finalize methods</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/finalizers.html#EmptyFinalizer</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+   protected void finalize() {}
+}
+
+       </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//MethodDeclaration[MethodDeclarator[@Image='finalize'][not(FormalParameters/*)]]
+  /Block[count(*)=0]
+
+                </pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="FinalizeOnlyCallsSuperFinalize::"></a>
+<h2>Rule FinalizeOnlyCallsSuperFinalize::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+If the finalize() is implemented, it should do something besides just calling
+super.finalize().
+       </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Finalize should do something besides just calling super.finalize()</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/finalizers.html#FinalizeOnlyCallsSuperFinalize</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+           
+public class Foo {
+   protected void finalize() {
+     super.finalize();
+   }
+}
+           
+       </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//MethodDeclaration[MethodDeclarator[@Image="finalize"][not(FormalParameters/*)]]
+   /Block[count(BlockStatement)=1]
+     /BlockStatement[
+       Statement/StatementExpression/PrimaryExpression
+      /PrimaryPrefix[@Image="finalize"]
+      ]
+
+                </pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="FinalizeOverloaded::"></a>
+<h2>Rule FinalizeOverloaded::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Methods named finalize() should not have parameters.  It is
+confusing and probably a bug to overload finalize().  It will
+not be called by the VM.
+   </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Finalize methods should not be overloaded</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/finalizers.html#FinalizeOverloaded</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+   // this is confusing and probably a bug
+   protected void finalize(int a) {
+   }
+}
+
+   </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+        
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//MethodDeclaration
+ /MethodDeclarator[@Image='finalize'][FormalParameters[count(*)&gt;0]]
+
+            </pre>
+</dd>
+</dl>
+    
+<br>
+<a href="#toc">TOC</a><a name="FinalizeDoesNotCallSuperFinalize::"></a>
+<h2>Rule FinalizeDoesNotCallSuperFinalize::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+If the finalize() is implemented, its last action should be to call super.finalize.
+       </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Last statement in finalize method should be a call to super.finalize()</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/finalizers.html#FinalizeDoesNotCallSuperFinalize</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+   protected void finalize() {
+       something();
+       // neglected to call super.finalize()
+   }
+}
+
+       </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+
+//MethodDeclaration[MethodDeclarator[@Image='finalize'][not(FormalParameters/*)]]
+   /Block
+      /BlockStatement[last()]
+      [not(Statement/StatementExpression/PrimaryExpression/PrimaryPrefix[@Image='finalize'])]
+      [not(Statement/TryStatement/FinallyStatement
+       /Block/BlockStatement/Statement/StatementExpression
+        /PrimaryExpression/PrimaryPrefix[@Image='finalize'])]
+
+                </pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="FinalizeShouldBeProtected::"></a>
+<h2>Rule FinalizeShouldBeProtected::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+If you override finalize(), make it protected.  If you make
+ it public, other classes may call it.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>If you override finalize(), make it protected</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/finalizers.html#FinalizeShouldBeProtected</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class Foo {
+ public void finalize() {
+  // do something
+ }
+}
+  
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                    
+//MethodDeclaration[@Protected="false"]
+  /MethodDeclarator[@Image="finalize"]
+  [not(FormalParameters/*)]
+                    
+                </pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="AvoidCallingFinalize::"></a>
+<h2>Rule AvoidCallingFinalize::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Object.finalize() is called by the garbage collector on an object when garbage collection determines
+that there are no more references to the object.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid calling finalize() explicitly</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.AvoidCallingFinalize</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/finalizers.html#AvoidCallingFinalize</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ void foo() {
+  Bar b = new Bar();
+  b.finalize();
+ }
+}
+
+      </pre>
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

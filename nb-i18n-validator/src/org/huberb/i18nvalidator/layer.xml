@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Build">
+            <file name="org-huberb-i18nvalidator-FindPropertyKeysActions.instance"/>
+        </folder>
+        <folder name="Tools">
+            <file name="org-huberb-i18nvalidator-ValidatePropertiesAction.instance"/>
+            <file name="org-huberb-i18nvalidator-PropertiesKeyUsageAction.instance"/>
+            
+            <file name="org-huberb-i18nvalidator-Properties2XMLAction.instance"/>
+            <file name="org-huberb-i18nvalidator-XML2PropertiesAction.instance"/>
+        </folder>
+    </folder>
+    <folder name="Loaders">
+        <folder name="text">
+            <folder name="x-properties">
+                <folder name="Actions">
+                    <attr name="ToolsAction.instance/org-huberb-i18nvalidator-FindPropertyKeysActions.shadow" boolvalue="true"/>
+                    <file name="org-huberb-i18nvalidator-FindPropertyKeysActions.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Build/org-huberb-i18nvalidator-FindPropertyKeysActions.instance"/>
+                    </file>
+                    <attr name="org-huberb-i18nvalidator-FindPropertyKeysActions.shadow/org-huberb-i18nvalidator-separatorAfter.instance" boolvalue="true"/>
+                    <file name="org-huberb-i18nvalidator-separatorAfter.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    </file>
+                    <attr name="org-huberb-i18nvalidator-separatorAfter.instance/PropertiesAction.instance" boolvalue="true"/>
+                    <file name="org-huberb-i18nvalidator-Properties2XMLAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-i18nvalidator-Properties2XMLAction.instance"/>
+                    </file>
+                    <file name="org-huberb-i18nvalidator-PropertiesKeyUsageAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-i18nvalidator-PropertiesKeyUsageAction.instance"/>
+                    </file>
+                    <file name="org-huberb-i18nvalidator-ValidatePropertiesAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-i18nvalidator-ValidatePropertiesAction.instance"/>
+                    </file>
+                </folder>
+            </folder>
+            <folder name="xml">
+                <folder name="Actions">
+                    <file name="org-huberb-i18nvalidator-XML2PropertiesAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-i18nvalidator-XML2PropertiesAction.instance"/>
+                    </file>
+                </folder>
+            </folder>
+        </folder>        
+        <folder name="folder">
+            <folder name="any">
+                <folder name="Actions">
+                    <file name="org-huberb-i18nvalidator-ValidatePropertiesAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-i18nvalidator-ValidatePropertiesAction.instance"/>
+                    </file>
+                </folder>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
+    <tocitem text="nb-pmd-rulesets">
+        <tocitem text="About nb-pmd-rulesets" target="org.huberb.nbpmdrulesets.about"/>
+        <tocitem text="Rulesets">
+
+            <tocitem text="Index" target="org.huberb.nbpmdrulesets.rulesets.index"/>
+            <tocitem text="Ruleset References">
+            <tocitem target="org.huberb.nbpmdrulesets.rulesets.favorites" text="rulesets/favorites.html"/>
+            <tocitem target="org.huberb.nbpmdrulesets.rulesets.migrating_to_13" text="rulesets/migrating_to_13.html"/>
+            <tocitem target="org.huberb.nbpmdrulesets.rulesets.migrating_to_14" text="rulesets/migrating_to_14.html"/>
+            <tocitem target="org.huberb.nbpmdrulesets.rulesets.migrating_to_15" text="rulesets/migrating_to_15.html"/>
+            </tocitem>
+
+            <tocitem text="Ruleset Definitions">
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.basic-jsf" text="rulesets/basic-jsf.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.basic-jsp" text="rulesets/basic-jsp.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.basic" text="rulesets/basic.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.braces" text="rulesets/braces.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.clone" text="rulesets/clone.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.codesize" text="rulesets/codesize.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.controversial" text="rulesets/controversial.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.coupling" text="rulesets/coupling.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.design" text="rulesets/design.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.finalizers" text="rulesets/finalizers.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.imports" text="rulesets/imports.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.j2eel" text="rulesets/j2ee.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.javabeansl" text="rulesets/javabeans.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.junitl" text="rulesets/junit.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.logging-jakarta-commonsl" text="rulesets/logging-jakarta-commons.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.logging-javal" text="rulesets/logging-java.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.migratingl" text="rulesets/migrating.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.namingl" text="rulesets/naming.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.optimizationsl" text="rulesets/optimizations.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.scratchpadl" text="rulesets/scratchpad.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.strictexceptionl" text="rulesets/strictexception.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.stringsl" text="rulesets/strings.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.sunsecurel" text="rulesets/sunsecure.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.typeresolutionl" text="rulesets/typeresolution.html"/>
+                <tocitem target="org.huberb.nbpmdrulesets.rulesets.unusedcodel" text="rulesets/unusedcode.html"/>
+            </tocitem>
+        </tocitem>
+    </tocitem>
+</toc>

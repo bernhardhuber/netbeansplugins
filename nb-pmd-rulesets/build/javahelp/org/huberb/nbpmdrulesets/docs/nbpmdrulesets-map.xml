@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN" "http://java.sun.com/products/javahelp/map_2_0.dtd">
+<map version="2.0">
+    <mapID target="org.huberb.nbpmdrulesets.about" url="nbpmdrulesets-about.html"/>
+    
+    
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.index" url="rulesets/index.html"/>
+    
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.favorites" url="rulesets/favorites.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.migrating_to_13" url="rulesets/migrating_to_13.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.migrating_to_14" url="rulesets/migrating_to_14.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.migrating_to_15" url="rulesets/migrating_to_15.html"/>
+    
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.basic-jsf" url="rulesets/basic-jsf.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.basic-jsp" url="rulesets/basic-jsp.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.basic" url="rulesets/basic.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.braces" url="rulesets/braces.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.clone" url="rulesets/clone.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.codesize" url="rulesets/codesize.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.controversial" url="rulesets/controversial.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.coupling" url="rulesets/coupling.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.design" url="rulesets/design.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.finalizers" url="rulesets/finalizers.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.imports" url="rulesets/imports.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.j2eel" url="rulesets/j2ee.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.javabeansl" url="rulesets/javabeans.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.junitl" url="rulesets/junit.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.logging-jakarta-commonsl" url="rulesets/logging-jakarta-commons.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.logging-javal" url="rulesets/logging-java.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.migratingl" url="rulesets/migrating.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.namingl" url="rulesets/naming.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.optimizationsl" url="rulesets/optimizations.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.scratchpadl" url="rulesets/scratchpad.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.strictexceptionl" url="rulesets/strictexception.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.stringsl" url="rulesets/strings.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.sunsecurel" url="rulesets/sunsecure.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.typeresolutionl" url="rulesets/typeresolution.html"/>
+    <mapID target="org.huberb.nbpmdrulesets.rulesets.unusedcodel" url="rulesets/unusedcode.html"/>
+    
+</map>

@@ -1,7 +1,7 @@
 /*
  * GzipOperation.java
  *
- * Created on 16. Jänner 2006, 15:14
+ * Created on 16. JÃ¤nner 2006, 15:14
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.

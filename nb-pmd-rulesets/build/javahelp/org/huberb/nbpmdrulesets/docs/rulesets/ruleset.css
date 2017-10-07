@@ -1,0 +1,62 @@
+/* 
+    Document   : ruleset
+    Created on : 05. Juni 2007, 20:56
+    Author     : HuberB1
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+margin: 10px;
+font-family: Verdana, sans-serif;
+}
+h1, h2, h3 {
+border: 1px solid lightgrey;
+padding: 4px;
+}
+h1 {
+background-color: #FFDA36;
+}
+h2 {
+background-color: #FFEEA3;
+}
+h3 {
+background-color: #FFBC36;
+}
+dt {
+font-weight:bold;
+}
+dd {
+}
+
+.rulesetDescription {
+padding: 1px;
+}
+.rule {
+border-top: 1px solid grey;
+}
+.ruleDescription {
+padding: 1px;
+}
+
+.property {
+border-top: 1px solid grey;
+}
+
+.propertyName {
+}
+.propertyDescription  {
+}
+.propertyValue {
+background-color: lightgrey;
+}
+
+.example {
+padding: 1px;
+background-color: lightgrey;
+}

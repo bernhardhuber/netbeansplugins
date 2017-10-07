@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="org-huberb-randompassword-RandomPasswordAction.instance"/>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="org-huberb-randompassword-RandomPasswordAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-randompassword-RandomPasswordAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Services">
+        <folder name="JavaHelp">
+            <file name="randompassword-helpset.xml" url="randompassword-helpset.xml"/>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="RandomPasswordTopComponent.settings" url="RandomPasswordTopComponent.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="output">
+                <file name="RandomPasswordTopComponent.wstcref" url="RandomPasswordTopComponent_1.xml"/>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

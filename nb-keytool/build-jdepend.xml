@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+
+<project name="vab-backend-depend" default="default" basedir=".">
+
+   <target name="jdepend" depends="init" description="Build JDepend report">
+     <property name="jdepend1.classes.dir" value="${build.classes.dir}"/>
+
+     <jdepend format="xml" outputfile="build/jdepend-report.xml">
+       <exclude name="java.*"/>
+       <exclude name="javax.*"/>
+       <classespath>
+         <pathelement location="${jdepend1.classes.dir}" />
+       </classespath>
+    </jdepend>
+
+    <property name="jdepend.xsl" value="${ant.home}/etc/jdepend.xsl"/>
+    <!--property name="jdepend.xsl" value="${ant.home}/etc/jdepend-frames.xsl"/-->
+
+    <style 
+      in="build/jdepend-report.xml" 
+      out="build/jdepend-report.html" 
+      style="${jdepend.xsl}"
+    >
+        <param name="output.dir" expression="${build.dir}"/>
+        <param name="date" expression="${DSTAMP} - ${TSTAMP}"/>
+    </style>
+   </target>
+</project>

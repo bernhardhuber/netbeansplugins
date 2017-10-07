@@ -1,0 +1,613 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Code Size Rules</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Code Size Rules</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+The Code Size Ruleset contains a collection of rules that find code size related problems.
+  </pre>
+<ul>
+<li>
+<a href="#NPathComplexity::">NPathComplexity::</a>
+</li>
+<li>
+<a href="#ExcessiveMethodLength::">ExcessiveMethodLength::</a>
+</li>
+<li>
+<a href="#ExcessiveParameterList::">ExcessiveParameterList::</a>
+</li>
+<li>
+<a href="#ExcessiveClassLength::">ExcessiveClassLength::</a>
+</li>
+<li>
+<a href="#CyclomaticComplexity::">CyclomaticComplexity::</a>
+</li>
+<li>
+<a href="#ExcessivePublicCount::">ExcessivePublicCount::</a>
+</li>
+<li>
+<a href="#TooManyFields::">TooManyFields::</a>
+</li>
+<li>
+<a href="#NcssMethodCount::">NcssMethodCount::</a>
+</li>
+<li>
+<a href="#NcssTypeCount::">NcssTypeCount::</a>
+</li>
+<li>
+<a href="#NcssConstructorCount::">NcssConstructorCount::</a>
+</li>
+</ul>
+<a name="NPathComplexity::"></a>
+<h2>Rule NPathComplexity::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+   The NPath complexity of a method is the number of acyclic execution paths through that method.
+   A threshold of 200 is generally considered the point where measures should be taken to reduce complexity.
+   </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>The method {0}() has an NPath complexity of {1}</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.NpathComplexity</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#NPathComplexityh</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>-</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+ 
+ public class Foo {
+  void bar() {
+   // lots of complicated code
+  }
+ }
+ 
+    </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The npath reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">200</pre>
+</dd>
+</dl>
+   
+<br>
+<a href="#toc">TOC</a><a name="ExcessiveMethodLength::"></a>
+<h2>Rule ExcessiveMethodLength::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Violations of this rule usually indicate that the method is doing
+too much.  Try to reduce the method size by creating helper methods and removing any copy/pasted code.
+   </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid really long methods.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.LongMethodRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#ExcessiveMethodLength</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ public void doSomething() {
+  System.out.println("Hello world!");
+  System.out.println("Hello world!");
+  // 98 copies omitted for brevity.
+ }
+}
+
+   </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The method size reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">100</pre>
+</dd>
+</dl>
+   
+<br>
+<a href="#toc">TOC</a><a name="ExcessiveParameterList::"></a>
+<h2>Rule ExcessiveParameterList::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Long parameter lists can indicate that a new object should be created to
+ wrap the numerous parameters.  Basically, try to group the parameters together.
+   </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid really long parameter lists.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.LongParameterListRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#ExcessiveParameterList</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ public void addData(
+  int p0, int p1, int p2, int p3, int p4, int p5,
+  int p5, int p6, int p7, int p8, int p9, int p10) {
+  }
+ }
+}
+
+   </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The parameter count reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">10</pre>
+</dd>
+</dl>
+   
+<br>
+<a href="#toc">TOC</a><a name="ExcessiveClassLength::"></a>
+<h2>Rule ExcessiveClassLength::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Long Class files are indications that the class may be trying to
+do too much.  Try to break it down, and reduce the size to something
+manageable.
+   </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid really long classes.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.LongClassRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#ExcessiveClassLength</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+  public void bar() {
+    // 1000 lines of code
+  }
+}
+
+   </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+        
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The class size reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">1000</pre>
+</dd>
+</dl>
+       
+<br>
+<a href="#toc">TOC</a><a name="CyclomaticComplexity::"></a>
+<h2>Rule CyclomaticComplexity::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Complexity is determined by the number of decision points in a method plus one for the
+method entry.  The decision points are 'if', 'while', 'for', and 'case labels'.  Generally,
+1-4 is low complexity, 5-7 indicates moderate complexity, 8-10 is high complexity,
+ and 11+ is very high complexity.
+   </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>The {0} ''{1}'' has a Cyclomatic Complexity of {2}.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.CyclomaticComplexity</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#CyclomaticComplexity</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+// Cyclomatic Complexity = 12
+public class Foo {
+1   public void example()  {
+2       if (a == b)  {
+3           if (a1 == b1) {
+                fiddle();
+4           } else if a2 == b2) {
+                fiddle();
+            }  else {
+                fiddle();
+            }
+5       } else if (c == d) {
+6           while (c == d) {
+                fiddle();
+            }
+7        } else if (e == f) {
+8           for (int n = 0; n &lt; h; n++) {
+                fiddle();
+            }
+        } else{
+            switch (z) {
+9               case 1:
+                    fiddle();
+                    break;
+10              case 2:
+                    fiddle();
+                    break;
+11              case 3:
+                    fiddle();
+                    break;
+12              default:
+                    fiddle();
+                    break;
+            }
+        }
+    }
+}
+
+   </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+      
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">reportLevel</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The Cyclomatic Complexity reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">10</pre>
+</dd>
+</dl>
+   
+<br>
+<a href="#toc">TOC</a><a name="ExcessivePublicCount::"></a>
+<h2>Rule ExcessivePublicCount::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+A large number of public methods and attributes declared in a class can indicate the
+ class may need to be broken up as increased effort will be required to thoroughly test it.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>This class has a bunch of public methods and attributes</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.ExcessivePublicCount</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#ExcessivePublicCount</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+public class Foo {
+ public String value;
+ public Bar something;
+ public Variable var;
+ // [... more more public attributes ...]
+ public void doWork() {}
+ public void doMoreWork() {}
+ public void doWorkAgain() {}
+ // [... more more public methods ...]
+}
+    
+    </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The public item reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">45</pre>
+</dd>
+</dl>
+    
+<br>
+<a href="#toc">TOC</a><a name="TooManyFields::"></a>
+<h2>Rule TooManyFields::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Classes that have too many fields could be redesigned to have fewer fields, possibly
+ through some nested object grouping of some of the information.  For example, a class with
+ city/state/zip fields could instead have one Address field.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Too many fields</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.TooManyFields</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#TooManyFields</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+   
+public class Person {
+   String one;
+   int two;
+   int three;
+   [... many more public fields ...]
+}
+   
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+       
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">maxfields</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The field count reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">15</pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="NcssMethodCount::"></a>
+<h2>Rule NcssMethodCount::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription"></pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>The method {0}() has an NCSS line count of {1}</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.codesize.NcssMethodCount</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#NcssMethodCount</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>-</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo extends Bar {
+ public int methd() {
+     super.methd();
+ 
+ 
+ 
+ 
+ 
+ //this method only has 1 NCSS lines
+      return 1;
+ }
+}
+
+   </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The method NCSS count reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">100</pre>
+</dd>
+</dl>
+   
+<br>
+<a href="#toc">TOC</a><a name="NcssTypeCount::"></a>
+<h2>Rule NcssTypeCount::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription"></pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>The type has an NCSS line count of {0}</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.codesize.NcssTypeCount</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#NcssTypeCount</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>-</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo extends Bar {
+ public Foo() {
+ //this class only has 6 NCSS lines
+     super();
+ 
+ 
+ 
+ 
+ 
+      super.foo();
+ }
+}
+
+   </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The type NCSS count reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">1500</pre>
+</dd>
+</dl>
+   
+<br>
+<a href="#toc">TOC</a><a name="NcssConstructorCount::"></a>
+<h2>Rule NcssConstructorCount::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription"></pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>The constructor with {0} parameters has an NCSS line count of {1}</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.codesize.NcssConstructorCount</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/codesize.html#NcssConstructorCount</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>-</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo extends Bar {
+ public Foo() {
+     super();
+ 
+ 
+ 
+ 
+ 
+ //this constructor only has 1 NCSS lines
+      super.foo();
+ }
+}
+
+   </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The constructor NCSS count reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">100</pre>
+</dd>
+</dl>
+   
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

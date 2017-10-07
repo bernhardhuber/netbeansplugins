@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontscolors>
+    <fontcolor name="mf-name" foreColor="green" default="default"/>
+    <fontcolor name="mf-value" foreColor="yellow" default="default"/>
+    <fontcolor name="mf-colon" default="default"/>
+</fontscolors>

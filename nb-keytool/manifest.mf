@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.huber.keytool/1
+OpenIDE-Module-Implementation-Version: 6
+OpenIDE-Module-Layer: org/huber/keytool/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/huber/keytool/Bundle.properties
+OpenIDE-Module-Requires: org.netbeans.api.javahelp.Help
+
+Name: org/huber/keytool/action/LoadKeyStoreCookieAction.class
+OpenIDE-Module-Class: Action

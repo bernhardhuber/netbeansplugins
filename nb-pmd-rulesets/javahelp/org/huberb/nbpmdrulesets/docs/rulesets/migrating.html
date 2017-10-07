@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Migration Rules</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Migration Rules</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+Contains rules about migrating from one JDK version to another.  Don't use these rules directly,
+      rather, use a wrapper ruleset such as migrating_to_13.xml.
+  </pre>
+<ul>
+<li>
+<a href="#ReplaceVectorWithList::">ReplaceVectorWithList::</a>
+</li>
+<li>
+<a href="#ReplaceHashtableWithMap::">ReplaceHashtableWithMap::</a>
+</li>
+<li>
+<a href="#ReplaceEnumerationWithIterator::">ReplaceEnumerationWithIterator::</a>
+</li>
+<li>
+<a href="#AvoidEnumAsIdentifier::">AvoidEnumAsIdentifier::</a>
+</li>
+<li>
+<a href="#AvoidAssertAsIdentifier::">AvoidAssertAsIdentifier::</a>
+</li>
+<li>
+<a href="#IntegerInstantiation::">IntegerInstantiation::</a>
+</li>
+</ul>
+<a name="ReplaceVectorWithList::"></a>
+<h2>Rule ReplaceVectorWithList::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+  Consider replacing Vector usages with the newer java.util.ArrayList if expensive threadsafe operation is not required.
+  </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Consider replacing this Vector with the newer java.util.List</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/migrating.html#ReplaceVectorWithList</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ void bar() {
+    Vector v = new Vector();
+ }
+}
+
+  </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//Type/ReferenceType/ClassOrInterfaceType[@Image='Vector']
+ 
+    </pre>
+</dd>
+</dl>
+  
+<br>
+<a href="#toc">TOC</a><a name="ReplaceHashtableWithMap::"></a>
+<h2>Rule ReplaceHashtableWithMap::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+      Consider replacing this Hashtable with the newer java.util.Map
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Consider replacing this Hashtable with the newer java.util.Map</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/migrating.html#ReplaceHashtableWithMap</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+    public class Foo {
+     void bar() {
+        Hashtable h = new Hashtable();
+     }
+    }
+    
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+        
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//Type/ReferenceType/ClassOrInterfaceType[@Image='Hashtable']
+     
+        </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="ReplaceEnumerationWithIterator::"></a>
+<h2>Rule ReplaceEnumerationWithIterator::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+      Consider replacing this Enumeration with the newer java.util.Iterator
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Consider replacing this Enumeration with the newer java.util.Iterator</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/migrating.html#ReplaceEnumerationWithIterator</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+public class Foo implements Enumeration {
+    private int x = 42;
+    public boolean hasMoreElements() {
+        return true;
+    }
+    public Object nextElement() {
+        return String.valueOf(i++);
+    }
+}
+    
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+        
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//ImplementsList/ClassOrInterfaceType[@Image='Enumeration']
+     
+        </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="AvoidEnumAsIdentifier::"></a>
+<h2>Rule AvoidEnumAsIdentifier::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">Finds all places 'enum' is used as an identifier is used.</pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid using enum as an identifier; it's a reserved word in JDK 1.5</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/migrating.html#AvoidEnumAsIdentifier</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>2</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+    public class A {
+        public  class foo {
+            String enum = "foo";
+        }
+    }
+  
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                  
+//VariableDeclaratorId[@Image='enum']
+                  
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="AvoidAssertAsIdentifier::"></a>
+<h2>Rule AvoidAssertAsIdentifier::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">Finds all places 'assert' is used as an identifier is used.</pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid using assert as an identifier; it's a reserved word in JDK 1.4</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/migrating.html#AvoidAssertAsIdentifier</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>2</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+    public class A {
+        public  class foo {
+            String assert = "foo";
+        }
+    }
+  
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                  
+//VariableDeclaratorId[@Image='assert']
+                  
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="IntegerInstantiation::"></a>
+<h2>Rule IntegerInstantiation::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">In JDK 1.5, calling new Integer() causes memory allocation.  Integer.valueOf() is more memory friendly.</pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid instantiating Integer objects. Call Integer.valueOf() instead.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>-</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>2</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class Foo {
+ private Integer i = new Integer(0); // change to Integer i = Integer.valueOf(0);
+}
+   
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                  
+//PrimaryPrefix
+ /AllocationExpression
+  [not (ArrayDimsAndInits)
+   and (ClassOrInterfaceType/@Image='Integer'
+    or ClassOrInterfaceType/@Image='java.lang.Integer')]
+                  
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

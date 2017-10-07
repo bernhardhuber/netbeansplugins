@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.huberb.nbpmdrulesets/1
+OpenIDE-Module-Implementation-Version: 1
+OpenIDE-Module-Layer: org/huberb/nbpmdrulesets/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/huberb/nbpmdrulesets/Bundle.properties
+OpenIDE-Module-Requires: org.netbeans.api.javahelp.Help
+

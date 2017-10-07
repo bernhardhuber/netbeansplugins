@@ -1,0 +1,2400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Design Rules</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Design Rules</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+The Design Ruleset contains a collection of rules that find questionable designs.
+  </pre>
+<ul>
+<li>
+<a href="#UseSingleton::">UseSingleton::</a>
+</li>
+<li>
+<a href="#SimplifyBooleanReturns::">SimplifyBooleanReturns::</a>
+</li>
+<li>
+<a href="#SimplifyBooleanExpressions::">SimplifyBooleanExpressions::</a>
+</li>
+<li>
+<a href="#SwitchStmtsShouldHaveDefault::">SwitchStmtsShouldHaveDefault::</a>
+</li>
+<li>
+<a href="#AvoidDeeplyNestedIfStmts::">AvoidDeeplyNestedIfStmts::</a>
+</li>
+<li>
+<a href="#AvoidReassigningParameters::">AvoidReassigningParameters::</a>
+</li>
+<li>
+<a href="#SwitchDensity::">SwitchDensity::</a>
+</li>
+<li>
+<a href="#ConstructorCallsOverridableMethod::">ConstructorCallsOverridableMethod::</a>
+</li>
+<li>
+<a href="#AccessorClassGeneration::">AccessorClassGeneration::</a>
+</li>
+<li>
+<a href="#FinalFieldCouldBeStatic::">FinalFieldCouldBeStatic::</a>
+</li>
+<li>
+<a href="#CloseResource::">CloseResource::</a>
+</li>
+<li>
+<a href="#NonStaticInitializer::">NonStaticInitializer::</a>
+</li>
+<li>
+<a href="#DefaultLabelNotLastInSwitchStmt::">DefaultLabelNotLastInSwitchStmt::</a>
+</li>
+<li>
+<a href="#NonCaseLabelInSwitchStatement::">NonCaseLabelInSwitchStatement::</a>
+</li>
+<li>
+<a href="#OptimizableToArrayCall::">OptimizableToArrayCall::</a>
+</li>
+<li>
+<a href="#BadComparison::">BadComparison::</a>
+</li>
+<li>
+<a href="#EqualsNull::">EqualsNull::</a>
+</li>
+<li>
+<a href="#ConfusingTernary::">ConfusingTernary::</a>
+</li>
+<li>
+<a href="#InstantiationToGetClass::">InstantiationToGetClass::</a>
+</li>
+<li>
+<a href="#IdempotentOperations::">IdempotentOperations::</a>
+</li>
+<li>
+<a href="#SimpleDateFormatNeedsLocale::">SimpleDateFormatNeedsLocale::</a>
+</li>
+<li>
+<a href="#ImmutableField::">ImmutableField::</a>
+</li>
+<li>
+<a href="#UseLocaleWithCaseConversions::">UseLocaleWithCaseConversions::</a>
+</li>
+<li>
+<a href="#AvoidProtectedFieldInFinalClass::">AvoidProtectedFieldInFinalClass::</a>
+</li>
+<li>
+<a href="#AssignmentToNonFinalStatic::">AssignmentToNonFinalStatic::</a>
+</li>
+<li>
+<a href="#MissingStaticMethodInNonInstantiatableClass::">MissingStaticMethodInNonInstantiatableClass::</a>
+</li>
+<li>
+<a href="#AvoidSynchronizedAtMethodLevel::">AvoidSynchronizedAtMethodLevel::</a>
+</li>
+<li>
+<a href="#MissingBreakInSwitch::">MissingBreakInSwitch::</a>
+</li>
+<li>
+<a href="#UseNotifyAllInsteadOfNotify::">UseNotifyAllInsteadOfNotify::</a>
+</li>
+<li>
+<a href="#AvoidInstanceofChecksInCatchClause::">AvoidInstanceofChecksInCatchClause::</a>
+</li>
+<li>
+<a href="#AbstractClassWithoutAbstractMethod::">AbstractClassWithoutAbstractMethod::</a>
+</li>
+<li>
+<a href="#SimplifyConditional::">SimplifyConditional::</a>
+</li>
+<li>
+<a href="#CompareObjectsWithEquals::">CompareObjectsWithEquals::</a>
+</li>
+<li>
+<a href="#PositionLiteralsFirstInComparisons::">PositionLiteralsFirstInComparisons::</a>
+</li>
+<li>
+<a href="#UnnecessaryLocalBeforeReturn::">UnnecessaryLocalBeforeReturn::</a>
+</li>
+<li>
+<a href="#NonThreadSafeSingleton::">NonThreadSafeSingleton::</a>
+</li>
+<li>
+<a href="#UncommentedEmptyMethod::">UncommentedEmptyMethod::</a>
+</li>
+<li>
+<a href="#UncommentedEmptyConstructor::">UncommentedEmptyConstructor::</a>
+</li>
+<li>
+<a href="#AvoidConstantsInterface::">AvoidConstantsInterface::</a>
+</li>
+<li>
+<a href="#UnsynchronizedStaticDateFormatter::">UnsynchronizedStaticDateFormatter::</a>
+</li>
+<li>
+<a href="#PreserveStackTrace::">PreserveStackTrace::</a>
+</li>
+<li>
+<a href="#UseCollectionIsEmpty::">UseCollectionIsEmpty::</a>
+</li>
+</ul>
+<a name="UseSingleton::"></a>
+<h2>Rule UseSingleton::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+If you have a class that has nothing but static methods, consider making it a Singleton.
+Note that this doesn't apply to abstract classes, since their subclasses may
+well include non-static methods.  Also, if you want this class to be a Singleton,
+remember to add a private constructor to prevent instantiation.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>All methods are static. Consider using Singleton instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.UseSingleton</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#UseSingleton</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class MaybeASingleton {
+ public static void foo() {}
+ public static void bar() {}
+}
+
+    </pre>
+<br>
+<a href="#toc">TOC</a><a name="SimplifyBooleanReturns::"></a>
+<h2>Rule SimplifyBooleanReturns::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Avoid unnecessary if..then..else statements when returning a boolean.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid unnecessary if..then..else statements when returning a boolean</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.SimplifyBooleanReturns</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#SimplifyBooleanReturns</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+  private int bar =2;
+  public boolean isBarEqualsTo(int x) {
+    // this bit of code
+    if (bar == x) {
+     return true;
+    } else {
+     return false;
+    }
+    // can be replaced with a simple
+    // return bar == x;
+  }
+}
+
+    </pre>
+<br>
+<a href="#toc">TOC</a><a name="SimplifyBooleanExpressions::"></a>
+<h2>Rule SimplifyBooleanExpressions::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Avoid unnecessary comparisons in boolean expressions - this complicates simple code.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid unnecessary comparisons in boolean expressions</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#SimplifyBooleanExpressions</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class Bar {
+ // can be simplified to
+ // bar = isFoo();
+ private boolean bar = (isFoo() == true);
+
+ public isFoo() { return false;}
+}
+  
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//EqualityExpression/PrimaryExpression
+ /PrimaryPrefix/Literal/BooleanLiteral
+
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="SwitchStmtsShouldHaveDefault::"></a>
+<h2>Rule SwitchStmtsShouldHaveDefault::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Switch statements should have a default label.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Switch statements should have a default label</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#SwitchStmtsShouldHaveDefault</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ public void bar() {
+  int x = 2;
+  switch (x) {
+   case 2: int j = 8;
+  }
+ }
+}
+
+    </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                  
+//SwitchStatement[not(SwitchLabel[@Default='true'])]
+                  
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="AvoidDeeplyNestedIfStmts::"></a>
+<h2>Rule AvoidDeeplyNestedIfStmts::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Deeply nested if..then statements are hard to read.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Deeply nested if..then statements are hard to read</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.AvoidDeeplyNestedIfStmtsRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#AvoidDeeplyNestedIfStmts</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ public void bar(int x, int y, int z) {
+  if (x&gt;y) {
+   if (y&gt;z) {
+    if (z==x) {
+     // whew, too deep
+    }
+   }
+  }
+ }
+}
+
+    </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+    
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">problemDepth</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The if statement depth reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">3</pre>
+</dd>
+</dl>
+   
+<br>
+<a href="#toc">TOC</a><a name="AvoidReassigningParameters::"></a>
+<h2>Rule AvoidReassigningParameters::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Reassigning values to parameters is a questionable practice.  Use a temporary local variable instead.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid reassigning parameters such as ''{0}''</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.AvoidReassigningParameters</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#AvoidReassigningParameters</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>2</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ private void foo(String bar) {
+  bar = "something else";
+ }
+}
+
+    </pre>
+<br>
+<a href="#toc">TOC</a><a name="SwitchDensity::"></a>
+<h2>Rule SwitchDensity::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+ A high ratio of statements to labels in a switch statement implies that the switch
+ statement is doing too much work.  Consider moving the statements into new
+ methods, or creating subclasses based on the switch variable.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>A high ratio of statements to labels in a switch statement. Consider refactoring.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.SwitchDensityRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#SwitchDensity</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+ 
+public class Foo {
+ public void bar(int x) {
+   switch (x) {
+     case 1: {
+       // lots of statements
+       break;
+     } case 2: {
+       // lots of statements
+       break;
+     }
+   }
+ }
+}
+ 
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+         
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">minimum</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">The switch statement ratio reporting threshold</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">10</pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="ConstructorCallsOverridableMethod::"></a>
+<h2>Rule ConstructorCallsOverridableMethod::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Calling overridable methods during construction poses a risk of invoking methods on an
+incompletely constructed object and can be difficult to discern.
+It may leave the sub-class unable to construct its superclass or forced to
+replicate the construction process completely within itself, losing the ability to call
+super().  If the default constructor contains a call to an overridable method,
+the subclass may be completely uninstantiable.   Note that this includes method calls
+throughout the control flow graph - i.e., if a constructor Foo() calls a private method
+bar() that calls a public method buz(), this denotes a problem.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Overridable {0} called during object construction</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.ConstructorCallsOverridableMethod</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#ConstructorCallsOverridableMethod</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>1</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class SeniorClass {
+  public SeniorClass(){
+      toString(); //may throw NullPointerException if overridden
+  }
+  public String toString(){
+    return "IAmSeniorClass";
+  }
+}
+public class JuniorClass extends SeniorClass {
+  private String name;
+  public JuniorClass(){
+    super(); //Automatic call leads to NullPointerException
+    name = "JuniorClass";
+  }
+  public String toString(){
+    return name.toUpperCase();
+  }
+}
+  
+      </pre>
+<br>
+<a href="#toc">TOC</a><a name="AccessorClassGeneration::"></a>
+<h2>Rule AccessorClassGeneration::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Instantiation by way of private constructors from outside of the constructor's class often causes the generation of an accessor.
+A factory method, or non-privitization of the constructor can eliminate this situation.
+The generated class file is actually an interface.  It gives the accessing class the ability to invoke a new hidden package
+scope constructor that takes the interface as a supplementary parameter.  This turns a private constructor effectively into
+one with package scope, and is challenging to discern.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid instantiation through private constructors from outside of the constructor's class.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.AccessorClassGeneration</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#AccessorClassGeneration</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class Outer {
+ void method(){
+  Inner ic = new Inner();//Causes generation of accessor class
+ }
+ public class Inner {
+  private Inner(){}
+ }
+}
+  
+      </pre>
+<br>
+<a href="#toc">TOC</a><a name="FinalFieldCouldBeStatic::"></a>
+<h2>Rule FinalFieldCouldBeStatic::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+If a final field is assigned to a compile-time constant, it could be
+made static, thus saving overhead in each object at runtime.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>This final field could be made static</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#FinalFieldCouldBeStatic</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class Foo {
+ public final int BAR = 42; // this could be static and save some space
+}
+  
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                    
+//FieldDeclaration
+ [@Final='true' and @Static='false']
+ [not (../../../../ClassOrInterfaceDeclaration[@Interface='true'])]
+   /VariableDeclarator/VariableInitializer/Expression
+    /PrimaryExpression/PrimaryPrefix/Literal
+                    
+                </pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="CloseResource::"></a>
+<h2>Rule CloseResource::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Ensure that resources (like Connection, Statement, and ResultSet objects) are always closed after use.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Ensure that resources like this {0} object are closed after use</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.CloseResource</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#CloseResource</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Bar {
+ public void foo() {
+  Connection c = pool.getConnection();
+  try {
+    // do stuff
+  } catch (SQLException ex) {
+    // handle exception
+  } finally {
+    // oops, should close the connection using 'close'!
+    // c.close();
+  }
+ }
+}
+
+    </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">types</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">Connection,Statement,ResultSet</pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="NonStaticInitializer::"></a>
+<h2>Rule NonStaticInitializer::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+A nonstatic initializer block will be called any time a constructor
+is invoked (just prior to invoking the constructor).  While this
+is a valid language construct, it is rarely used and is confusing.
+       </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Non-static initializers are confusing</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#NonStaticInitializer</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+   
+public class MyClass {
+ // this block gets run before any call to a constructor
+ {
+  System.out.println("I am about to construct myself");
+ }
+}
+   
+       </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+             
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//Initializer[@Static='false']
+
+                 </pre>
+</dd>
+</dl>
+         
+<br>
+<a href="#toc">TOC</a><a name="DefaultLabelNotLastInSwitchStmt::"></a>
+<h2>Rule DefaultLabelNotLastInSwitchStmt::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+By convention, the default label should be the last label in a switch statement.
+       </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>The default label should be the last label in a switch statement</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#DefaultLabelNotLastInSwitchStmt</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+   
+public class Foo {
+ void bar(int a) {
+  switch (a) {
+   case 1:  // do something
+      break;
+   default:  // the default case should be last, by convention
+      break;
+   case 2:
+      break;
+  }
+ }
+}   
+       </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+             
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//SwitchStatement
+ [not(SwitchLabel[position() = last()][@Default='true'])]
+ [SwitchLabel[@Default='true']]
+
+                 </pre>
+</dd>
+</dl>
+         
+<br>
+<a href="#toc">TOC</a><a name="NonCaseLabelInSwitchStatement::"></a>
+<h2>Rule NonCaseLabelInSwitchStatement::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+A non-case label (e.g. a named break/continue label) was present in a switch statement.
+This legal, but confusing. It is easy to mix up the case labels and the non-case labels.
+       </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>A non-case label was present in a switch statement</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#NonCaseLabelInSwitchStatement</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+   
+public class Foo {
+ void bar(int a) {
+  switch (a) {
+   case 1:
+      // do something
+      break;
+   mylabel: // this is legal, but confusing!
+      break;
+   default:
+      break;
+  }
+ }
+}
+   
+       </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+             
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+ 
+//SwitchStatement//BlockStatement/Statement/LabeledStatement
+ 
+                 </pre>
+</dd>
+</dl>
+         
+<br>
+<a href="#toc">TOC</a><a name="OptimizableToArrayCall::"></a>
+<h2>Rule OptimizableToArrayCall::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+A call to Collection.toArray can use the Collection's size vs an empty Array of the desired type.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>This call to Collection.toArray() may be optimizable</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#OptimizableToArrayCall</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+class Foo {
+ void bar(Collection x) {
+   // A bit inefficient
+   x.toArray(new Foo[0]);
+   // Much better; this one sizes the destination array, avoiding
+   // a reflection call in some Collection implementations
+   x.toArray(new Foo[x.size()]);
+ }
+}
+  
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                  
+//PrimaryExpression
+[PrimaryPrefix/Name[ends-with(@Image, 'toArray')]]
+[
+PrimarySuffix/Arguments/ArgumentList/Expression
+ /PrimaryExpression/PrimaryPrefix/AllocationExpression
+ /ArrayDimsAndInits/Expression/PrimaryExpression/PrimaryPrefix/Literal[@Image='0']
+]
+
+                  
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="BadComparison::"></a>
+<h2>Rule BadComparison::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Avoid equality comparisons with Double.NaN - these are likely to be logic errors.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid equality comparisons with Double.NaN</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#BadComparison</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class Bar {
+ boolean x = (y == Double.NaN);
+}
+  
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                  
+//EqualityExpression[@Image='==']
+ /PrimaryExpression/PrimaryPrefix
+ /Name[@Image='Double.NaN' or @Image='Float.NaN']
+                  
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="EqualsNull::"></a>
+<h2>Rule EqualsNull::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Inexperienced programmers sometimes confuse comparison concepts
+and use equals() to compare to null.
+        </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid using equals() to compare against null</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#EqualsNull</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>1</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+       
+class Bar {
+   void foo() {
+       String x = "foo";
+       if (x.equals(null)) { // bad!
+        doSomething();
+       }
+   }
+}
+    
+        </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//PrimaryExpression
+ [
+PrimaryPrefix/Name[ends-with(@Image, 'equals')]
+or
+PrimarySuffix[ends-with(@Image, 'equals')]
+]
+[PrimarySuffix/Arguments/ArgumentList[count(Expression)=1]
+  /Expression/PrimaryExpression/PrimaryPrefix
+   /Literal/NullLiteral]
+    
+                </pre>
+</dd>
+</dl>
+         
+<br>
+<a href="#toc">TOC</a><a name="ConfusingTernary::"></a>
+<h2>Rule ConfusingTernary::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+In an "if" expression with an "else" clause, avoid negation in
+the test.  For example, rephrase:
+if (x != y) diff(); else same();
+as:
+if (x == y) same(); else diff();
+Most "if (x != y)" cases without an "else" are often return
+cases, so consistent use of this rule makes the code easier
+to read.  Also, this resolves trivial ordering problems, such
+as "does the error case go first?" or "does the common case
+go first?".
+        </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid if (x != y) ..; else ..;</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.ConfusingTernary</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#ConfusingTernary</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+          
+public class Foo {
+ boolean bar(int x, int y) {
+  return (x != y) ? diff : same;
+ }
+}          
+        </pre>
+<br>
+<a href="#toc">TOC</a><a name="InstantiationToGetClass::"></a>
+<h2>Rule InstantiationToGetClass::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Avoid instantiating an object just to call getClass() on it; use the .class public member instead.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid instantiating an object just to call getClass() on it; use the .class public member instead</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#InstantiationToGetClass</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>4</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+public class Foo {
+ // Replace this
+ Class c = new String().getClass();
+ // with this:
+ Class c = String.class;
+}
+    
+        </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                
+//PrimarySuffix
+ [@Image='getClass']
+ [parent::PrimaryExpression
+  [PrimaryPrefix/AllocationExpression]
+  [count(PrimarySuffix) = 2]
+ ]
+     
+            </pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="IdempotentOperations::"></a>
+<h2>Rule IdempotentOperations::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Avoid idempotent operations - they are have no effect.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid idempotent operations (like assigning a variable to itself).</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.IdempotentOperations</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#IdempotentOperations</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+      
+public class Foo {
+ public void bar() {
+  int x = 2;
+  x = x;
+ }
+}
+      
+      </pre>
+<br>
+<a href="#toc">TOC</a><a name="SimpleDateFormatNeedsLocale::"></a>
+<h2>Rule SimpleDateFormatNeedsLocale::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Be sure to specify a Locale when creating a new instance of SimpleDateFormat.
+        </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>When instantiating a SimpleDateFormat object, specify a Locale</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#SimpleDateFormatNeedsLocale</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+        
+public class Foo {
+ // Should specify Locale.US (or whatever)
+ private SimpleDateFormat sdf = new SimpleDateFormat("pattern");
+}
+        
+        </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//AllocationExpression
+ [ClassOrInterfaceType[@Image='SimpleDateFormat']]
+ [Arguments[@ArgumentCount=1]]
+
+                    </pre>
+</dd>
+</dl>
+              
+<br>
+<a href="#toc">TOC</a><a name="ImmutableField::"></a>
+<h2>Rule ImmutableField::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Identifies private fields whose values never change once they are initialized either in the declaration of the field or by
+a constructor.  This aids in converting existing classes to immutable classes.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Private field ''{0}'' could be made final; it is only initialized in the declaration or constructor.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.ImmutableField</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#ImmutableField</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class Foo {
+  private int x; // could be final
+  public Foo() {
+      x = 7;
+  }
+  public void foo() {
+     int a = x + 2;
+  }
+}
+  
+      </pre>
+<br>
+<a href="#toc">TOC</a><a name="UseLocaleWithCaseConversions::"></a>
+<h2>Rule UseLocaleWithCaseConversions::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+When doing a String.toLowerCase()/toUpperCase() call, use a Locale.  This avoids
+problems with certain locales, i.e. Turkish.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>When doing a String.toLowerCase()/toUpperCase() call, use a Locale</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#UseLocaleWithCaseConversions</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+class Foo {
+ // BAD
+ if (x.toLowerCase().equals("list"))...
+ /*
+ This will not match "LIST" when in Turkish locale
+ The above could be
+ if (x.toLowerCase(Locale.US).equals("list")) ...
+ or simply
+ if (x.equalsIgnoreCase("list")) ...
+ */
+ // GOOD
+ String z = a.toLowerCase(Locale.EN);
+}
+    
+        </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                
+//PrimaryExpression
+[PrimaryPrefix/Name
+ [ends-with(@Image, 'toLowerCase') or ends-with(@Image,
+'toUpperCase')]
+ ]
+[PrimarySuffix/Arguments[@ArgumentCount=0]]
+     
+            </pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="AvoidProtectedFieldInFinalClass::"></a>
+<h2>Rule AvoidProtectedFieldInFinalClass::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Do not use protected fields in final classes since they cannot be subclassed.
+Clarify your intent by using private or package access modifiers instead.
+         </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid protected fields in a final class. Change to private or package access.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#AvoidProtectedFieldInFinalClass</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public final class Bar {
+ private int x;
+ protected int y;  // &lt;-- Bar cannot be subclassed, so is y really private or package visible???
+ Bar() {}
+}
+ 
+         </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+             
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+
+//ClassOrInterfaceDeclaration[@Final='true']
+/ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration
+/FieldDeclaration[@Protected='true']
+ 
+                 </pre>
+</dd>
+</dl>
+         
+<br>
+<a href="#toc">TOC</a><a name="AssignmentToNonFinalStatic::"></a>
+<h2>Rule AssignmentToNonFinalStatic::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Identifies a possible unsafe usage of a static field.
+       </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Possible unsafe assignment to a non-final static field in a constructor.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.AssignmentToNonFinalStatic</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#AssignmentToNonFinalStatic</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+   
+public class StaticField {
+   static int x;
+   public FinalFields(int y) {
+    x = y; // unsafe
+   }
+}
+   
+       </pre>
+<br>
+<a href="#toc">TOC</a><a name="MissingStaticMethodInNonInstantiatableClass::"></a>
+<h2>Rule MissingStaticMethodInNonInstantiatableClass::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+A class that has private constructors and does not have any static methods or fields cannot be used.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Class cannot be instantiated and does not provide any static methods or fields</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#MissingStaticMethodInNonInstantiatableClass</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+/* This class is unusable, since it cannot be
+ instantiated (private constructor),
+ and no static method can be called.
+ */
+public class Foo {
+ private Foo() {}
+ void foo() {}
+}
+
+
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//ClassOrInterfaceDeclaration[@Nested='false'][
+( count(./ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration/ConstructorDeclaration)&gt;0
+  and count(./ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration/ConstructorDeclaration) = count(./ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration/ConstructorDeclaration[@Private='true']) )
+and
+count(.//MethodDeclaration[@Static='true'])=0
+and
+count(.//FieldDeclaration[@Private='false'][@Static='true'])=0
+]
+    
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="AvoidSynchronizedAtMethodLevel::"></a>
+<h2>Rule AvoidSynchronizedAtMethodLevel::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+  Method level synchronization can backfire when new code is added to the method.  Block-level
+  synchronization helps to ensure that only the code that needs synchronization gets it.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Use block level rather than method level synchronization</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#AvoidSynchronizedAtMethodLevel</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ // Try to avoid this
+ synchronized void foo() {
+ }
+ // Prefer this:
+ void bar() {
+  synchronized(this) {
+  }
+ }
+}
+
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//MethodDeclaration[@Synchronized='true']
+    
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="MissingBreakInSwitch::"></a>
+<h2>Rule MissingBreakInSwitch::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+A switch statement without an enclosed break statement may be a bug.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>A switch statement does not contain a break</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#MissingBreakInSwitch</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ public void bar(int status) {
+  switch(status) {
+   case CANCELLED:
+    doCancelled();
+    // break; hm, should this be commented out?
+   case NEW:
+    doNew();
+   case REMOVED:
+    doRemoved();
+   }
+ }
+}
+
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//SwitchStatement
+[count(.//BreakStatement)=0]
+[count(SwitchLabel) &gt; 0]
+[count(BlockStatement/Statement/ReturnStatement)
+ + count(BlockStatement/Statement/ThrowStatement)
+     &lt; count (SwitchLabel)]
+    
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="UseNotifyAllInsteadOfNotify::"></a>
+<h2>Rule UseNotifyAllInsteadOfNotify::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Thread.notify() awakens a thread monitoring the object. If more than one thread is monitoring, then only
+one is chosen.  The thread chosen is arbitrary; thus it's usually safer to call notifyAll() instead.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Call Thread.notifyAll() rather than Thread.notify()</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#UseNotifyAllInsteadOfNotify</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ void bar() {
+  x.notify();
+  // If many threads are monitoring x, only one (and you won't know which) will be notified.
+  // use instead:
+  x.notifyAll();
+ }
+}
+
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//StatementExpression/PrimaryExpression
+[count(PrimarySuffix/Arguments/ArgumentList) = 0]
+[
+PrimaryPrefix[./Name[@Image='notify' or ends-with(@Image,'.notify')]
+or @Image='notify'
+or (./AllocationExpression and ../PrimarySuffix[@Image='notify'])
+]
+]
+    
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="AvoidInstanceofChecksInCatchClause::"></a>
+<h2>Rule AvoidInstanceofChecksInCatchClause::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Each caught exception type should be handled in its own catch clause.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>An instanceof check is being performed on the caught exception. Create a separate catch clause for this exception type.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#AvoidInstanceofChecksInCatchClause</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+try { // Avoid this
+ // do something
+} catch (Exception ee) {
+ if (ee instanceof IOException) {
+  cleanup();
+ }
+}
+try {  // Prefer this:
+ // do something
+} catch (IOException ee) {
+ cleanup();
+}
+
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//CatchStatement/FormalParameter
+ /following-sibling::Block//InstanceOfExpression/PrimaryExpression/PrimaryPrefix
+  /Name[
+   @Image = ./ancestor::Block/preceding-sibling::FormalParameter
+    /VariableDeclaratorId/@Image
+  ]
+    
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="AbstractClassWithoutAbstractMethod::"></a>
+<h2>Rule AbstractClassWithoutAbstractMethod::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+The abstract class does not contain any abstract methods. An abstract class suggests
+an incomplete implementation, which is to be completed by subclasses implementing the
+abstract methods. If the class is intended to be used as a base class only (not to be instantiated
+direcly) a protected constructor can be provided prevent direct instantiation.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>This abstract class does not have any abstract methods</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#AbstractClassWithoutAbstractMethod</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public abstract class Foo {
+ void int method1() { ... }
+ void int method2() { ... }
+ // consider using abstract methods or removing
+ // the abstract modifier and adding protected constructors
+}
+
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+//ClassOrInterfaceDeclaration
+ [@Abstract='true'
+  and count( .//MethodDeclaration[@Abstract='true'] )=0 ]
+  [count(ImplementsList)=0]
+              
+              </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="SimplifyConditional::"></a>
+<h2>Rule SimplifyConditional::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+No need to check for null before an instanceof; the instanceof keyword returns false when given a null argument.
+           </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>No need to check for null before an instanceof</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#SimplifyConditional</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+      
+class Foo {
+ void bar(Object x) {
+  if (x != null &amp;&amp; x instanceof Bar) {
+   // just drop the "x != null" check
+  }
+ }
+}      
+           </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+              
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+                      
+//Expression
+ [ConditionalOrExpression
+ [EqualityExpression[@Image='==']
+  //NullLiteral
+  and
+  UnaryExpressionNotPlusMinus
+   [@Image='!']//InstanceOfExpression[PrimaryExpression
+     //Name/@Image = ancestor::ConditionalOrExpression/EqualityExpression
+      /PrimaryExpression/PrimaryPrefix/Name/@Image]]
+or
+ConditionalAndExpression
+ [EqualityExpression[@Image='!=']//NullLiteral
+ and
+InstanceOfExpression
+ [PrimaryExpression[count(PrimarySuffix[@ArrayDereference='true'])=0]
+  //Name/@Image = ancestor::ConditionalAndExpression
+   /EqualityExpression/PrimaryExpression/PrimaryPrefix/Name/@Image]]]
+ 
+                  </pre>
+</dd>
+</dl>
+          
+<br>
+<a href="#toc">TOC</a><a name="CompareObjectsWithEquals::"></a>
+<h2>Rule CompareObjectsWithEquals::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+ Use equals() to compare object references; avoid comparing them with ==.
+  </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Use equals() to compare object references.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.CompareObjectsWithEquals</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#CompareObjectsWithEquals</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+class Foo {
+ boolean bar(String a, String b) {
+  return a == b;
+ }
+}
+
+
+  </pre>
+<br>
+<a href="#toc">TOC</a><a name="PositionLiteralsFirstInComparisons::"></a>
+<h2>Rule PositionLiteralsFirstInComparisons::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+ Position literals first in String comparisons - that way if the String is null you won't get a NullPointerException, it'll just return false.
+  </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Position literals first in String comparisons</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#PositionLiteralsFirstInComparisons</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+class Foo {
+ boolean bar(String x) {
+  return x.equals("2"); // should be "2".equals(x)
+ }
+}
+
+
+  </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+        
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+//PrimaryExpression[PrimaryPrefix[Name[ends-with(@Image, '.equals')]][..//Literal]]
+    [not(ancestor::Expression/ConditionalAndExpression//EqualityExpression[@Image='!=']//NullLiteral)]
+    [not(ancestor::Expression/ConditionalOrExpression//EqualityExpression[@Image='==']//NullLiteral)]
+          </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="UnnecessaryLocalBeforeReturn::"></a>
+<h2>Rule UnnecessaryLocalBeforeReturn::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Avoid unnecessarily creating local variables
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Consider simply returning the value vs storing it in local variable ''{0}''</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.UnnecessaryLocalBeforeReturn</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#UnnecessaryLocalBeforeReturn</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+  public class Foo {
+    public int foo() {
+      int x = doSomething();
+      return x;  // instead, just 'return doSomething();'
+    }
+  }
+  
+      </pre>
+<br>
+<a href="#toc">TOC</a><a name="NonThreadSafeSingleton::"></a>
+<h2>Rule NonThreadSafeSingleton::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Non-thread safe singletons can result in bad state changes. Eliminate
+static singletons if possible by instantiating the object directly. Static
+singletons are usually not needed as only a single instance exists anyway.
+Other possible fixes are to synchronize the entire method or to use an
+initialize-on-demand holder class (do not use the double-check idiom).
+
+See Effective Java, item 48.
+        </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Singleton is not thread safe</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.NonThreadSafeSingleton</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#NonThreadSafeSingleton</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+private static Foo foo = null;
+
+//multiple simultaneous callers may see partially initialized objects
+public static Foo getFoo() {
+    if (foo==null)
+        foo = new Foo();
+    return foo;
+}
+        </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">checkNonStaticMethods</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">true</pre>
+</dd>
+</dl>
+            
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">checkNonStaticFields</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">false</pre>
+</dd>
+</dl>
+        
+<br>
+<a href="#toc">TOC</a><a name="UncommentedEmptyMethod::"></a>
+<h2>Rule UncommentedEmptyMethod::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Uncommented Empty Method finds instances where a method does not contain
+statements, but there is no comment. By explicitly commenting empty methods
+it is easier to distinguish between intentional (commented) and unintentional
+empty methods.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Document empty method</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyMethod</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public void doSomething() {
+}
+ 
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//MethodDeclaration/Block[count(BlockStatement) = 0 and @containsComment = 'false']
+ 
+             </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="UncommentedEmptyConstructor::"></a>
+<h2>Rule UncommentedEmptyConstructor::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Uncommented Empty Constructor finds instances where a constructor does not
+contain statements, but there is no comment. By explicitly commenting empty
+constructors it is easier to distinguish between intentional (commented)
+and unintentional empty constructors.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Document empty constructor</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyConstructor</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public Foo() {
+  super();
+}
+ 
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//ConstructorDeclaration[@Private='false'][count(BlockStatement) = 0 and ($ignoreExplicitConstructorInvocation = 'true' or not(ExplicitConstructorInvocation)) and @containsComment = 'false']
+ 
+             </pre>
+</dd>
+</dl>
+          
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">ignoreExplicitConstructorInvocation</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">Ignore explicit constructor invocation when deciding whether constructor is empty or not</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">false</pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="AvoidConstantsInterface::"></a>
+<h2>Rule AvoidConstantsInterface::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+     An interface should be used only to model a behaviour of a
+    class: using an interface as a container of constants is a poor usage pattern.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>An Interface should be used only to model a behaviour; consider converting this to a class.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>-</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+    public interface ConstantsInterface {
+     public static final int CONSTANT1=0;
+     public static final String CONSTANT2="1";
+    }
+    
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+        
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+    
+//ClassOrInterfaceDeclaration[@Interface="true"]
+    [
+     count(//MethodDeclaration)=0
+     and
+     count(//FieldDeclaration)&gt;0
+    ]
+    
+        </pre>
+</dd>
+</dl>
+      
+<br>
+<a href="#toc">TOC</a><a name="UnsynchronizedStaticDateFormatter::"></a>
+<h2>Rule UnsynchronizedStaticDateFormatter::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+SimpleDateFormat is not synchronized. Sun recomends separate format instances 
+for each thread. If multiple threads must access a static formatter, the 
+formatter must be synchronized either on method or block level.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Static DateFormatter objects should be accessed in a synchronized manner</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.UnsynchronizedStaticDateFormatter</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>-</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+public class Foo {
+    private static final SimpleDateFormat sdf = new SimpleDateFormat();
+    void bar() {
+        sdf.format(); // bad
+    }
+    synchronized void foo() {
+        sdf.format(); // good
+    }
+}
+    
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+<br>
+<a href="#toc">TOC</a><a name="PreserveStackTrace::"></a>
+<h2>Rule PreserveStackTrace::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Throwing a new exception from a catch block without passing the original exception into the 
+new Exception will cause the true stack trace to be lost, and can make it difficult to
+debug effectively.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Caught exception is rethrown, original stack trace may be lost</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.PreserveStackTrace</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#PreserveStackTrace</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+public class Foo {
+    void good() {
+        try{
+            Integer.parseInt("a");
+        } catch(Exception e){
+            throw new Exception(e);
+        }
+    }
+    void bad() {
+        try{
+            Integer.parseInt("a");
+        } catch(Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+}
+    
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+<br>
+<a href="#toc">TOC</a><a name="UseCollectionIsEmpty::"></a>
+<h2>Rule UseCollectionIsEmpty::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+The isEmpty() method on java.util.Collection is provided to see if a collection has any elements.
+Comparing the value of size() to 0 merely duplicates existing behavior.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Substitute calls to size() == 0 (or size() != 0) with calls to isEmpty()</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.design.UseCollectionIsEmpty</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/design.html#UseCollectionIsEmpty</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+    
+	public class Foo {
+		void good() {
+        	List foo = getList();
+			if (foo.isEmpty()) {
+				// blah
+			}
+    	}
+
+	    void bad() {
+    	    List foo = getList();
+				if (foo.size() == 0) {
+					// blah
+				}
+	    	}
+	}
+    
+      </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

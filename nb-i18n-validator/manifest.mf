@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.huberb.i18nvalidator
+OpenIDE-Module-Implementation-Version: 1
+OpenIDE-Module-Layer: org/huberb/i18nvalidator/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/huberb/i18nvalidator/Bundle.properties
+

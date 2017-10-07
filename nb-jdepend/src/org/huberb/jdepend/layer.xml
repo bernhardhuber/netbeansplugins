@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Build">
+            <file name="org-huberb-jdepend-JDependAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/jdepend/resources/jdepend.png"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.jdepend.Bundle"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="BuildProject">
+            <file name="org-huberb-jdepend-JDependAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Build/org-huberb-jdepend-JDependAction.instance"/>
+            </file>
+            <attr name="org-huberb-jdepend-JDependAction.shadow/org-netbeans-modules-project-ui-BuildMainProject.shadow" boolvalue="true"/>
+        </folder>
+    </folder>
+    <folder name="OptionsDialog">
+        <folder name="Advanced">
+            <file name="org-huberb-jdepend-options-JDependAdvancedOption.instance"/>
+        </folder>
+    </folder>
+    <folder name="Services">
+        <file name="JDependSettings.settings" url="options/JDependSettings.xml">
+            <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/jdepend/resources/jdepend.png"/>
+        </file>
+         
+        <folder name="JavaHelp">
+            <attr name="org-netbeans-modules-versioning-system-cvss-resources-helpset.xml/jdepend-helpset.xml" boolvalue="true"/>
+            <file name="jdepend-helpset.xml" url="jdepend-helpset.xml"/>
+        </folder>
+    </folder>
+    
+    <folder name="jdepend">
+        <folder name="xslt">
+            <file name="standard.xsl" url="resources/jdependxml2html_standard.xsl"/>
+            <file name="narrow.xsl" url="resources/jdependxml2html_narrow.xsl"/>
+            <file name="summary.xsl" url="resources/jdependxml2html_summary.xsl"/>
+        </folder>
+    </folder>
+</filesystem>

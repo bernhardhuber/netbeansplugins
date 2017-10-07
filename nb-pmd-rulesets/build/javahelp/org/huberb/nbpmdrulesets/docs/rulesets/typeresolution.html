@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Type Resolution Rules</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Type Resolution Rules</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+    These are rules which resolve java Class files for comparisson, as opposed to a String
+  </pre>
+<ul>
+<li>
+<a href="#LooseCoupling::">LooseCoupling::</a>
+</li>
+<li>
+<a href="#CloneMethodMustImplementCloneable::">CloneMethodMustImplementCloneable::</a>
+</li>
+</ul>
+<a name="LooseCoupling::"></a>
+<h2>Rule LooseCoupling::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Avoid using implementation types (i.e., HashSet); use the interface (i.e, Set) instead
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid using implementation types like ''{0}''; use the interface instead</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.typeresolution.rules.LooseCoupling</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/typeresolution.html#LooseCoupling</dd>
+<dt>TypeResolution</dt>
+<dd>true</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+import java.util.ArrayList;
+import java.util.HashSet;
+public class Bar {
+ // Use List instead
+ private ArrayList list = new ArrayList();
+ // Use Set instead
+ public HashSet getFoo() {
+  return new HashSet();
+ }
+}
+  
+      </pre>
+<br>
+<a href="#toc">TOC</a><a name="CloneMethodMustImplementCloneable::"></a>
+<h2>Rule CloneMethodMustImplementCloneable::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+The method clone() should only be implemented if the class implements the 
+Cloneable interface with the exception of a final method that only throws 
+CloneNotSupportedException. This version uses PMD's type resolution facilities, 
+and can detect if the class implements or extends a Cloneable class
+        </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>clone() method should be implemented only if implementing Cloneable interface</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.typeresolution.rules.CloneMethodMustImplementCloneable</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/typeresolution.html#CloneMethodMustImplementCloneable</dd>
+<dt>TypeResolution</dt>
+<dd>true</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+            
+public class MyClass {
+ public Object clone() throws CloneNotSupportedException {
+  return foo;
+ }
+}
+   
+        </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+        
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

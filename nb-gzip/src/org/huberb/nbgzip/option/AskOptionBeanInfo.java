@@ -1,7 +1,7 @@
 /*
  * AskOptionBeanInfo.java
  *
- * Created on 16. Jänner 2006, 23:13
+ * Created on 16. JÃ¤nner 2006, 23:13
  */
 
 package org.huberb.nbgzip.option;

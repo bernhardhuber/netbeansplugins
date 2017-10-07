@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="pmd-ruleset-ant" default="init" basedir=".">
+    <description>
+        This ant script launches PMD's designer tool
+    </description>
+    
+    <property name="pmd.home" value="${user.home}/pmd"/>
+    
+    <target name="init">
+        <available file="${pmd.home}" type="dir" property="pmd.home.available"/>
+        <fail unless="pmd.home.available"
+              message="Missing pmd.home property, or pmd.home '${pmd.home}' is not a directory!"/>
+    </target>
+    
+    <target name="launch-pmd-designer" depends="init" description="Launch pmd's ruleset designer">
+        <java fork="true" classname="net.sourceforge.pmd.util.designer.Designer">
+            <!--sysproperty key="swing.defaultlaf" value="com.sun.java.swing.plaf.windows.WindowsLookAndFeel"/-->
+
+            <classpath>
+                <fileset dir="${pmd.home}/lib" includes="*.jar"/>
+            </classpath>
+        </java>
+    </target>
+</project>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Security Code Guidelines</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Security Code Guidelines</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+These rules check the security guidelines from Sun, published at http://java.sun.com/security/seccodeguide.html#gcg
+  </pre>
+<ul>
+<li>
+<a href="#MethodReturnsInternalArray::">MethodReturnsInternalArray::</a>
+</li>
+<li>
+<a href="#ArrayIsStoredDirectly::">ArrayIsStoredDirectly::</a>
+</li>
+</ul>
+<a name="MethodReturnsInternalArray::"></a>
+<h2>Rule MethodReturnsInternalArray::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Exposing internal arrays directly allows the user to modify some code that could be critical.
+It is safer to return a copy of the array.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Returning ''{0}'' may expose an internal array.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.sunsecure.MethodReturnsInternalArray</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/sunsecure.html#MethodReturnsInternalArray</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class SecureSystem {
+  UserData [] ud;
+  public UserData [] getUserData() {
+      // Don't return directly the internal array, return a copy
+      return ud;
+  }
+}
+  
+      </pre>
+<br>
+<a href="#toc">TOC</a><a name="ArrayIsStoredDirectly::"></a>
+<h2>Rule ArrayIsStoredDirectly::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Constructors and methods receiving arrays should clone objects and store the copy.
+This prevents that future changes from the user affect the internal functionality.
+      </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>The user-supplied array ''{0}'' is stored directly.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.sunsecure.ArrayIsStoredDirectly</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/sunsecure.html#ArrayIsStoredDirectly</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+  
+public class Foo {
+ private String [] x;
+  public void foo (String [] param) {
+      // Don't do this, make a copy of the array at least
+      this.x=param;
+  }
+}
+  
+      </pre>
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

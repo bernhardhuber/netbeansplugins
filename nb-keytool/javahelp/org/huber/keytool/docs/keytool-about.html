@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+        
+        <title>About keytool</title><link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+
+    <body>
+        <a name="toc"></a>
+        <h2>About keytool</h2>
+        <p>
+            The keytool module allows you to
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td><img src="nbres:/org/huber/keytool/images/password-16x16.png" alt="Open Keystore"></td>
+                    <td><a href="#view-a-keystore-file">View a keystore file</a></td>
+                </tr>
+                <tr>
+                    <td><img src="nbres:/org/huber/keytool/images/password-new16x16.png" alt="New Keystore"></td>
+                    <td><a href="#create-a-new-store-file">Create a new keystore file</a></td>
+                </tr>
+                <tr>
+                    <td><img src="nbres:/org/huber/keytool/images/password-open16x16.png" alt="Open Keystore"></td>
+                    <td><a href="#open-a-keystore-file">Open a keystore file</a></td>
+                </tr>
+                <tr>
+
+                    <td><img src="nbres:/org/huber/keytool/images/password-save16x16.png" alt="Save Keystore"></td>
+                    <td><a href="#save-the-keystore-file">Save the keystore file</a></td>
+                </tr>
+
+                <tr>
+                    <td><img src="nbres:/org/huber/keytool/images/password-storepasswd16x16.png" alt="Store Password"></td>
+                    <td><a href="#changepasswd-of-the-keystore-file">Change keystore password</a></td>
+                </tr>
+                <tr>
+                    <td><img src="nbres:/org/huber/keytool/images/password-create16x16.png" alt="Create Key"></td>
+                    <td><a href="#create-a-new-keystore-entry">Create a new keystore entry</a></td>
+                </tr>
+                <tr>
+                    <td><img src="nbres:/org/huber/keytool/images/password-delete16x16.png" alt="Delete Key"></td>
+                    <td><a href="#delete-a-keystore-entry">Delete a keystore entry</a></td>
+                </tr>
+                <tr>
+                    <td><img src="nbres:/org/huber/keytool/images/certreq-new16x16.png" alt="Create Certificate Request File"></td>
+                    <td><a href="#create-certificate-request-file">Create a Certificate Request File</a></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+        <!-- ************************************************************************************ -->
+        <a name="view-a-keystore-file"></a>
+        <h2>View a keystore file</h2>
+        <p><img src="nbres:/org/huber/keytool/images/password-16x16.png" alt="View Keystore">
+            Display the content of a keystore in a window.
+        </p>
+
+        <img src="images/view-keystore-file.jpg" alt="View keystore file screenshot">
+
+        <p>
+            You can open the keystore window by selecting <b>Windows|View Keystore</b>, or by clicking
+            the icon <img src="nbres:/org/huber/keytool/images/password-16x16.png" alt="View Keystore"> in the toolbar.
+            <br>
+
+            The keystore window displays the keystore entries of the currently loaded keystore file.
+        </p>
+        <p>
+            The keystore entries are displayed in a table at the bottom of the window.
+            The details of a keystore entry are shown at the upper part of the window.
+            You can choose to view the keystore entry either in the <i>Verbose</i>, or <i>RFC</i>
+            view mode.
+        </p>
+        <p>
+            <a href="#toc">Table of Content</a>
+        </p>
+
+        <hr>
+        <!-- ************************************************************************************ -->
+        <a name="create-a-new-keystore-file"></a>
+        <h2>Create a new keystore file</h2>
+        <p><img src="nbres:/org/huber/keytool/images/password-new16x16.png" alt="New Keystore">
+            A new keystore file is opened in the keystore window.
+        </p>
+        <p>
+            A wizard guides you through creating a new keystore file. The wizard has following steps:
+        </p>
+        <ol>
+
+            <li>Select a new file
+            </li>
+            <li>Specify a keystore password, and retype the keystore password
+            </li>
+        </ol>
+        <p>
+            Finishing the wizard creates an empty keystore file in the filesystem, and opens the
+            empty keystore file in the keystore window.
+        </p>
+        <p>
+            <a href="#toc">Table of Content</a>
+        </p>
+
+
+        <hr>
+        <!-- ************************************************************************************ -->
+        <a name="open-a-keystore-file"></a>
+        <h2>Open a keystore file</h2>
+
+        <p><img src="nbres:/org/huber/keytool/images/password-open16x16.png" alt="Open Keystore">
+            A keystore file is opened, its content is displayed in the keystore window.
+        </p>
+        <p>
+            You can load a key store file by selecting the open keystore icon in the toolbar.
+            <br>
+
+            Alternatively, you can select a file having the extension
+            <code>keystore</code>, or <code>jks</code> in the explorer window,
+            opening the context menu and selecting <b>Tools|Load Key Store</b>.</p><p>Moreover
+you can drag a keystore file to the keystore window, and keystore
+filename text field. You either select the dragging keystore file from
+within Netbeans explorer view, or from the OS explorer application.
+        </p>
+        <p>
+            A wizard guides you through opening a keystore file. The wizard has following steps.
+        </p>
+        <ol>
+
+            <li>Select a keystore file
+            </li>
+            <li>Enter the keystore password
+            </li>
+        </ol>
+        <p>
+            By finishing the wizard the keystore file is loaded,
+            and its content is shown in the keystore window.
+        </p>
+        <p>
+            <a href="#toc">Table of Content</a>
+        </p>
+
+
+        <hr>
+        <!-- ************************************************************************************ -->
+        <a name="save-the-keystore-file"></a>
+        <h2>Save the keystore file</h2>
+        <p><img src="nbres:/org/huber/keytool/images/password-save16x16.png" alt="Save Keystore">
+            The keystore file viewed in the keystore window is saved.
+        </p>
+        <p>
+            You must store a keystore explicitly.
+        </p>
+        <ul>
+            <li>If you create a new keystore, it is not saved automatically.
+            </li>
+
+            <li>If you create a new keystore entry or if you delete a keystore entry, you have to save the keystore explicitly.
+            </li>
+        </ul>
+        <p>
+            <a href="#toc">Table of Content</a>
+        </p>
+
+
+        <hr>
+        <!-- ************************************************************************************ -->
+        <a name="changepasswd-of-the-keystore-file"></a>
+        <h2>Change keystore password</h2>
+        <p><img src="nbres:/org/huber/keytool/images/password-save16x16.png" alt="Save Keystore">
+            Changes the keystore password of the keystore which is opened.
+        </p>
+        <p>
+            A wizard guides you through changing the keystore password. The wizard has following steps:
+        </p>
+        <ol>
+            <li>Confirm the keystore file name which is used for storing the changed keystore password.
+            </li>
+            <li>Enter the new keystore password, and confirm the new keystore password.
+            </li>
+        </ol>
+        <p>
+            Finishing the wizard the keystore with the new password is saved on disk.
+        </p>
+        <p>
+            The next time opening the keystore file,
+            you have to provide the wizard-entered keystore password.
+        </p>
+        <p>
+            <a href="#toc">Table of Content</a>
+        </p>
+
+
+        <hr>
+        <!-- ************************************************************************************ -->
+        <a name="create-a-new-keystore-entry"></a>
+        <h2>Create a new keystore entry</h2>
+        <p><img src="nbres:/org/huber/keytool/images/password-create16x16.png" alt="Create Key">
+            A new keystore entry is creating in the current keystore window.
+        </p>
+        <p>
+            A wizard guides you through creating a new key entry. The wizard has following steps:
+        </p>
+        <ol>
+
+            <li>Enter certificate basic information, like <i>alias</i>, <i>validity</i> of the key, etc.
+            </li>
+            <li>Enter identity informations, like <i>firstname</i>, <i>lastname</i>, etc.
+            </li>
+            <li>Confirm informations entered
+            </li>
+        </ol>
+        <p>
+            By finishing the wizard a new keystore entry is created in the currently opened keystore file.
+            The created keystore entry is self-signed automatically.
+        </p>
+        <p>
+            You must save the keystore file for making the change persistent.
+        </p>
+        <p>
+            <a href="#toc">Table of Content</a>
+        </p>
+
+
+        <hr>
+        <!-- ************************************************************************************ -->
+        <a name="delete-a-keystore-entry"></a>
+        <h2>Delete a keystore entry</h2>
+        <p><img src="nbres:/org/huber/keytool/images/password-delete16x16.png" alt="Delete Key">
+            The current selected keystore entry is deleted from the keystore entry file.
+        </p>
+        <p>
+            You must save the keystore file for making the change persistent.
+        </p>
+        <p>
+            <a href="#toc">Table of Content</a>
+        </p>
+        
+        
+        <hr>
+        <!-- ************************************************************************************ -->
+        <a name="create-certificate-request-file"></a>
+        <h2>Create a certificate request file</h2>
+        <p><img src="nbres:/org/huber/keytool/images/certreq-new16x16.png" alt="Create Certificate Request File">
+            Create a certificate request file.
+        </p>
+        <p>
+            A wizard guides you through creating the certificate request file.
+            The wizard has following steps:
+        </p>
+        <ol>
+            <li>
+                Select the certificate request file. You must select a new file,
+                files already existing are not acceptable.
+            </li>
+            <li>
+                <ol>
+                    <li>
+                        Select the alias for which the certificate request is created.
+                    </li>
+                    <li>
+                        Select the signature algorithm for creating the certificate request.
+                    </li>
+                    <li>
+                        Enter the key password, alternatively you may reuse the store password.
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <p>
+            A dialog window informs you whether the certificate request file
+            has been created successfully.
+        </p>
+        <p>
+            Usually, you sent the created certificate request file to a certification
+            authority for signing it.
+        </p>
+
+
+        <p>
+            <b>Note</b>: Currently there is no feature in the keytool for importing the
+            signed certificate request. You still have to use the traditional
+            <code>keytool</code> command.
+        </p>
+        <p>
+            <a href="#toc">Table of Content</a>
+        </p>
+        <hr>
+        <!-- ************************************************************************************ -->
+        <!--
+        Tip: to create a link which will open in an external web browser, try:
+        <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+        <param name="content" value="http://www.netbeans.org/">
+        <param name="text" value="<html><u>http://www.netbeans.org/</u></html>">
+        <param name="textFontSize" value="medium">
+        <param name="textColor" value="blue">
+        </object>
+        To create a link to a help set from another module, you need to know the code name base and path, e.g.:
+        <a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a>
+        (This link will behave sanely if that module is disabled or missing.)
+        -->
+    </body></html>

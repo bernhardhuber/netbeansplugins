@@ -9,12 +9,6 @@ package org.huberb.nbgzip.util;
 
 import java.io.ByteArrayInputStream;
 import junit.framework.*;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.io.FilterInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import javax.swing.event.SwingPropertyChangeSupport;
 
 /**
  *

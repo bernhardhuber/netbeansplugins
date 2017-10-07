@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="org.huberb.httppost" default="netbeans" basedir=".">
+    <description>Builds, tests, and runs the project org.huberb.httppost.</description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <target name="preview-javahelp" depends="javahelp"
+        description="preview java help">
+        <property name="javahelp.base" value="/org/huberb/httppost/docs"/>
+        <property name="javahelp.hs" value="httppost-hs.xml"/>
+        
+        <property name="hsviewer.dir" value="C:\all_projects\projects\external-java-projects\javahelp-2_0_02\jh2.0\demos\bin"/>
+        <property name="hsviewer.jar" value="${hsviewer.dir}/hsviewer.jar"/>
+        
+        <available property="hsviewer.jar.exists" file="${hsviewer.jar}"/>
+        <fail unless="hsviewer.jar.exists">You must set 'hsviewer.jar' (e.g. in private.properties) to the location of hsviewer.jar from a JavaHelp distribution</fail>
+        
+        <java  classname="sunw.demo.jhdemo.JHLauncher" fork="true">
+            <classpath>
+                <pathelement location="${hsviewer.jar}"/>
+                <pathelement location="${build.classes.dir}"/>
+            </classpath>
+            <arg value="-helpset" />
+            <arg value="build/javahelp/${javahelp.base}/${javahelp.hs}" />
+        </java>
+    </target>
+</project>

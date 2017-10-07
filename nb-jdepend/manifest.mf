@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.huberb.jdepend/1
+OpenIDE-Module-Implementation-Version: 10
+OpenIDE-Module-Layer: org/huberb/jdepend/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/huberb/jdepend/Bundle.properties
+OpenIDE-Module-Requires: org.netbeans.api.javahelp.Help
+

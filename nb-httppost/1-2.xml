@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_09" class="java.beans.XMLDecoder"> 
+ <object class="org.huberb.httppost.model.HttpPostForm"> 
+  <void property="contentType"> 
+   <string>text/xml</string> 
+  </void> 
+  <void property="endDate"> 
+   <long>2</long> 
+  </void> 
+  <void property="followRedirects"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="method"> 
+   <string>POST</string> 
+  </void> 
+  <void property="requestData"> 
+   <string>requestData</string> 
+  </void> 
+  <void property="requestHeaders"> 
+   <object class="java.util.HashMap"> 
+    <void method="put"> 
+     <string>User-Agent</string> 
+     <object class="java.util.ArrayList"> 
+      <void method="add"> 
+       <string>TestBrowser</string> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="responseCode"> 
+   <int>200</int> 
+  </void> 
+  <void property="responseData"> 
+   <string>responseData</string> 
+  </void> 
+  <void property="responseHeaders"> 
+   <object class="java.util.HashMap"> 
+    <void method="put"> 
+     <string>Server</string> 
+     <object class="java.util.ArrayList"> 
+      <void method="add"> 
+       <string>TestServer</string> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="responseMessage"> 
+   <string>OK</string> 
+  </void> 
+  <void property="startDate"> 
+   <long>1</long> 
+  </void> 
+  <void property="url"> 
+   <string>http://some.url/</string> 
+  </void> 
+  <void property="useCache"> 
+   <boolean>true</boolean> 
+  </void> 
+ </object> 
+</java> 

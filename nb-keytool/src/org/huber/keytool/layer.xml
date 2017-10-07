@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="LoadKeyStoreCookieAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/password-16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.LoadKeyStoreCookieAction"/>
+                <attr name="instanceCreate" methodvalue="org.huber.keytool.action.LoadKeyStoreCookieAction.getDefault"/>
+            </file>
+            
+            <file name="OpenKeyStoreTopComponentAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/password-16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.OpenKeyStoreTopComponentAction"/>
+                
+            </file>
+            <file name="NewKeyStoreAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/password-new16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.NewKeyStoreAction"/>
+            </file>
+            <file name="LoadKeyStoreAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/password-open16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.LoadKeyStoreAction"/>
+            </file>
+            <file name="SaveKeyStoreAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/password-save16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.SaveKeyStoreAction"/>
+            </file>
+            <file name="GenKeyAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/password-create16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.GenKeyAction"/>
+            </file>
+            
+            <file name="StorePasswordAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/password-storepasswd16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.StorePasswordAction"/>
+            </file>
+            <file name="DeleteKeyAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/password-delete16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.DeleteKeyAction"/>
+            </file>
+            <file name="CreateCertReqFileAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huber/keytool/images/certreq-new16x16.png"/>
+                <attr name="instanceClass" stringvalue="org.huber.keytool.action.CreateCertReqFileAction"/>                
+            </file>
+            <file name="org-huber-keytool-action-LoadKeyStoreCookieAction.instance"/>
+            <file name="org-huber-keytool-action-LoadKeysStoreNodeAction.instance"/>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="OpenKeyStoreTopComponentAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/OpenKeyStoreTopComponentAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="OptionsDialog">
+        <file name="org-huber-keytool-settings-KeytoolOptionsCategory.instance"/>
+    </folder>
+    <folder name="Services">
+        <file name="KeytoolSettings.settings" url="settings/KeytoolSettings.xml">
+        </file>
+        
+        <folder name="JavaHelp">
+            <file name="keytool-helpset.xml" url="keytool-helpset.xml"/>
+        </folder>
+    </folder>
+    <folder name="Toolbars">
+        <folder name="KeyStore">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huber.keytool.Bundle"/>
+            
+            <file name="OpenKeyStoreTopComponentAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/OpenKeyStoreTopComponentAction.instance"/>
+            </file>
+<!--
+            <file name="NewKeyStoreAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/NewKeyStoreAction.instance"/>
+            </file>
+            <file name="LoadKeyStoreAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/LoadKeyStoreAction.instance"/>
+            </file>            
+            <file name="SaveKeyStoreAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/SaveKeyStoreAction.instance"/>
+            </file>
+            <file name="StorePasswordAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/StorePasswordAction.instance"/>
+            </file>
+            <file name="GenKeyAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/GenKeyAction.instance"/>
+            </file>
+            <file name="DeleteKeyAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/DeleteKeyAction.instance"/>
+            </file>
+            <file name="CreateCertReqFileAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/CreateCertReqFileAction.instance"/>
+            </file>
+                        
+            <attr name="OpenKeyStoreTopComponentAction.shadow/NewKeyStoreAction.shadow" boolvalue="true"/>
+            <attr name="NewKeyStoreAction.shadow/LoadKeyStoreAction.shadow" boolvalue="true"/>
+            <attr name="LoadKeyStoreAction.shadow/SaveKeyStoreAction.shadow" boolvalue="true"/>
+            <attr name="SaveKeyStoreAction.shadow/StorePasswordAction.shadow" boolvalue="true"/>
+            <attr name="StorePasswordAction.shadow/GenKeyAction.shadow" boolvalue="true"/>
+            
+            <attr name="GenKeyAction.shadow/DeleteKeyAction.shadow" boolvalue="true"/>
+            <attr name="DeleteKeyAction.shadow/CreateCertReqFileAction.shadow" boolvalue="true"/>
+-->
+            
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="KeyStoreTopComponent.settings" url="KeyStoreTopComponentSettings.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="KeyStoreTopComponent.wstcref" url="KeyStoreTopComponentWstcref.xml"/>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

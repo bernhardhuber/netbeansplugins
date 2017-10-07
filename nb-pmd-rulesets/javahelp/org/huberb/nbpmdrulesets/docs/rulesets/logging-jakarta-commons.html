@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Jakarta Commons Logging Rules</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Jakarta Commons Logging Rules</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+The Jakarta Commons Logging ruleset contains a collection of rules that find questionable usages of that framework.
+  </pre>
+<ul>
+<li>
+<a href="#UseCorrectExceptionLogging::">UseCorrectExceptionLogging::</a>
+</li>
+<li>
+<a href="#ProperLogger::">ProperLogger::</a>
+</li>
+</ul>
+<a name="UseCorrectExceptionLogging::"></a>
+<h2>Rule UseCorrectExceptionLogging::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+To make sure the full stacktrace is printed out, use the logging statement with 2 arguments: a String and a Throwable.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Use the correct logging statement for logging exceptions</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/logging-jakarta-commons.html#UseCorrectExceptionLogging</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+public class Main {
+ private static final Log _LOG = LogFactory.getLog( Main.class );
+ void bar() {
+  try {
+  } catch( Exception e ) {
+   _LOG.error( e ); //Wrong!
+  } catch( OtherException oe ) {
+   _LOG.error( oe.getMessage(), oe ); //Correct
+  }
+ }
+}
+</pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+			
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+//CatchStatement/Block/BlockStatement/Statement/StatementExpression
+/PrimaryExpression[PrimaryPrefix/Name[starts-with(@Image,
+concat(//ClassOrInterfaceBodyDeclaration/FieldDeclaration
+[Type//ClassOrInterfaceType[@Image='Log']]
+/VariableDeclarator/VariableDeclaratorId/@Image, '.'))]]
+[PrimarySuffix/Arguments[@ArgumentCount='1']]
+[PrimarySuffix/Arguments//Name/@Image = ancestor::CatchStatement/FormalParameter/VariableDeclaratorId/@Image]         </pre>
+</dd>
+</dl>
+		
+<br>
+<a href="#toc">TOC</a><a name="ProperLogger::"></a>
+<h2>Rule ProperLogger::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+ Logger should normally be defined private static final and have the correct class.
+ Private final Log log; is also allowed for rare cases when loggers need to be passed
+ around, but the logger needs to be passed into the constructor.
+ </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Logger should be defined private static final and have the correct class</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.XPathRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/logging-jakarta-commons.html#ProperLogger</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+ 
+ public class Foo {
+ // right
+  private static final Log LOG = LogFactory.getLog(Foo.class);
+ // wrong
+ protected Log LOG = LogFactory.getLog(Testclass.class);
+}
+ 
+ </pre>
+<h3>Properties</h3>
+<div>Following properties are defined:
+            </div>
+             
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">xpath</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">
+     
+//ClassOrInterfaceBodyDeclaration[FieldDeclaration//ClassOrInterfaceType[@Image='Log']
+ and
+ not(FieldDeclaration[@Final='true'][@Static='true'][@Private='true'][//VariableDeclaratorId[@Image=$staticLoggerName]]
+ //ArgumentList//ClassOrInterfaceType/@Image = ancestor::ClassOrInterfaceDeclaration/@Image)
+ and
+ not(FieldDeclaration[@Final='true'][@Private='true'][//VariableDeclaratorId[@Image='log']]
+ [count(//VariableInitializer)=0]
+ [/descendant::StatementExpression[//PrimaryExpression/descendant::*[@Image='log']][count(//AllocationExpression)=0]]
+ )]
+     
+                     </pre>
+</dd>
+</dl>
+             
+<dl class="property">
+<dt>Name</dt>
+<dd class="propertyName">staticLoggerName</dd>
+<dt>Description</dt>
+<dd class="propertyDescription">-</dd>
+<dt>Value</dt>
+<dd>
+<pre class="propertyValue">LOG</pre>
+</dd>
+</dl>
+             
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

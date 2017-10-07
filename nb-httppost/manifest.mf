@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.huberb.httppost/1
+OpenIDE-Module-Implementation-Version: 10
+OpenIDE-Module-Layer: org/huberb/httppost/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/huberb/httppost/Bundle.properties
+OpenIDE-Module-Requires: org.netbeans.api.javahelp.Help
+

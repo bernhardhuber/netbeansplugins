@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="org-huberb-cpd-CpdAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/cpd/resources/cpd.png"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.huberb.cpd.Bundle"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="BuildProject">
+            <file name="org-huberb-cpd-CpdAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/org-huberb-cpd-CpdAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="OptionsDialog">
+        <folder name="Advanced">
+            <file name="org-huberb-cpd-options-CpdAdvancedOption.instance"/>
+        </folder>
+    </folder>
+    <folder name="Services">
+        <file name="CpdSettings.settings" url="options/CpdSettings.xml">
+            <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/jdepend/resources/cpd.png"/>
+        </file>
+        <folder name="JavaHelp">
+            <file name="cpd-helpset.xml" url="cpd-helpset.xml"/>
+        </folder>
+    </folder>
+    <folder name="Editors">
+        <folder name="AnnotationTypes">
+            <file name="org-huberb-cpd-cpd-annotation.xml" url="cpdAnnotation.xml"/>
+        </folder>
+    </folder>
+</filesystem>

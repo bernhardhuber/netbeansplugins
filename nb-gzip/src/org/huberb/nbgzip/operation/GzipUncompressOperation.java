@@ -1,7 +1,7 @@
 /*
  * GzipUncompressOperation.java
  *
- * Created on 27. Jänner 2006, 22:11
+ * Created on 27. JÃ¤nner 2006, 22:11
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.

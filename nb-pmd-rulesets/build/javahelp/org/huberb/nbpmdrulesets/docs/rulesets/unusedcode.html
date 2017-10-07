@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:rs="http://pmd.sf.net/ruleset/1.0.0">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ruleset Unused Code Rules</title>
+<link rel="stylesheet" href="ruleset.css" type="text/css">
+<link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<a name="toc"></a>
+<h1>Ruleset Unused Code Rules</h1>
+<div>
+<a href="index.html">Index</a>
+</div>
+<div>
+                    Language -</div>
+<h2>Description</h2>
+<pre class="rulesetDescription">
+The Unused Code Ruleset contains a collection of rules that find unused code.
+  </pre>
+<ul>
+<li>
+<a href="#UnusedPrivateField::">UnusedPrivateField::</a>
+</li>
+<li>
+<a href="#UnusedLocalVariable::">UnusedLocalVariable::</a>
+</li>
+<li>
+<a href="#UnusedPrivateMethod::">UnusedPrivateMethod::</a>
+</li>
+<li>
+<a href="#UnusedFormalParameter::">UnusedFormalParameter::</a>
+</li>
+</ul>
+<a name="UnusedPrivateField::"></a>
+<h2>Rule UnusedPrivateField::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Detects when a private field is declared and/or assigned a value, but not used.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid unused private fields such as ''{0}''.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.UnusedPrivateFieldRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Something {
+  private static int FOO = 2; // Unused
+  private int i = 5; // Unused
+  private int j = 6;
+  public int addOne() {
+    return j++;
+  }
+}
+
+    </pre>
+<br>
+<a href="#toc">TOC</a><a name="UnusedLocalVariable::"></a>
+<h2>Rule UnusedLocalVariable::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Detects when a local variable is declared and/or assigned, but not used.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid unused local variables such as ''{0}''.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.UnusedLocalVariableRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ public void doSomething() {
+  int i = 5; // Unused
+ }
+}
+
+    </pre>
+<br>
+<a href="#toc">TOC</a><a name="UnusedPrivateMethod::"></a>
+<h2>Rule UnusedPrivateMethod::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Unused Private Method detects when a private method is declared but is unused.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid unused private methods such as ''{0}''.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.UnusedPrivateMethodRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateMethod</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Something {
+ private void foo() {} // unused
+}
+
+    </pre>
+<br>
+<a href="#toc">TOC</a><a name="UnusedFormalParameter::"></a>
+<h2>Rule UnusedFormalParameter::</h2>
+<a href="#toc">TOC</a>
+<h3>Description</h3>
+<pre class="ruleDescription">
+Avoid passing parameters to methods or constructors and then not using those parameters.
+    </pre>
+<dl class="rule">
+<dt>Message</dt>
+<dd>Avoid unused {0} parameters such as ''{1}''.</dd>
+<dt>Class</dt>
+<dd>net.sourceforge.pmd.rules.UnusedFormalParameterRule</dd>
+<dt>Reference</dt>
+<dd>-</dd>
+<dt>ExternalInfoUrl</dt>
+<dd>http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter</dd>
+<dt>TypeResolution</dt>
+<dd>-</dd>
+<dt>Priority</dt>
+<dd>3</dd>
+</dl>
+<h3>Example</h3>
+<div>Example code snippet of this rule.
+            </div>
+<pre class="example">
+
+public class Foo {
+ private void bar(String howdy) {
+  // howdy is not used
+ }
+
+    </pre>
+<br>
+<a href="#toc">TOC</a>
+</body>
+</html>

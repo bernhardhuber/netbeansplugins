@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+        
+        <title>About nb-cpd</title><link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+    <body>
+        <h2>About nb-cpd</h2>
+        <p>
+            This module integrates PMD's Copy/Paste Detector (CPD) tool.
+        </p>
+        <p>
+            CPD can find duplicate code in your project. 
+            Read more about CPD at the PMD's homepage:
+        </p>
+        <p>
+            <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+                <param name="content" value="http://pmd.sourceforge.net/">
+                <param name="text" value="&lt;html&gt;&lt;u&gt;PMD&lt;/u&gt;&lt;/html&gt;">
+                <param name="textFontSize" value="medium">
+                <param name="textColor" value="blue">
+            </object>
+            <br>
+            <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+                <param name="content" value="http://pmd.sourceforge.net/cpd.html">
+                <param name="text" value="&lt;html&gt;&lt;u&gt;PMD's Copy/Paste Detector&lt;/u&gt;&lt;/html&gt;">
+                <param name="textFontSize" value="medium">
+                <param name="textColor" value="blue">
+            </object>
+        </p>
+        
+        <h2>Usage</h2>
+        <p>
+            For code duplicates do the following steps:
+        </p>
+        <ul>
+            <li>Select your files, or your source directory in the project, files, or favorites explorer window
+            </li>
+            <li>Select <b>Build|PMD's Copy/Paste Detector</b> <img src="nbres:/org/huberb/cpd/resources/cpd.png">
+            </li>
+            <li>In the output tab <b>CPD Result</b> the result of running CPD is shown.
+            </li>
+        </ul>
+        <p>
+            For text, and xml output formats the lines specifying files having code duplication
+            are hyperlinked. Clicking the line opens the file.
+        </p>
+        <p>
+            In output window you can navigate to the next file by <b>Navigate|Next Error (F12)</b>, 
+            and to the previous file by <b>Navigate|Previous Error (Shift+F12)</b>.
+        </p>
+        <p>
+            The CPD results are shown in the output window:
+        </p>            
+        <img src="cpd-output.gif" alt="CPD Ouput Tab">
+        <p>
+            Selecting a line/file reference shows the source file, having an annotation, like:
+        </p>
+        <img src="cpd-annotation.gif" alt="CPD Editor Annotation">
+        
+        <h2>Options</h2>
+        <p>
+            You can set following options
+        </p>
+        <ul>
+            <li>Scan Directory Recursively - Enable scanning of subdirectories.</li>
+            <li>Minimal Token Count - Minimal count of tokens that must match for detecting code duplication.
+            </li>
+            <li>Language - Process only files of specific code language</li>
+            <li>Extension - For the language selection 'by_extension" specify the file extension</li>
+            <li>Ignore Identifiers, Ignore Literals - For the java language CPD
+                allows you to ignore identifiers, and literals when doing the processing.        
+            </li>
+        </ul>
+        <ul>
+            <li>Renderer Output - select the renderer output format.
+            </li>
+        </ul>
+        <p>
+            You can set these options via 
+            <b>Tools|Options|Miscellaneous|PMD's Copy/Paste Detector</b>.
+        </p>
+        <p>
+            The <b>CPD Options</b> dialog window:
+        </p>
+        <img src="cpd-options.gif" alt="CPD Options Dialog">
+        
+        <!--
+Tip: to create a link which will open in an external web browser, try:
+<object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+    <param name="content" value="http://www.netbeans.org/">
+    <param name="text" value="<html><u>http://www.netbeans.org/</u></html>">
+    <param name="textFontSize" value="medium">
+    <param name="textColor" value="blue">
+</object>
+To create a link to a help set from another module, you need to know the code name base and path, e.g.:
+<a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a>
+(This link will behave sanely if that module is disabled or missing.)
+        -->
+    </body>
+</html>

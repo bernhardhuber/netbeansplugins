@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title>About httppost</title>
+        <link rel="stylesheet" 
+        href="nbdocs:/org/netbeans/modules/usersguide/ide.css" 
+        type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h2>About httppost</h2>
+        <p>
+            This module helps you posting ad-hoc http-requests.
+        </p>
+        <img src="images/topcomponent-1.gif">
+
+        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <h2>Usage</h2>
+        <p>
+            The most simple way to use the http-post module do the following steps:
+        </p>
+        <ol>
+            <li>Open the window HttpPost, using <b>Windows|HttpPost</b>.
+            </li>
+            <li>Enter the URL details into form of the http-post window.
+            </li>
+            <li>Press button <b>HttpPost</b> in the toolbar of the http-post window.
+            </li>
+        </ol>
+        <p>
+            Pressing <b>HttpPost</b> sends the URL in the http-post window.
+            The response section of the http-post window displays the response information.<br>
+            Moreover the tree view shows the sent URL in the folder <b>Current</b>.
+        </p>
+        <p>
+            You can specify details of the request data by clicking the tap panel separator:
+        </p>
+        <img src="images/topcomponent-2.gif">
+
+        <p>
+            You can specify the request headers by clicking the tap panel separator:
+        </p>
+        <img src="images/topcomponent-3.gif">
+
+
+        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <h2>Advanced Usage</h2>
+        <p>
+            The tree view of the http-post window displays two folder nodes:
+        </p>
+        <ul>
+            <li><b>Current</b></li>
+            <li><b>Saved</b></li>
+        </ul>
+        <p>
+            The folder <b>Current</b> displays all URLs posted during a user session. 
+            Nodes in this folder offers following node actions:
+        </p>
+        <dl>
+            <dt>Edit</dt>
+            <dd>Load the node information into the form of the http-post window.</dd>
+            <dt>Delete</dt>
+            <dd>Remove the node from this folder.</dd>
+            <dt>Save</dt>
+            <dd>Move the node to the folder <b>Saved</b>.</dd>
+            <dt>Properties</dt>
+            <dd>Displays a dialog of the URL properties</dd>
+        </dl>
+        <p>
+            The folder <b>Saved</b> displays all URLs saved to the filesystem. During
+            startup saved URLs are loaded into this folder. Nodes in this folder
+            offers following node actions:
+        </p>
+        <dl>
+            <dt>Edit</dt>
+            <dd>Load the node information into the form of the http-post window</dd>
+            <dt>Delete</dt>
+            <dd>Remove the node from this folder, and the filesystem</dd>
+            <dt>Properties</dt>
+            <dd>Displays a dialog of the URL properties</dd>
+        </dl>
+        <p>
+            Moreover the properties of the currently selected node 
+            are shown in properties window.
+        </p>
+        <img src="images/properties-1.gif">
+
+        
+        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <h2>Details</h2>
+        <p>
+            Persisted URLs are stored in the filesystem at location
+            <code>{nbuser.dir}/config/httppost</code>. 
+            <br>
+            The name of the files are calculated from
+            the start-date, and end-date of the URL post.
+            <br>
+            The data format of the files are the format as defined by 
+            <code>java.beans.XMLEncoder</code>, and 
+            <code>java.beans.XMLDecoder</code>.
+        </p>
+        <!-- Tip: to create a link which will open in an external web browser, try: <object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer"> <param name="content" value="http://www.netbeans.org/"> <param name="text" value="<html><u>http://www.netbeans.org/</u></html>"> <param name="textFontSize" value="medium"> <param name="textColor" value="blue"> </object> To create a link to a help set from another module, you need to know the code name base and path, e.g.: <a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a> (This link will behave sanely if that module is disabled or missing.) -->
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.huberb.cpd/1">
+<module_version install_time="1180775109335" last="true" origin="installer" specification_version="1.0.7">
+<file crc="3315787074" name="config/Modules/org-huberb-cpd.xml"/>
+<file crc="1109004575" name="modules/docs/org-huberb-cpd.jar"/>
+<file crc="3722921384" name="modules/ext/backport-util-concurrent.jar"/>
+<file crc="2941498589" name="modules/ext/pmd-3.9.jar"/>
+<file crc="501170625" name="modules/org-huberb-cpd.jar"/>
+</module_version>
+</module>

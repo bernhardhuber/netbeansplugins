@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : JDependSettings.xml
+    Created on : 13. September 2006, 21:23
+    Author     : HuberB1
+    Description:
+        Purpose of the document follows.
+-->
+
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+    <module name="org.huberb.jdepend"/>
+    <instanceof class="org.openide.util.SharedClassObject"/>
+    <instanceof class="org.openide.options.SystemOption"/>
+    <instanceof class="org.huberb.jdepend.options.JDependSettings"/>
+    <instance class="org.huberb.jdepend.options.JDependSettings" method="getDefault"/>
+</settings>

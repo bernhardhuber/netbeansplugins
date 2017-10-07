@@ -1,7 +1,7 @@
 /*
  * DeleteOperation.java
  *
- * Created on 16. Jänner 2006, 21:27
+ * Created on 16. JÃ¤nner 2006, 21:27
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
