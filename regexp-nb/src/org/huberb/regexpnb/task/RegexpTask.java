@@ -24,7 +24,7 @@ import org.openide.util.NbBundle;
  *
  * @author berni3
  */
-class RegexpTask implements IRegexpTask {
+public class RegexpTask implements IRegexpTask {
 
     @Override
     public RegexpTaskResponse doProcess(RegexpTaskRequest req) {
@@ -36,7 +36,10 @@ class RegexpTask implements IRegexpTask {
 
         final boolean matchesResult = req.getF().apply(matcher);
         StringBuilder sb = buildResult(matcher, matchesResult);
-        RegexpTaskResponse resp = new RegexpTaskResponse(sb.toString());
+        RegexpTaskResponse resp = new RegexpTaskResponse(
+                matchesResult,
+                matcher, pattern,
+                sb.toString());
 
         return resp;
     }

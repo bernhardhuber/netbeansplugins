@@ -15,8 +15,6 @@
  */
 package org.huberb.regexpnb.task;
 
-import org.huberb.regexpnb.task.IRegexpTask;
-import org.huberb.regexpnb.task.RegexpTask;
 import java.util.regex.Matcher;
 import org.huberb.regexpnb.task.IRegexpTask.RegexpTaskRequest;
 import org.junit.After;
@@ -65,7 +63,12 @@ public class RegexpTaskTest {
         RegexpTask instance = new RegexpTask();
         IRegexpTask.RegexpTaskResponse result = instance.doProcess(req);
         assertNotNull(result);
-        assertEquals("", result.getResult());
+        assertEquals(true, result.isMatches());
+        assertEquals("matchesResult: true, hasAnchoringBounds: true, hasTransparentBounds: false\n"
+                + "groupSummary: brown, groupCount: 0\n"
+                + "groupDetail 0: brown\n", result.getSummary());
+        assertEquals(4, result.getMatcher().start());
+        assertEquals(9, result.getMatcher().end());
     }
 
     /**
@@ -82,7 +85,12 @@ public class RegexpTaskTest {
         RegexpTask instance = new RegexpTask();
         IRegexpTask.RegexpTaskResponse result = instance.doProcess(req);
         assertNotNull(result);
-        assertEquals("", result.getResult());
+        assertEquals(true, result.isMatches());
+        assertEquals("matchesResult: true, hasAnchoringBounds: true, hasTransparentBounds: false\n"
+                + "groupSummary: brown, groupCount: 0\n"
+                + "groupDetail 0: brown\n", result.getSummary());
+        assertEquals(4, result.getMatcher().start());
+        assertEquals(9, result.getMatcher().end());
     }
 
     /**
@@ -99,7 +107,8 @@ public class RegexpTaskTest {
         RegexpTask instance = new RegexpTask();
         IRegexpTask.RegexpTaskResponse result = instance.doProcess(req);
         assertNotNull(result);
-        assertEquals("", result.getResult());
+        assertEquals(false, result.isMatches());
+        assertEquals("matchesResult: false, hasAnchoringBounds: true, hasTransparentBounds: false\n", result.getSummary());
     }
 
 }

@@ -7,6 +7,8 @@ package org.huberb.regexpnb.ui;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.huberb.regexpnb.task.IRegexpTask.RegexpTaskResponse;
+import org.huberb.regexpnb.task.RegexpTask;
 import org.openide.ErrorManager;
 import org.openide.util.NbBundle;
 
@@ -162,13 +164,13 @@ public class RegexpPanel extends javax.swing.JPanel {
         try {
             final String patternAsString = this.regularExpressionPattern.getText();
             final String inputAsString = this.inputStringTextArea.getText();
+            final int flags = this.buildFlagsFromCheckBoxes();
 
-            final Pattern pattern = Pattern.compile(patternAsString, this.buildFlagsFromCheckBoxes());
-            Matcher matcher = pattern.matcher(inputAsString);
-            final boolean matchesResult = matcher.find();
-
-            StringBuffer sb = buildResult(matcher, matchesResult);
-            this.resultTextArea.setText(sb.toString());
+            final RegexpTask regexpTask = new RegexpTask();
+            final RegexpTaskResponse res = regexpTask.doProcess(
+                    regexpTask.createFindRegexpTaskRequest(patternAsString, inputAsString, flags)
+            );
+            this.resultTextArea.setText(res.getSummary());
         } catch (Exception e) {
             ErrorManager.getDefault().log(ErrorManager.WARNING, "Cannot run find action");
         }
@@ -178,13 +180,13 @@ public class RegexpPanel extends javax.swing.JPanel {
         try {
             final String patternAsString = this.regularExpressionPattern.getText();
             final String inputAsString = this.inputStringTextArea.getText();
+            final int flags = this.buildFlagsFromCheckBoxes();
 
-            final Pattern pattern = Pattern.compile(patternAsString, this.buildFlagsFromCheckBoxes());
-            Matcher matcher = pattern.matcher(inputAsString);
-            final boolean matchesResult = matcher.matches();
-
-            StringBuffer sb = buildResult(matcher, matchesResult);
-            this.resultTextArea.setText(sb.toString());
+            final RegexpTask regexpTask = new RegexpTask();
+            final RegexpTaskResponse res = regexpTask.doProcess(
+                    regexpTask.creataMatchesRegexpTaskRequest(patternAsString, inputAsString, flags)
+            );
+            this.resultTextArea.setText(res.getSummary());
         } catch (Exception e) {
             ErrorManager.getDefault().log(ErrorManager.WARNING, "Cannot run match action");
         }
@@ -193,7 +195,7 @@ public class RegexpPanel extends javax.swing.JPanel {
     /**
      * Build Pattern flags from checkboxes
      *
-     * @return int a value or by the <code>Pattern</code> flags, like
+     * @return int a value or-ed by the <code>Pattern</code> flags, like
      * <code>Pattern.CASE_INSENSITIVE</code>
      */
     private int buildFlagsFromCheckBoxes() {

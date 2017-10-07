@@ -17,12 +17,13 @@ package org.huberb.regexpnb.task;
 
 import java.util.function.Function;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
  * @author berni3
  */
-interface IRegexpTask {
+public interface IRegexpTask {
 
     public static class RegexpTaskRequest {
 
@@ -58,17 +59,50 @@ interface IRegexpTask {
 
     public static class RegexpTaskResponse {
 
-        String result;
+        private final boolean matches;
+        private final Pattern pattern;
+        private final Matcher matcher;
+        private final String summary;
 
-        public RegexpTaskResponse(String result) {
-            this.result = result;
+        RegexpTaskResponse(boolean matches, Matcher matcher, Pattern pattern, String summary) {
+            this.matches = matches;
+            this.matcher = matcher;
+            this.pattern = pattern;
+            this.summary = summary;
         }
 
-        public String getResult() {
-            return result;
+        public boolean isMatches() {
+            return matches;
         }
+
+        public Pattern getPattern() {
+            return pattern;
+        }
+
+        public Matcher getMatcher() {
+            return matcher;
+        }
+
+        public String getSummary() {
+            return summary;
+        }
+
     }
 
     RegexpTaskResponse doProcess(RegexpTaskRequest req);
+
+    default RegexpTaskRequest createFindRegexpTaskRequest(String pattern, String inputAsString, int flags) {
+        RegexpTaskRequest req = new RegexpTaskRequest(
+                pattern, inputAsString, flags, (Matcher m) -> m.find()
+        );
+        return req;
+    }
+
+    default RegexpTaskRequest creataMatchesRegexpTaskRequest(String pattern, String inputAsString, int flags) {
+        RegexpTaskRequest req = new RegexpTaskRequest(
+                pattern, inputAsString, flags, (Matcher m) -> m.matches()
+        );
+        return req;
+    }
 
 }
