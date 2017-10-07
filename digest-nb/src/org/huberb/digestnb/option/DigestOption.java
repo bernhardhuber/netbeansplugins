@@ -26,6 +26,7 @@ public class DigestOption extends SystemOption {
     public DigestOption() {
     }
     
+    @Override
     public String displayName() {
         return NbBundle.getMessage(DigestOption.class, "CTL_DigestOption");
     }
@@ -55,11 +56,13 @@ public class DigestOption extends SystemOption {
     
     private final static String DEFAULT_DIGEST_MESSAGE_FORMAT = "secret {0} [{1} (algorigthm), {2} (encoding)] : {3}";
     
+    @Override
     protected void initialize() {
         super.initialize();
         putProperty( PROPERTY_DIGEST_FORMAT_MESSAGE, DEFAULT_DIGEST_MESSAGE_FORMAT );
     }
 
+    @Override
     public HelpCtx getHelpCtx() {
         final HelpCtx retValue = new HelpCtx("about_digestnb");
         return retValue;

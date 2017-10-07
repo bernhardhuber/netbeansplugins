@@ -41,6 +41,7 @@ public class LocaleOption extends SystemOption {
      *
      * @return String the display name
      */
+    @Override
     public String displayName() {
         return NbBundle.getMessage(LocaleOption.class, "CTL_LocaleOption");
     }
@@ -140,6 +141,7 @@ public class LocaleOption extends SystemOption {
     /**
      * initialize this option
      */
+    @Override
     protected void initialize() {
         super.initialize();
         putProperty( PROPERTY_DATE_PATTERN_LIST, DEFAULT_DATE_PATTERNS, false );
@@ -150,6 +152,7 @@ public class LocaleOption extends SystemOption {
         putProperty( PROPERTY_MESSAGE_ARG_NUMBER_PATTERN, DEFAULT_MESSAGE_ARG_NUMBER_PATTERN, false );
     }
     
+    @Override
     public HelpCtx getHelpCtx() {
         HelpCtx retValue = new HelpCtx("org.huberb.localenb.about");
         return retValue;

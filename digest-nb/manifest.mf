@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 OpenIDE-Module: org.huberb.digestnb/1
-OpenIDE-Module-Implementation-Version: 10
+OpenIDE-Module-Implementation-Version: 11
 OpenIDE-Module-Layer: org/huberb/digestnb/layer.xml
 OpenIDE-Module-Localizing-Bundle: org/huberb/digestnb/Bundle.properties
 
