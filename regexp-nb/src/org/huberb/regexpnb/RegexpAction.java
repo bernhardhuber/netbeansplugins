@@ -17,6 +17,7 @@ public class RegexpAction extends AbstractAction {
 //        putValue(SMALL_ICON, new ImageIcon(ImageUtilities.loadImage("SET/PATH/TO/ICON/HERE", true)));
     }
 
+    @Override
     public void actionPerformed(ActionEvent evt) {
         TopComponent win = WindowManager.getDefault().findTopComponent("RegexpTopComponent");
         if (win == null) {
