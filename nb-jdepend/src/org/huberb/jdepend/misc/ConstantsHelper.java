@@ -25,7 +25,7 @@ public class ConstantsHelper {
     }
     
     //---
-    private static HelpCtx helpCtx = new HelpCtx("org.huberb.jdepend.about");
+    private static final HelpCtx helpCtx = new HelpCtx("org.huberb.jdepend.about");
     public static HelpCtx getHelpCtx() {
         return helpCtx;
     }

@@ -14,9 +14,9 @@ import org.netbeans.api.progress.ProgressHandleFactory;
  * </ul>
  */
 public class ProgressHandleHelper {
-    private ProgressHandle ph;
+    private final ProgressHandle ph;
     private int progressCount;
-    private int totalNumberOfProgressSteps;
+    private final int totalNumberOfProgressSteps;
     
     /**
      * Create a new instance

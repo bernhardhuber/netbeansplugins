@@ -6,7 +6,6 @@
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
-
 package org.huberb.jdependlib;
 
 import java.io.IOException;
@@ -29,13 +28,12 @@ import jdepend.framework.ParserListener;
  * The <code>JDepend</code> class analyzes directories of Java class files,
  * generates metrics for each Java package, and reports the metrics in a textual
  * format.
- * 
+ *
  * @author <b>Mike Clark</b>
  * @author Clarkware Consulting, Inc.
  * @author HuberB1
  */
 public class JDependProcessor {
-    
 
     private jdepend.framework.JDepend analyzer;
 
@@ -44,15 +42,17 @@ public class JDependProcessor {
     protected NumberFormat formatter;
 
     /**
-     * Constructs a <code>JDependProcessor</code> instance using standard output.
+     * Constructs a <code>JDependProcessor</code> instance using standard
+     * output.
      */
     public JDependProcessor() {
         this(new PrintWriter(System.out));
     }
 
     /**
-     * Constructs a <code>JDependProcessor</code> instance with the specified writer.
-     * 
+     * Constructs a <code>JDependProcessor</code> instance with the specified
+     * writer.
+     *
      * @param writer Writer.
      */
     public JDependProcessor(PrintWriter writer) {
@@ -67,15 +67,14 @@ public class JDependProcessor {
     public JDepend getAnalyzer() {
         return this.analyzer;
     }
-    
+
     public void addParseListener(ParserListener pl) {
         this.analyzer.addParseListener(pl);
     }
-    
-    
+
     /**
      * Sets the output writer.
-     * 
+     *
      * @param writer Output writer.
      */
     public void setWriter(PrintWriter writer) {
@@ -88,7 +87,7 @@ public class JDependProcessor {
 
     /**
      * Sets the package filter.
-     * 
+     *
      * @param filter Package filter.
      */
     public void setFilter(PackageFilter filter) {
@@ -101,11 +100,11 @@ public class JDependProcessor {
     public void setComponents(String components) {
         analyzer.setComponents(components);
     }
-    
+
     /**
      * Adds the specified directory name to the collection of directories to be
      * analyzed.
-     * 
+     *
      * @param name Directory name.
      * @throws IOException If the directory does not exist.
      */
@@ -115,9 +114,9 @@ public class JDependProcessor {
 
     /**
      * Determines whether inner classes are analyzed.
-     * 
+     *
      * @param b <code>true</code> to analyze inner classes; <code>false</code>
-     *            otherwise.
+     * otherwise.
      */
     public void analyzeInnerClasses(boolean b) {
         analyzer.analyzeInnerClasses(b);
@@ -343,11 +342,11 @@ public class JDependProcessor {
         getWriter()
                 .println(
                         tab() + "Concrete Classes: "
-                                + jPackage.getConcreteClassCount());
+                        + jPackage.getConcreteClassCount());
         getWriter()
                 .println(
                         tab() + "Abstract Classes: "
-                                + jPackage.getAbstractClassCount());
+                        + jPackage.getAbstractClassCount());
         getWriter().println("");
         getWriter().println(tab() + "Ca: " + jPackage.afferentCoupling());
         getWriter().println(tab() + "Ce: " + jPackage.efferentCoupling());
@@ -485,4 +484,3 @@ public class JDependProcessor {
     }
 
 }
-

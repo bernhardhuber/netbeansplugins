@@ -14,7 +14,6 @@ import java.util.Enumeration;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import org.huberb.jdepend.misc.ConstantsHelper;
-import org.huberb.jdepend.options.LabelFileObjectBean;
 import org.openide.filesystems.FileObject;
 import org.openide.filesystems.FileSystem;
 import org.openide.filesystems.Repository;
@@ -44,7 +43,7 @@ public class XsltFileObjectComboBoxModel extends DefaultComboBoxModel {
     }
     
     protected LabelFileObjectBean[] populateModel() {
-        final List<LabelFileObjectBean> foList = new ArrayList<LabelFileObjectBean>();
+        final List<LabelFileObjectBean> foList = new ArrayList<>();
         final String FOLDER_NAME = ConstantsHelper.getXsltFolderName();
         
         final Repository repo = Repository.getDefault();

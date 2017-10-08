@@ -16,6 +16,7 @@ import org.openide.util.actions.CookieAction;
 public final class CpdAction extends CookieAction {
     private final static String ICON_PATH = "org/huberb/cpd/resources/cpd.png";
     
+    @Override
     protected void performAction(Node[] activatedNodes) {
         if(activatedNodes == null || activatedNodes.length == 0) {
             return ;
@@ -35,6 +36,7 @@ public final class CpdAction extends CookieAction {
      */
     private Runnable createLaunchJarAnalyzerTask(final Node[] activatedNodes) {
         final Runnable task = new Runnable() {
+            @Override
             public void run() {
                 final CpdTask cpdTask = new CpdTask();
                 
@@ -54,14 +56,17 @@ public final class CpdAction extends CookieAction {
         return task;
     }
     
+    @Override
     protected int mode() {
         return CookieAction.MODE_ALL;
     }
     
+    @Override
     public String getName() {
         return NbBundle.getMessage(CpdAction.class, "CTL_CpdAction");
     }
     
+    @Override
     protected Class[] cookieClasses() {
         return new Class[]{
             DataFolder.class, 
@@ -69,21 +74,25 @@ public final class CpdAction extends CookieAction {
         };
     }
     
+    @Override
     protected void initialize() {
         super.initialize();
         // see org.openide.util.actions.SystemAction.iconResource() javadoc for more details
         // putValue("noIconInMenu", Boolean.TRUE);
     }
     
+    @Override
     public HelpCtx getHelpCtx() {
         HelpCtx helpCtx = ConstantsHelper.getHelpCtx();
         return helpCtx;
     }
     
+    @Override
     protected boolean asynchronous() {
         return false;
     }
     
+    @Override
     protected String iconResource() {
         return ICON_PATH;
     }

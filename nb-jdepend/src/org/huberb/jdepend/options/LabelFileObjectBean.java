@@ -70,10 +70,12 @@ public class LabelFileObjectBean implements Serializable {
     }
 
     //---
+    @Override
     public int hashCode() {
         return this.getFileObject().hashCode();
     }
     
+    @Override
     public boolean equals(Object o) {
         if (o == this) {
             return true;

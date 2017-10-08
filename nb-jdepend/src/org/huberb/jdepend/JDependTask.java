@@ -95,7 +95,7 @@ public class JDependTask {
             fp.addPackage( filterPackage );
         }
         // (2) analyze inner classes flag
-        final boolean analyzeInnerClasses = settings.getAnalyzerInnerClasses().booleanValue();
+        final boolean analyzeInnerClasses = settings.getAnalyzerInnerClasses();
         
         // (3) Create a print writer
         final PrintWriter pw = new PrintWriter(sw);
@@ -122,6 +122,7 @@ public class JDependTask {
             this.phh = phh;
         }
         
+        @Override
         public void onParsedJavaClass(final JavaClass javaClass) {
             final String className = javaClass.getName();            
             phh.progress( className );

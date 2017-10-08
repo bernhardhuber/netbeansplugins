@@ -41,7 +41,7 @@ public class TransformHelper {
     /**
      * Transform xml content to html
      *
-     * @param sw the xml content
+     * @param result the xml content
      * @return String the transformed html content
      */
     public String transformResult(String result) {

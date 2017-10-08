@@ -80,33 +80,40 @@ public class JDependProcessorXML2 extends JDependProcessor {
         }
     }
     
+    @Override
     protected void printHeader() {
         xmlEmitter.startDocument();
         xmlEmitter.startElement("JDepend");
     }
     
+    @Override
     protected void printFooter() {
         xmlEmitter.endElement("JDepend");
         xmlEmitter.endDocument();
     }
     
+    @Override
     protected void printPackagesHeader() {
         xmlEmitter.startElement( "Packages");
     }
     
+    @Override
     protected void printPackagesFooter() {
         xmlEmitter.endElement("Packages");
     }
     
+    @Override
     protected void printPackageHeader(JavaPackage jPackage) {
         xmlEmitter.addAttribute( "name", jPackage.getName() );
         xmlEmitter.startElement("Package");
     }
     
+    @Override
     protected void printPackageFooter(JavaPackage jPackage) {
         xmlEmitter.endElement("Package");
     }
     
+    @Override
     protected void printNoStats() {
         final String noStatsMessage = NbBundle.getMessage(JDependProcessorXML2.class,"JDP_NON_STATS");
         xmlEmitter.startElement("error");
@@ -114,6 +121,7 @@ public class JDependProcessorXML2 extends JDependProcessor {
         xmlEmitter.endElement( "error" );
     }
     
+    @Override
     protected void printStatistics(JavaPackage jPackage) {
         xmlEmitter.startElement( "Stats");
         
@@ -130,6 +138,7 @@ public class JDependProcessorXML2 extends JDependProcessor {
         xmlEmitter.endElement("Stats");
     }
     
+    @Override
     protected void printClassName(JavaClass jClass) {
         xmlEmitter.addAttribute( "sourceFile", jClass.getSourceFile() );
         xmlEmitter.startElement( "Class" );
@@ -137,79 +146,97 @@ public class JDependProcessorXML2 extends JDependProcessor {
         xmlEmitter.endElement( "Class");
     }
     
+    @Override
     protected void printPackageName(JavaPackage jPackage) {
         xmlEmitter.startElement("Package" );
         xmlEmitter.characters( jPackage.getName() );
         xmlEmitter.endElement("Package");
     }
     
+    @Override
     protected void printAbstractClassesHeader() {
         xmlEmitter.startElement( "AbstractClasses");
     }
     
+    @Override
     protected void printAbstractClassesFooter() {
         xmlEmitter.endElement("AbstractClasses");
     }
     
+    @Override
     protected void printConcreteClassesHeader() {
         xmlEmitter.startElement( "ConcreteClasses");
     }
     
+    @Override
     protected void printConcreteClassesFooter() {
         xmlEmitter.endElement("ConcreteClasses");
     }
     
+    @Override
     protected void printEfferentsHeader() {
         xmlEmitter.startElement( "DependsUpon");
     }
     
+    @Override
     protected void printEfferentsFooter() {
         xmlEmitter.endElement("DependsUpon");
     }
     
+    @Override
     protected void printEfferentsError() {
         // do nothing
     }
     
+    @Override
     protected void printAfferentsHeader() {
         xmlEmitter.startElement( "UsedBy");
     }
     
+    @Override
     protected void printAfferentsFooter() {
         xmlEmitter.endElement( "UsedBy");
     }
     
+    @Override
     protected void printAfferentsError() {
         // do nothing
     }
     
+    @Override
     protected void printCyclesHeader() {
         xmlEmitter.startElement( "Cycles");
     }
     
+    @Override
     protected void printCyclesFooter() {
         xmlEmitter.endElement( "Cycles");
     }
     
+    @Override
     protected void printCycleHeader(JavaPackage jPackage) {
         xmlEmitter.addAttribute( "Name", jPackage.getName() );
         xmlEmitter.startElement( "Package" );
     }
     
+    @Override
     protected void printCycleFooter() {
         xmlEmitter.endElement( "Package");
     }
     
+    @Override
     protected void printCycleTarget(JavaPackage jPackage) {
         printCycleContributor(jPackage);
     }
     
+    @Override
     protected void printCycleContributor(JavaPackage jPackage) {
         xmlEmitter.startElement( "Package" );
         xmlEmitter.characters( jPackage.getName() );
         xmlEmitter.endElement( "Package" );
     }
     
+    @Override
     protected void printSummary(Collection packages) {
         // do nothing
     }
@@ -225,7 +252,7 @@ public class JDependProcessorXML2 extends JDependProcessor {
     /**
      * Wrap SAXException, and other Throwable instances as 
      * RuntimeException.
-     * <p>This is neccessary for not-breaking the JDependProcessor method contract
+     * <p>This is necessary for not-breaking the JDependProcessor method contract
      */
     public static class XmlEmitterException extends RuntimeException {
         public XmlEmitterException(Throwable t) {
@@ -237,8 +264,8 @@ public class JDependProcessorXML2 extends JDependProcessor {
      * An XmlEmitter using a TransformHandler for emitting XML content
      */
     static class XmlEmitter {
-        private TransformerHandler hd ;
-        private AttributesImpl atts = new AttributesImpl();
+        private final TransformerHandler hd ;
+        private final AttributesImpl atts = new AttributesImpl();
         
         public XmlEmitter( TransformerHandler hd ) {
             this.hd = hd;

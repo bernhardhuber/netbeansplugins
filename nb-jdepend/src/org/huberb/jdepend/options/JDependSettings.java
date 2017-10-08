@@ -32,6 +32,7 @@ public class JDependSettings extends SystemOption {
     public JDependSettings() {
     }
     
+    @Override
     public String displayName() {
         return NbBundle.getMessage( JDependSettings.class, "AdvancedOption_DisplayName");
     }
@@ -41,6 +42,7 @@ public class JDependSettings extends SystemOption {
      * <p>This method need <em>not</em> be called explicitly; it will be called once
      * the first time a given shared class is used (not for each instance!).
      */
+    @Override
     protected void initialize() {
         super.initialize();
         

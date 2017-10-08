@@ -42,7 +42,7 @@ public class ProjectHelper {
      *   e.g. <code>build/classes</code>
      */
     public List<String> findClassDirectories( Project project ) {
-        List<String> classDirectories = new ArrayList<String>();
+        List<String> classDirectories = new ArrayList<>();
         
         final ClassPathProvider cpp = (ClassPathProvider)project.getLookup().lookup(ClassPathProvider.class);
         final Sources s = (Sources)project.getLookup().lookup(Sources.class);
