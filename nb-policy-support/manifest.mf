@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.netbeans.modules.policysupport/1
+OpenIDE-Module-Implementation-Version: 2
+OpenIDE-Module-Layer: org/netbeans/modules/policysupport/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/netbeans/modules/policysupport/Bundle.properties
+OpenIDE-Module-Install: org/netbeans/modules/policysupport/RestoreColoring.class
+OpenIDE-Module-Requires: org.netbeans.api.javahelp.Help
+
+Name: org/netbeans/modules/policysupport/dataobject/PolicyDataLoader.class
+OpenIDE-Module-Class: Loader
+

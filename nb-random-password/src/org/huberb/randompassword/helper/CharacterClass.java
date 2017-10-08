@@ -19,7 +19,7 @@ public enum CharacterClass {
     DIGITS("0123456789"),
     SPECIAL("!$%&/()=?,.-_:;<>#+*");
     
-    private String characters;
+    private final String characters;
     
     CharacterClass( String newCharacters ) {
         this.characters = newCharacters;

@@ -8,7 +8,6 @@ package org.huberb.randompassword.ui;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.DefaultListModel;
 import javax.swing.JComponent;
 import javax.swing.SpinnerNumberModel;
 import org.huberb.randompassword.helper.CharacterClass;
@@ -22,8 +21,8 @@ import org.openide.util.NbBundle;
  */
 public class RandomPasswordPanel extends javax.swing.JPanel {
     
-    private JComponent[] characterClasseJComponent;
-    private JComponent[] freeJComponents;
+    private final JComponent[] characterClasseJComponent;
+    private final JComponent[] freeJComponents;
     
     /** Creates new form RandomPasswordPanel */
     public RandomPasswordPanel() {
@@ -32,9 +31,9 @@ public class RandomPasswordPanel extends javax.swing.JPanel {
         
         // set the spinner model
         SpinnerNumberModel sm = (SpinnerNumberModel)this.numberOfCharactersSpinner.getModel();
-        sm.setMinimum( new Integer(1) );
-        sm.setMaximum( new Integer( 256 ) );
-        sm.setValue( new Integer(12) );
+        sm.setMinimum(1);
+        sm.setMaximum(256);
+        sm.setValue(12);
         
         // set the tool tips
         this.charactersLowerCaseCheckBox.setToolTipText( CharacterClass.LOWER_CASE.getCharacters() );
@@ -290,10 +289,10 @@ public class RandomPasswordPanel extends javax.swing.JPanel {
             final String allowedCharacters = this.freeCharactersTextField.getText();
             
             // fetch a password suggestion
-            suggestedPassword = rps.suggestPassword( passwordLength.intValue(), allowedCharacters );
+            suggestedPassword = rps.suggestPassword(passwordLength, allowedCharacters );
         } else if (this.classesRadioButton.isSelected()) {
             // set up the allowed characters
-            final List <CharacterClass> allowedCharacterClasses = new ArrayList<CharacterClass>();
+            final List <CharacterClass> allowedCharacterClasses = new ArrayList<>();
             
             if (this.charactersLowerCaseCheckBox.isSelected()) {
                 allowedCharacterClasses.add( CharacterClass.LOWER_CASE );
@@ -309,7 +308,7 @@ public class RandomPasswordPanel extends javax.swing.JPanel {
             }
             
             // fetch a password suggestion
-            suggestedPassword = rps.suggestPassword( passwordLength.intValue(), allowedCharacterClasses );
+            suggestedPassword = rps.suggestPassword(passwordLength, allowedCharacterClasses );
         }
         
         // print the suggested password

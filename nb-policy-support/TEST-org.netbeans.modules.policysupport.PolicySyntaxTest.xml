@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" name="org.netbeans.modules.policysupport.PolicySyntaxTest" tests="6" time="1.913">
+  <properties>
+    <property name="libs.spring-framework-1.2.8.classpath" value="C:\all_projects\projects\external-java-projects\spring-framework-1.2.8-with-dependencies\spring-framework-1.2.8\dist\spring.jar"></property>
+    <property name="Env-TMP" value="C:\DOCUME~1\huberb1\LOCALS~1\Temp"></property>
+    <property name="javax.xml.parsers.SAXParserFactory" value="org.netbeans.core.startup.SAXFactoryImpl"></property>
+    <property name="release.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\release"></property>
+    <property name="libs.NB JUnit.src" value=""></property>
+    <property name="profiler.settings.sort.results.by.thread.cpu.time" value="false"></property>
+    <property name="nbm.module.author" value="Bernhard Huber"></property>
+    <property name="profiler.info.single.file" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\test\unit\src\org\netbeans\modules\policysupport\PolicySyntaxTest.java"></property>
+    <property name="profiler.settings.instrumentation.quickfilter.value" value=""></property>
+    <property name="org.openide.TopManager.GUI" value="true"></property>
+    <property name="profiler.settings.profiling.type" value="16"></property>
+    <property name="libs.spring-framework-1.28.src" value="C:\all_projects\projects\external-java-projects\spring-framework-1.2.8-with-dependencies\spring-framework-1.2.8\src"></property>
+    <property name="libs.junit.javadoc" value="C:\Programme\netbeans-5.0\ide6\docs\junit-3.8.1-api.zip"></property>
+    <property name="libs.NB JUnit.classpath" value="C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\nbjunit.jar;C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\nbjunit-ide.jar;C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\insanelib.jar"></property>
+    <property name="build.compiler.debug" value="true"></property>
+    <property name="user.dir" value="C:\Programme\netbeans-5.0"></property>
+    <property name="java.vm.version" value="1.5.0_05-b05"></property>
+    <property name="profiler.settings.sampling.interval" value="10"></property>
+    <property name="profiler.session.port.no" value="5140"></property>
+    <property name="env-path" value="C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Adaptec Shared\System;C:\Sun\AppServer8.2\bin;C:\Sun\AppServer\jdk;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Adaptec Shared\System"></property>
+    <property name="env-tmpdir" value="C:\DOCUME~1\huberb1\LOCALS~1\Temp"></property>
+    <property name="libs.jstl11.src" value=""></property>
+    <property name="build.package.index" value="false"></property>
+    <property name="libs.jaxrpc16.src" value=""></property>
+    <property name="env-computername" value="ATVIE-HUBERB"></property>
+    <property name="jdk.home" value="C:\Program Files\Java\jdk1.5.0_05"></property>
+    <property name="nbm" value="org-netbeans-modules-policysupport.nbm"></property>
+    <property name="wsclientuptodate.classpath" value="C:\Programme\netbeans-5.0\enterprise2\ant\extra\wsclientuptodate.jar"></property>
+    <property name="javahelp.search" value="JavaHelpSearch"></property>
+    <property name="Env-HOME" value="C:\Documents and Settings\huberb1"></property>
+    <property name="sun.os.patch.level" value="Service Pack 1"></property>
+    <property name="libs.log4j.src" value=""></property>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"></property>
+    <property name="libs.Hsqldb-1.7.2.classpath" value="C:\all_projects\projects\external-java-projects\hsqldb_v1.7.2\lib\hsqldb.jar"></property>
+    <property name="env-os" value="Windows_NT"></property>
+    <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.parsers.SAXParser"></property>
+    <property name="jnlp.signjar.keystore" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\${jnlp.dest.dir}\default.keystore"></property>
+    <property name="test.unit.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\test\unit"></property>
+    <property name="os.name" value="Windows XP"></property>
+    <property name="public.packages" value="-"></property>
+    <property name="env-processor_revision" value="0207"></property>
+    <property name="libs.jaxrpc16.classpath" value="C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\activation.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\FastInfoset.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\jax-qname.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\jaxp-api.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\jaxrpc-api.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\jaxrpc-impl.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\jaxrpc-spi.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\jsr173_api.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\mail.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\relaxngDatatype.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\saaj-api.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\saaj-impl.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\jaxrpc16\xsdlib.jar"></property>
+    <property name="Env-CYGWIN_HOME" value="c:\cygwin"></property>
+    <property name="test.unit.src.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\test\unit\src"></property>
+    <property name="Env-USERDNSDOMAIN" value="EU.UIS.UNISYS.COM"></property>
+    <property name="profiler.info.javaPlatform" value="default_platform"></property>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"></property>
+    <property name="buildnumber" value="060904"></property>
+    <property name="platforms.Java_HotSpot_TM__Client_VM_1.5.0-b64.compiler" value="modern"></property>
+    <property name="nbplatform.active" value="default"></property>
+    <property name="libs.vab_lib_frontend.classpath" value="C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\commons-beanutils.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\commons-collections.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\commons-lang.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\commons-logging.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\commons-validator.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\displaytag-1.0.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\jstl.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\junit.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\log4j.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\sitemesh-2.2.1.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\spring.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\frontend\standard.jar"></property>
+    <property name="profiler.settings.instr.scheme" value="1"></property>
+    <property name="extra.module.files" value=""></property>
+    <property name="profiler.info.project.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport"></property>
+    <property name="os.arch" value="x86"></property>
+    <property name="user.name" value="HuberB1"></property>
+    <property name="libs.jdepend.classpath" value="C:\all_projects\projects\external-java-projects\jdepend-2.9.1\lib\jdepend-2.9.1.jar"></property>
+    <property name="build.classes.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\classes"></property>
+    <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense"></property>
+    <property name="build.sysclasspath" value="ignore"></property>
+    <property name="libs.Oracle-JDBC-Driver-10.javadoc" value=""></property>
+    <property name="spec.version.base" value="1.0"></property>
+    <property name="Env-Path" value="C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Adaptec Shared\System;C:\Sun\AppServer8.2\bin;C:\Sun\AppServer\jdk;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Adaptec Shared\System"></property>
+    <property name="env-systemroot" value="C:\WINDOWS"></property>
+    <property name="javax.xml.parsers.DocumentBuilderFactory" value="org.netbeans.core.startup.DOMFactoryImpl"></property>
+    <property name="libs.jakarta-commons.classpath" value="C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-attributes-api.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-attributes-compiler.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-beanutils.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-codec.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-collections.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-dbcp.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-digester.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-discovery.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-fileupload.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-httpclient.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-lang.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-logging.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-pool.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\jakarta-commons\commons-validator.jar"></property>
+    <property name="user.country" value="AT"></property>
+    <property name="javahelp.hs" value="policysupport-hs.xml"></property>
+    <property name="libs.jstl11.javadoc" value="C:\Programme\netbeans-5.0\enterprise2\docs\jstl-1.1.2-javadoc.zip"></property>
+    <property name="Env-ComSpec" value="C:\WINDOWS\system32\cmd.exe"></property>
+    <property name="ant.file.jdk" value="C:\Programme\netbeans-5.0\harness\jdk.xml"></property>
+    <property name="netbeans.home" value="C:\Programme\netbeans-5.0\platform6"></property>
+    <property name="build.compiler.emacs" value="true"></property>
+    <property name="libs.ibatis-2.1.7.javadoc" value="C:\all_projects\projects\external-java-projects\ibatis\doc\user-javadoc.zip"></property>
+    <property name="Env-PROCESSOR_ARCHITECTURE" value="x86"></property>
+    <property name="jnlp.codebase" value="file:${jnlp.dest.dir}"></property>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.5.0_05\jre\lib\endorsed"></property>
+    <property name="netbeans.dynamic.classpath" value="C:\Programme\netbeans-5.0\platform6\core\core.jar;C:\Programme\netbeans-5.0\platform6\core\org-openide-filesystems.jar;C:\Programme\netbeans-5.0\nb5.0\core\org-netbeans-upgrader.jar;C:\Programme\netbeans-5.0\nb5.0\core\locale\core_nb.jar;C:\Programme\netbeans-5.0\ide6\core\org-netbeans-modules-utilities-cli.jar"></property>
+    <property name="Env-HOMEDRIVE" value="C:"></property>
+    <property name="env-java_home" value="c:\Program Files\java\jdk1.5.0_05"></property>
+    <property name="java.vm.specification.version" value="1.0"></property>
+    <property name="libs.Jemmy.javadoc" value="C:\Documents and Settings\huberb1\.netbeans\5.0\docs\org-netbeans-jemmy.zip"></property>
+    <property name="Env-USERPROFILE" value="C:\Documents and Settings\huberb1"></property>
+    <property name="profiler.settings.override.jvm.args" value=""></property>
+    <property name="java.vendor" value="Sun Microsystems Inc."></property>
+    <property name="env-java_home_1.4" value="C:\bea-81sp5\jdk142_08"></property>
+    <property name="env-userdnsdomain" value="EU.UIS.UNISYS.COM"></property>
+    <property name="Env-=C:" value="C:\Documents and Settings\huberb1"></property>
+    <property name="code.name.base.dashes" value="org-netbeans-modules-policysupport"></property>
+    <property name="env-processor_identifier" value="x86 Family 15 Model 2 Stepping 7, GenuineIntel"></property>
+    <property name="env-logonserver" value="\\ATVIE-EUDC1"></property>
+    <property name="libs.vab_lib_backend.javadoc" value=""></property>
+    <property name="file.separator" value="\"></property>
+    <property name="module.run.classpath" value="C:\Programme\netbeans-5.0\ide6\modules\org-netbeans-modules-editor.jar:C:\Programme\netbeans-5.0\ide6\modules\org-netbeans-modules-editor-lib.jar:C:\Programme\netbeans-5.0\platform6\core\org-openide-filesystems.jar:C:\Programme\netbeans-5.0\platform6\modules\org-openide-loaders.jar:C:\Programme\netbeans-5.0\platform6\lib\org-openide-modules.jar:C:\Programme\netbeans-5.0\platform6\modules\org-openide-nodes.jar:C:\Programme\netbeans-5.0\platform6\modules\org-openide-options.jar:C:\Programme\netbeans-5.0\platform6\modules\org-openide-text.jar:C:\Programme\netbeans-5.0\platform6\lib\org-openide-util.jar:C:\Programme\netbeans-5.0\platform6\modules\org-openide-windows.jar"></property>
+    <property name="nbjdk.home.defaulted" value="true"></property>
+    <property name="libs.jdepend.javadoc" value="C:\all_projects\projects\external-java-projects\jdepend-2.9.1\build\docs\api"></property>
+    <property name="libs.Jemmy.src" value=""></property>
+    <property name="netbeans.buildnumber" value="200601251500"></property>
+    <property name="user.variant" value=""></property>
+    <property name="libs.vab_lib_backend.classpath" value="C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\backend\commons-collections-2.1.1.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\backend\commons-lang.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\backend\commons-logging.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\backend\hibernate3.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\backend\ldaptemplate-1.0-rc2.jar;C:\all_projects\projects\mobilkom\vab\vab-sources\dupres-vab-cvs\vab\vab_lib\backend\mailapi.jar"></property>
+    <property name="nbm.needs.restart" value="false"></property>
+    <property name="libs.junit.classpath" value="C:\Programme\netbeans-5.0\ide6\modules\ext\junit-3.8.1.jar"></property>
+    <property name="profiler.settings.obj.alloc.stack.sampling.interval" value="10"></property>
+    <property name="libs.struts.classpath" value="C:\Programme\netbeans-5.0\enterprise2\modules\ext\struts\antlr.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\struts\commons-beanutils.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\struts\commons-digester.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\struts\commons-fileupload.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\struts\commons-logging.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\struts\commons-validator.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\struts\jakarta-oro.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\struts\struts.jar"></property>
+    <property name="ant.home" value="C:\Programme\netbeans-5.0\ide6\ant"></property>
+    <property name="Env-USERDOMAIN" value="EU"></property>
+    <property name="ant.java.version" value="1.5"></property>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.5.0_05\jre\bin;.;C:\WINDOWS\System32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Adaptec Shared\System;C:\Sun\AppServer8.2\bin;C:\Sun\AppServer\jdk;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Adaptec Shared\System"></property>
+    <property name="profiler.settings.run.gc.on.get.results.in.memory.profiling" value="true"></property>
+    <property name="build.test.unit.classes.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\test\unit\classes"></property>
+    <property name="DSTAMP" value="20060904"></property>
+    <property name="https.proxyPort" value=""></property>
+    <property name="libs.jaxrpc16.javadoc" value=""></property>
+    <property name="sun.arch.data.model" value="32"></property>
+    <property name="profiler.session.jvm.args" value=""></property>
+    <property name="basedir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport"></property>
+    <property name="libs.jstl11.classpath" value="C:\Programme\netbeans-5.0\enterprise2\modules\ext\standard.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\jstl.jar"></property>
+    <property name="path.separator" value=";"></property>
+    <property name="com.sun.aas.installRoot" value="C:\Sun\AppServer8.2"></property>
+    <property name="libs.ibatis-2.1.7.classpath" value="C:\all_projects\projects\external-java-projects\ibatis\lib\ibatis-common-2.jar;C:\all_projects\projects\external-java-projects\ibatis\lib\ibatis-dao-2.jar;C:\all_projects\projects\external-java-projects\ibatis\lib\ibatis-sqlmap-2.jar"></property>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"></property>
+    <property name="TSTAMP" value="2053"></property>
+    <property name="libs.struts.src" value=""></property>
+    <property name="Env-APPDATA" value="C:\Documents and Settings\huberb1\Application Data"></property>
+    <property name="libs.spring-framework-1.28.javadoc" value="C:\all_projects\projects\external-java-projects\spring-framework-1.2.8-with-dependencies\spring-framework-1.2.8\docs\api"></property>
+    <property name="user.language" value="de"></property>
+    <property name="xtest.home" value="C:\Documents and Settings\huberb1\.netbeans\5.0\xtest-distribution"></property>
+    <property name="Env-windir" value="C:\WINDOWS"></property>
+    <property name="module.classpath" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-netbeans-modules-editor.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-netbeans-modules-editor-lib.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-openide-filesystems.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-openide-loaders.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-openide-modules.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-openide-nodes.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-openide-options.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-openide-text.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-openide-util.jar:C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars\org-openide-windows.jar"></property>
+    <property name="profiler.settings.thread.cpu.timer.on" value="false"></property>
+    <property name="env-programfiles" value="C:\Program Files"></property>
+    <property name="build.test.unit.results.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\test\unit\results"></property>
+    <property name="libs.swing-layout.javadoc" value="C:\Documents and Settings\huberb1\.netbeans\5.0\docs\swing-layout-1.0.1-doc.zip"></property>
+    <property name="Env-PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH"></property>
+    <property name="nbm.is.global" value=""></property>
+    <property name="env-number_of_processors" value="1"></property>
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|atvie-huberb|ATVIE-HUBERB"></property>
+    <property name="java.class.version" value="49.0"></property>
+    <property name="wscompile.tools.classpath" value="C:\Program Files\Java\jdk1.5.0_05\jre\..\lib\tools.jar"></property>
+    <property name="profiler.settings.instrumentation.root.methods.size" value="1"></property>
+    <property name="netbeans.system_http_proxy" value="DIRECT"></property>
+    <property name="user.properties.file" value="C:\Documents and Settings\huberb1\.netbeans\5.0\build.properties"></property>
+    <property name="libs.spring-framework-1.2.8.src" value="C:\all_projects\projects\external-java-projects\spring-framework-1.2.8-with-dependencies\spring-framework-1.2.8\src"></property>
+    <property name="javahelp.class.path.extension" value="docs/org-netbeans-modules-policysupport.jar"></property>
+    <property name="profiler.settings.istrumentation.root.methods-0" value="org.netbeans.modules.policysupport.PolicySyntax,doParseToken,()Lorg/netbeans/editor/TokenID;"></property>
+    <property name="file.encoding.pkg" value="sun.io"></property>
+    <property name="sun.cpu.endian" value="little"></property>
+    <property name="harness.taskdefs.done" value="true"></property>
+    <property name="libs.log4j.javadoc" value=""></property>
+    <property name="java.home.parent" value="C:\Program Files\Java\jdk1.5.0_05"></property>
+    <property name="libs.spring-framework-1.2.8.javadoc" value="C:\all_projects\projects\external-java-projects\spring-framework-1.2.8-with-dependencies\spring-framework-1.2.8\docs\api"></property>
+    <property name="libs.vab_lib_frontend.javadoc" value=""></property>
+    <property name="Env-JAVA_HOME" value="c:\Program Files\java\jdk1.5.0_05"></property>
+    <property name="env-username" value="HuberB1"></property>
+    <property name="Env-SMS_LOCAL_DIR" value="C:\WINDOWS"></property>
+    <property name="env-homepath" value="\Documents and Settings\huberb1"></property>
+    <property name="nbplatform.default.harness.dir" value="C:\Programme\netbeans-5.0/harness"></property>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.5.0_05\jre"></property>
+    <property name="copyfiles.classpath" value="C:\Programme\netbeans-5.0\enterprise2\ant\extra\copyfiles.jar"></property>
+    <property name="libs.Oracle-JDBC-Driver-10.src" value=""></property>
+    <property name="javahelp.jar.dir" value="modules/docs"></property>
+    <property name="profiler.jvmargs" value="-agentpath:C:/Programme/netbeans-5.0/profiler1/lib/deployed/jdk15/windows/profilerinterface.dll=\&quot;C:\Programme\netbeans-5.0\profiler1\lib\&quot;,5140,10"></property>
+    <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade"></property>
+    <property name="libs.jsf.javadoc" value="C:\Programme\netbeans-5.0\enterprise2\docs\jsf-1.1.01-javadoc.zip"></property>
+    <property name="env-sessionname" value="Console"></property>
+    <property name="org.openide.TopManager" value="org.netbeans.core.NonGui"></property>
+    <property name="ant.file.harness" value="C:\Programme\netbeans-5.0\harness\build.xml"></property>
+    <property name="libs.Jemmy.classpath" value="C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\jemmy.jar"></property>
+    <property name="env-commonprogramfiles" value="C:\Program Files\Common Files"></property>
+    <property name="public.package.jar.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\public-package-jars"></property>
+    <property name="nbm.distribution" value=""></property>
+    <property name="env-processor_level" value="15"></property>
+    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|atvie-huberb|ATVIE-HUBERB"></property>
+    <property name="Env-PROCESSOR_IDENTIFIER" value="x86 Family 15 Model 2 Stepping 7, GenuineIntel"></property>
+    <property name="Env-JAVA_HOME_1.4" value="C:\bea-81sp5\jdk142_08"></property>
+    <property name="profile.class" value="org.netbeans.modules.policysupport.PolicySyntaxTest"></property>
+    <property name="Env-SystemRoot" value="C:\WINDOWS"></property>
+    <property name="profiler.settings.instrumentation.filter.selected" value="Profile All Classes"></property>
+    <property name="env-ant_home" value="C:\all_projects\projects\apache-jakarta\apache-ant-1.6.3"></property>
+    <property name="http.proxyHost" value=""></property>
+    <property name="profiler.settings.cpu.exclude.wait.time" value="true"></property>
+    <property name="profiler.settings.override" value="false"></property>
+    <property name="Env-TEMP" value="C:\DOCUME~1\huberb1\LOCALS~1\Temp"></property>
+    <property name="module.dependencies" value="org.netbeans.modules.editor/3 &gt; 1.26.1.1, org.netbeans.modules.editor.lib/1 &gt; 1.9.1.1, org.openide.filesystems &gt; 6.4.1, org.openide.loaders &gt; 5.9.1, org.openide.modules &gt; 6.5.1, org.openide.nodes &gt; 6.7.1, org.openide.options &gt; 6.4.1, org.openide.text &gt; 6.9.1, org.openide.util &gt; 6.8.1, org.openide.windows &gt; 6.5.1"></property>
+    <property name="profiler.session.args" value=""></property>
+    <property name="env-sms_local_dir" value="C:\WINDOWS"></property>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"></property>
+    <property name="libs.Hsqldb-1.7.2.javadoc" value="C:\all_projects\projects\external-java-projects\hsqldb_v1.7.2\doc\src"></property>
+    <property name="libs.jsf.src" value=""></property>
+    <property name="tools.jar" value="C:\Program Files\Java\jdk1.5.0_05\lib\tools.jar"></property>
+    <property name="class.files.in.src" value=""></property>
+    <property name="env-home" value="C:\Documents and Settings\huberb1"></property>
+    <property name="javac.compilerargs" value="-Xlint:unchecked"></property>
+    <property name="ant.file" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build.xml"></property>
+    <property name="env-tmp" value="C:\DOCUME~1\huberb1\LOCALS~1\Temp"></property>
+    <property name="Env-SystemDrive" value="C:"></property>
+    <property name="ant.file.projectized-common" value="C:\Programme\netbeans-5.0\harness\common.xml"></property>
+    <property name="nbjdk.home" value="C:\Program Files\Java\jdk1.5.0_05"></property>
+    <property name="sun.awt.exception.handler" value="org.netbeans.core.NbErrorManager$AWTHandler"></property>
+    <property name="Env-CommonProgramFiles" value="C:\Program Files\Common Files"></property>
+    <property name="libs.JBoss4.0.4GA-ejb3.javadoc" value=""></property>
+    <property name="javahelp.jar.basename" value="org-netbeans-modules-policysupport.jar"></property>
+    <property name="nbm.homepage" value=""></property>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="libs.swing-layout.src" value=""></property>
+    <property name="nbm.release.date" value=""></property>
+    <property name="org.openide.major.version" value="IDE/1"></property>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"></property>
+    <property name="build.javahelp.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\javahelp"></property>
+    <property name="build.test.unit.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\test\unit"></property>
+    <property name="netbeans.user" value="C:\Documents and Settings\huberb1\.netbeans\5.0"></property>
+    <property name="libs.Jellytools.classpath" value="C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\jelly2-nb.jar"></property>
+    <property name="libs.jakarta-commons.src" value=""></property>
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\huberb1\LOCALS~1\Temp\"></property>
+    <property name="java.vendor.url" value="http://java.sun.com/"></property>
+    <property name="env-=::" value="::\"></property>
+    <property name="profiler.settings.instrument.spawned.threads" value="false"></property>
+    <property name="jspc.classpath" value="C:\Programme\netbeans-5.0\ide6\ant\lib\ant.jar:${j2ee.platform.classpath}:C:\Programme\netbeans-5.0\enterprise2\modules\ext\jasper-compiler-5.5.9.jar:C:\Programme\netbeans-5.0\enterprise2\modules\ext\jasper-runtime-5.5.9.jar:C:\Programme\netbeans-5.0\enterprise2\modules\ext\commons-el.jar:C:\Programme\netbeans-5.0\ide6\modules\ext\commons-logging-1.0.4.jar"></property>
+    <property name="ant.file.org.netbeans.modules.policysupport-impl" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\nbproject\build-impl.xml"></property>
+    <property name="env-appdata" value="C:\Documents and Settings\huberb1\Application Data"></property>
+    <property name="Env-ProgramFiles" value="C:\Program Files"></property>
+    <property name="env-windir" value="C:\WINDOWS"></property>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.5.0_05\jre\bin"></property>
+    <property name="libs.spring-framework-1.2.5.src" value="C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\src"></property>
+    <property name="env-pathext" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH"></property>
+    <property name="Env-TMPDIR" value="C:\DOCUME~1\huberb1\LOCALS~1\Temp"></property>
+    <property name="manifest.mf" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\manifest.mf"></property>
+    <property name="Env-ALLUSERSPROFILE" value="C:\Documents and Settings\All Users"></property>
+    <property name="Env-LOGONSERVER" value="\\ATVIE-EUDC1"></property>
+    <property name="profiler.settings.code.region.cpu.res.buf.size" value="1000"></property>
+    <property name="java.runtime.name" value="Java(TM) 2 Runtime Environment, Standard Edition"></property>
+    <property name="env-comspec" value="C:\WINDOWS\system32\cmd.exe"></property>
+    <property name="netbeans.dest.dir" value="C:\Programme\netbeans-5.0"></property>
+    <property name="profiler.info.jvmargs" value=""></property>
+    <property name="has.javahelp" value="true"></property>
+    <property name="Env-=::" value="::\"></property>
+    <property name="ant.project.name" value="org.netbeans.modules.policysupport"></property>
+    <property name="platforms.Java_HotSpot_TM__Client_VM_1.5.0-b64.bootclasspath" value="C:\jdk1.5.0\jre\lib\rt.jar;C:\jdk1.5.0\jre\lib\i18n.jar;C:\jdk1.5.0\jre\lib\sunrsasign.jar;C:\jdk1.5.0\jre\lib\jsse.jar;C:\jdk1.5.0\jre\lib\jce.jar;C:\jdk1.5.0\jre\lib\charsets.jar;C:\jdk1.5.0\jre\classes;C:\jdk1.5.0\jre\lib\ext\dnsns.jar;C:\jdk1.5.0\jre\lib\ext\localedata.jar;C:\jdk1.5.0\jre\lib\ext\Rational.jar;C:\jdk1.5.0\jre\lib\ext\sunjce_provider.jar;C:\jdk1.5.0\jre\lib\ext\sunpkcs11.jar"></property>
+    <property name="javahelp.base" value="org/netbeans/modules/policysupport/docs"></property>
+    <property name="javahelp.jar" value="modules/docs/org-netbeans-modules-policysupport.jar"></property>
+    <property name="sun.cpu.isalist" value=""></property>
+    <property name="libs.CopyLibs.javadoc" value=""></property>
+    <property name="profiler.settings.n.profiled.threads.limit" value="32"></property>
+    <property name="netbeans.javadoc.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\javadoc"></property>
+    <property name="org.openide.specification.version" value="6.2"></property>
+    <property name="user.home" value="C:\Documents and Settings\huberb1"></property>
+    <property name="netbeans.osenv" value="C:\DOCUME~1\huberb1\LOCALS~1\Temp\nbenv2"></property>
+    <property name="libs.absolutelayout.javadoc" value=""></property>
+    <property name="java.specification.name" value="Java Platform API Specification"></property>
+    <property name="libs.Jellytools.src" value="C:\Documents and Settings\huberb1\.netbeans\5.0\sources\jelly2-nb-src.zip"></property>
+    <property name="libs.jsf.classpath" value="C:\Programme\netbeans-5.0\enterprise2\modules\ext\jsf\commons-beanutils.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\jsf\commons-collections.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\jsf\commons-digester.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\jsf\commons-logging.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\jsf\jsf-api.jar;C:\Programme\netbeans-5.0\enterprise2\modules\ext\jsf\jsf-impl.jar"></property>
+    <property name="profiler.settings.threads.monitoring.enabled" value="false"></property>
+    <property name="Env-ANT_HOME" value="C:\all_projects\projects\apache-jakarta\apache-ant-1.6.3"></property>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="libs.spring-framework-1.2.5.classpath" value="C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-aop.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-beans.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-context.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-core.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-dao.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-hibernate.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-jdbc.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-mock.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-orm.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-remoting.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-support.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-web.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring-webmvc.jar;C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\dist\spring.jar"></property>
+    <property name="Env-OS" value="Windows_NT"></property>
+    <property name="java.version" value="1.5.0_05"></property>
+    <property name="org.openide.version" value="deprecated"></property>
+    <property name="Env-PROCESSOR_LEVEL" value="15"></property>
+    <property name="libs.NB JUnit.javadoc" value="C:\Documents and Settings\huberb1\.netbeans\5.0\docs\org-netbeans-modules-nbjunit.zip"></property>
+    <property name="is.regular" value="true"></property>
+    <property name="profiler.info.jvm" value="C:\Program Files\Java\jdk1.5.0_05\bin\java.exe"></property>
+    <property name="libs.swing-layout.classpath" value="C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\swing-layout-1.0.1.jar"></property>
+    <property name="libs.Oracle-JDBC-Driver-10.classpath" value="C:\all_projects\archiv\oracle-10\ojdbc14.jar;C:\all_projects\archiv\oracle-10\orai18n.jar"></property>
+    <property name="javac.source" value="1.5"></property>
+    <property name="profiler.info.dir" value="C:\Programme\netbeans-5.0"></property>
+    <property name="line.separator" value="
+"></property>
+    <property name="profiler.session.working.dir" value="C:\Programme\netbeans-5.0"></property>
+    <property name="java.specification.version" value="1.5"></property>
+    <property name="java.vm.info" value="mixed mode"></property>
+    <property name="libs.JBoss4.0.4GA-ejb3.classpath" value="C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\activation.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\antlr-2.7.6.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\avalon-framework.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\commons-httpclient.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\commons-logging.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\concurrent.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\ejb3-persistence.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\getopt.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\hibernate-annotations.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\hibernate-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jacorb.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\javassist.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\javax.servlet.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-annotations-ejb3.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-aop-jdk50-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-aspect-jdk50-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-common-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-deployment.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-ejb3-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-ejb3x.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-iiop-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-j2ee.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-jaxrpc.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-jsr77-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-remoting.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-saaj.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-serialization.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-srp-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-system-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-transaction-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jboss-xml-binding.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jbossall-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jbosscx-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jbossha-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jbossjmx-ant.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jbossmq-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jbosssx-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jbossws-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jmx-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jmx-invoker-adaptor-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\jnp-client.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\juddisaaj.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\log4j.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\logkit.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\mail.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\scout.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\trove.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\wsdl4j.jar;C:\all_projects\programme\jboss-4.0.4.GA-ejb3\client\xmlsec.jar"></property>
+    <property name="test.filter.trace" value="true"></property>
+    <property name="libs.JBoss4.0.4GA-ejb3.src" value=""></property>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.5.0_05\jre\lib\rt.jar;C:\Program Files\Java\jdk1.5.0_05\jre\lib\i18n.jar;C:\Program Files\Java\jdk1.5.0_05\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.5.0_05\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.5.0_05\jre\lib\jce.jar;C:\Program Files\Java\jdk1.5.0_05\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.5.0_05\jre\classes;C:\Programme\netbeans-5.0\profiler1\lib/jfluid-server.jar;C:\Programme\netbeans-5.0\profiler1\lib/jfluid-server-15.jar"></property>
+    <property name="javac.target" value="1.5"></property>
+    <property name="netbeans.osenv.nullsep" value="true"></property>
+    <property name="module.jar.basename" value="org-netbeans-modules-policysupport.jar"></property>
+    <property name="src.dir" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\src"></property>
+    <property name="sun.awt.keepWorkingSetOnMinimize" value="true"></property>
+    <property name="build.compiler.optimize" value="off"></property>
+    <property name="profiler.settings.instrument.method.invoke" value="true"></property>
+    <property name="nbplatform.default.netbeans.dest.dir" value="C:\Programme\netbeans-5.0"></property>
+    <property name="env-systemdrive" value="C:"></property>
+    <property name="libs.struts.javadoc" value="C:\Programme\netbeans-5.0\enterprise2\docs\struts-javadoc.zip"></property>
+    <property name="profiler.settings.override.working.dir" value=""></property>
+    <property name="code.name.base.slashes" value="org/netbeans/modules/policysupport"></property>
+    <property name="profiler.settings.istrument.getter.setter.methods" value="false"></property>
+    <property name="Env-SESSIONNAME" value="Console"></property>
+    <property name="http.proxyPort" value=""></property>
+    <property name="Env-USERNAME" value="HuberB1"></property>
+    <property name="profiler.session.class.name" value=""></property>
+    <property name="platforms.Java_HotSpot_TM__Client_VM_1.5.0-b64.home" value="C:\jdk1.5.0"></property>
+    <property name="TODAY" value="September 4 2006"></property>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"></property>
+    <property name="profiler.session.java.version" value="jdk15"></property>
+    <property name="default.javac.source" value="1.5"></property>
+    <property name="Env-HOMEPATH" value="\Documents and Settings\huberb1"></property>
+    <property name="env-homedrive" value="C:"></property>
+    <property name="env-userdomain" value="EU"></property>
+    <property name="sun.jnu.encoding" value="Cp1252"></property>
+    <property name="Env-COMPUTERNAME" value="ATVIE-HUBERB"></property>
+    <property name="jnlp.signjar.alias" value="jnlp"></property>
+    <property name="ant.file.org.netbeans.modules.policysupport" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build.xml"></property>
+    <property name="profiler.settings.obj.alloc.stack.sampling.depth" value="0"></property>
+    <property name="java.runtime.version" value="1.5.0_05-b05"></property>
+    <property name="env-allusersprofile" value="C:\Documents and Settings\All Users"></property>
+    <property name="libs.spring-framework-1.2.5.javadoc" value="C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\docs\api"></property>
+    <property name="profiler.session.class.path" value=""></property>
+    <property name="libs.log4j.classpath" value="C:\all_projects\projects\external-java-projects\spring-on-wls\spring-framework-1.2.5-with-dependencies\spring-framework-1.2.5\lib\log4j\log4j-1.2.9.jar"></property>
+    <property name="default.javac.target" value="1.5"></property>
+    <property name="cluster" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\cluster"></property>
+    <property name="user.timezone" value="Europe/Berlin"></property>
+    <property name="Env-PROCESSOR_REVISION" value="0207"></property>
+    <property name="release.files" value=""></property>
+    <property name="netbeans.dirs" value="C:\Programme\netbeans-5.0\nb5.0;C:\Programme\netbeans-5.0\ide6;C:\Programme\netbeans-5.0\enterprise2;C:\Programme\netbeans-5.0\harness;C:\Programme\netbeans-5.0\profiler1"></property>
+    <property name="libs.vab_lib_frontend.src" value=""></property>
+    <property name="jar-excludes" value="**/*.java,**/*.form,**/package.html,**/doc-files/"></property>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.5.0_05\jre\lib\ext"></property>
+    <property name="libs.ibatis-2.1.7.src" value="C:\all_projects\projects\external-java-projects\ibatis\src\ibatis-src.zip"></property>
+    <property name="libs.absolutelayout.classpath" value="C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\AbsoluteLayout.jar"></property>
+    <property name="apple.laf.useScreenMenuBar" value="true"></property>
+    <property name="java.class.path" value="C:\Programme\netbeans-5.0\ide6\modules\org-netbeans-modules-editor.jar;C:\Programme\netbeans-5.0\ide6\modules\org-netbeans-modules-editor-lib.jar;C:\Programme\netbeans-5.0\platform6\core\org-openide-filesystems.jar;C:\Programme\netbeans-5.0\platform6\modules\org-openide-loaders.jar;C:\Programme\netbeans-5.0\platform6\lib\org-openide-modules.jar;C:\Programme\netbeans-5.0\platform6\modules\org-openide-nodes.jar;C:\Programme\netbeans-5.0\platform6\modules\org-openide-options.jar;C:\Programme\netbeans-5.0\platform6\modules\org-openide-text.jar;C:\Programme\netbeans-5.0\platform6\lib\org-openide-util.jar;C:\Programme\netbeans-5.0\platform6\modules\org-openide-windows.jar;C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\cluster\modules\org-netbeans-modules-policysupport.jar;C:\Programme\netbeans-5.0\ide6\modules\ext\junit-3.8.1.jar;C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\nbjunit.jar;C:\Documents and Settings\huberb1\.netbeans\5.0\modules\ext\insanelib.jar;C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\build\test\unit\classes;C:\Programme\netbeans-5.0\ide6\ant\lib\ant-launcher.jar;C:\Programme\netbeans-5.0\ide6\ant\lib\ant.jar;C:\Programme\netbeans-5.0\ide6\ant\lib\ant-junit.jar"></property>
+    <property name="libs.Hsqldb-1.7.2.src" value="C:\all_projects\projects\external-java-projects\hsqldb_v1.7.2\src"></property>
+    <property name="libs.absolutelayout.src" value=""></property>
+    <property name="env-userprofile" value="C:\Documents and Settings\huberb1"></property>
+    <property name="have-jdk-1.5" value="true"></property>
+    <property name="profiler.settings.instrument.empty.methods" value="false"></property>
+    <property name="have-jdk-1.4" value="true"></property>
+    <property name="harness.dir" value="C:\Programme\netbeans-5.0/harness"></property>
+    <property name="os.version" value="5.1"></property>
+    <property name="profiler.session.java.executable" value="C:\Program Files\Java\jdk1.5.0_05\bin\java.exe"></property>
+    <property name="libs.jdepend.src" value="C:\all_projects\projects\external-java-projects\jdepend-2.9.1\src"></property>
+    <property name="sun.desktop" value="windows"></property>
+    <property name="libs.spring-framework-1.28.classpath" value="C:\all_projects\projects\external-java-projects\spring-framework-1.2.8-with-dependencies\spring-framework-1.2.8\dist\spring.jar"></property>
+    <property name="env-=c:" value="C:\Documents and Settings\huberb1"></property>
+    <property name="profiler.settings.settings.name" value="Preset: Part of Application"></property>
+    <property name="build.compiler.deprecation" value="true"></property>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"></property>
+    <property name="profiler.info.jvmargs.agent" value="-agentpath:C:/Programme/netbeans-5.0/profiler1/lib/deployed/jdk15/windows/profilerinterface.dll=\&quot;C:\Programme\netbeans-5.0\profiler1\lib\&quot;,5140,10"></property>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."></property>
+    <property name="libs.CopyLibs.classpath" value="C:\Programme\netbeans-5.0\ide6\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar"></property>
+    <property name="module.jar.dir" value="modules"></property>
+    <property name="build.package.compress" value="false"></property>
+    <property name="build.compiler.debuglevel" value="source,lines,vars"></property>
+    <property name="libs.vab_lib_backend.src" value=""></property>
+    <property name="env-processor_architecture" value="x86"></property>
+    <property name="env-temp" value="C:\DOCUME~1\huberb1\LOCALS~1\Temp"></property>
+    <property name="Env-NUMBER_OF_PROCESSORS" value="1"></property>
+    <property name="license.file" value="../../LICENSE"></property>
+    <property name="libs.Jellytools.javadoc" value="C:\Documents and Settings\huberb1\.netbeans\5.0\docs\jelly2-nb-javadoc.zip"></property>
+    <property name="module.auto.deps.xml" value="C:\Documents and Settings\nb4.0\nb-utils\PolicySupport\module-auto-deps.xml"></property>
+    <property name="libs.junit.src" value=""></property>
+    <property name="jnlp.signjar.password" value="netbeans"></property>
+    <property name="libs.CopyLibs.src" value=""></property>
+    <property name="libs.jakarta-commons.javadoc" value=""></property>
+    <property name="module.jar" value="modules/org-netbeans-modules-policysupport.jar"></property>
+    <property name="env-cygwin_home" value="c:\cygwin"></property>
+    <property name="ant.version" value="Apache Ant version 1.6.5 compiled on June 2 2005"></property>
+    <property name="file.encoding" value="Cp1252"></property>
+    <property name="profiler.settings.instrumentation.quickfilter.type" value="false"></property>
+    <property name="https.proxyHost" value=""></property>
+    <property name="profiler.settings.cpu.profiling.type" value="0"></property>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"></property>
+  </properties>
+  <testcase classname="org.netbeans.modules.policysupport.PolicySyntaxTest" name="testParseToken1" time="1.823"></testcase>
+  <testcase classname="org.netbeans.modules.policysupport.PolicySyntaxTest" name="testParseToken2" time="0.0"></testcase>
+  <testcase classname="org.netbeans.modules.policysupport.PolicySyntaxTest" name="testParseToken3" time="0.0"></testcase>
+  <testcase classname="org.netbeans.modules.policysupport.PolicySyntaxTest" name="testIsNewline" time="0.01"></testcase>
+  <testcase classname="org.netbeans.modules.policysupport.PolicySyntaxTest" name="testIsWhitespace" time="0.0"></testcase>
+  <testcase classname="org.netbeans.modules.policysupport.PolicySyntaxTest" name="testIsSpecialChar" time="0.0"></testcase>
+  <system-out><![CDATA[keyword
+whitespace
+keyword
+whitespace
+string
+whitespace
+specialchar
+whitespace
+keyword
+whitespace
+permission
+specialchar
+whitespace
+specialchar
+specialchar
+null
+---
+string
+specialchar
+null
+---
+comment
+whitespace
+comment
+keyword
+whitespace
+keyword
+whitespace
+string
+whitespace
+specialchar
+whitespace
+keyword
+whitespace
+permission
+specialchar
+whitespace
+specialchar
+specialchar
+null
+---
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

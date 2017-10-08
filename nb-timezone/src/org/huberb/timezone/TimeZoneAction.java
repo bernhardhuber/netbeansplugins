@@ -16,6 +16,7 @@ public class TimeZoneAction extends AbstractAction {
         putValue(SMALL_ICON, new ImageIcon(ImageUtilities.loadImage(TimeZoneTopComponent.ICON_RESOURCE, true)));
     }
     
+    @Override
     public void actionPerformed(ActionEvent evt) {
         TopComponent win = TimeZoneTopComponent.findInstance();
         win.open();

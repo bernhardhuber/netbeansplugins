@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>About PolicySupport</title>
+        <link rel="stylesheet" href="nbdocs:/org/netbeans/modules/usersguide/ide.css" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <!-- Section ----------------------------------------------------- -->
+        <h2>About PolicySupport</h2>
+        <p>
+            The module <b>PolicySupport</b> supports editing, and viewing 
+            <i>policy</i> files.
+        </p>
+        <p>
+            The <i>policy</i> file is displayed using syntax highlightning.
+        </p>
+        
+        <!-- Section ----------------------------------------------------- -->
+        <h2>Usage</h2>
+        <p>
+            You can take use of the <b>PolicySupport</b> module by
+            following these steps:
+        </p>
+        <ul>
+            <li>Open a file having the extension <code>.policy</code>.
+            </li>
+        </ul>
+        <p>
+            The opened <i>policy</i> file has following features:
+        </p>
+        <ul>
+            <li>The file is displayed in an editor window.
+            </li>
+            <li>The syntax of the <i>policy</i> file is highlighted.
+            </li>
+        </ul>
+        <p>
+            The following screen-shot shows a typical syntax hightlighted 
+            <i>policy</i> file.
+        </p>
+        <img src="images/java-policy.gif">
+        
+        <!-- Section ----------------------------------------------------- -->
+        <h2>Actions</h2>
+        <p>
+            You can verify the policy file by invoking a <b>ParsePolicy</b> action.
+            This action will parse the <i>policy</i> file, using policy parser
+            provided by the Java runtime.
+            <br>
+            Parsing errors are writen to the output window into the window tab
+            named <b>Policy</b>.
+        </p>
+        <p>
+            You can activate parsing the <i>policy</i> file by doing following
+            steps:
+        </p>
+        <ul>
+            <li>Select the policy node in the explorer window, or select
+            the editor window of the <i>policy</i> file.
+            </li>
+            <li>Right click, and select the action <b>ParsePolicy</b> from the popup menu.
+            </li>
+            <li>Verify the parsing result by viewing the output window tab named <b>Policy</b>.
+            </li>
+        </ul>
+        <p>
+            The screenshot belows shows the popup menu of the policy editor.
+        </p>
+        <img src="images/editor-popup.gif">
+        <p>
+            The screenshot below shows the result of successfully parsing a <i>policy</i> file.
+        </p>
+        <img src="images/output-tab.gif">
+        <p>
+            <b>Note</b>: The <i>policy</i> file is read from the filesystem. 
+            Thus not-saved changes of the <i>policy</i> file are not taken
+            into account when parsing takes place.
+        </p>
+
+        <!-- Section ----------------------------------------------------- -->
+        <h2>About Policy File</h2>
+        <p>
+            You can find a detailsed description about <i>policy</i> files in
+            the Java SDK documentation.
+        </p>
+        <p>
+            The paragraphs below are a short extract of the Java SDK documentation
+            about <i>policy</i> files.
+        </p>
+        <blockquote>
+            <p>
+                The policy configuration file(s) for an SDK installation specify 
+                what permissions (which types of system resource accesses) 
+                are allowed to code from a specified code source, 
+                and executed as a specified principal.
+            </p>
+            <p>
+                For an applet (or an application running under a security manager) 
+                to be allowed to perform secured actions 
+                (such as reading or writing a file), the applet (or application) 
+                must be granted permission for that particular action. 
+                In the Policy reference implementation, that permission must be 
+                granted by a grant entry in a policy configuration file. 
+                See the "Java Security Architecture Specification" for more information. 
+                (The only exception is that code always automatically has permission 
+                to read files from its same (URL) location, 
+                and subdirectories of that location; 
+                it does not need explicit permission to do so.)
+            </p>
+            <p>
+                A policy configuration file essentially contains a list of entries. It may contain a "keystore" entry, and contains zero or more "grant" entries.
+            </p>
+        </blockquote>
+    </body>
+</html>
+<!--
+Tip: to create a link which will open in an external web browser, try:
+<object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+    <param name="content" value="http://www.netbeans.org/">
+    <param name="text" value="<html><u>http://www.netbeans.org/</u></html>">
+    <param name="textFontSize" value="medium">
+    <param name="textColor" value="blue">
+</object>
+To create a link to a help set from another module, you need to know the code name base and path, e.g.:
+<a href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/configure/configure_options.html">Using the Options Window</a>
+(This link will behave sanely if that module is disabled or missing.)
+-->

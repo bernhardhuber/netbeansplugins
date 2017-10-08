@@ -318,27 +318,33 @@ final class TimeZoneTopComponent extends TopComponent {
         return getDefault();
     }
     
+    @Override
     public int getPersistenceType() {
         return TopComponent.PERSISTENCE_ALWAYS;
     }
     
+    @Override
     public void componentOpened() {
         // TODO add custom code on component opening
     }
     
+    @Override
     public void componentClosed() {
         // TODO add custom code on component closing
     }
     
     /** replaces this in object stream */
+    @Override
     public Object writeReplace() {
         return new ResolvableHelper();
     }
     
+    @Override
     protected String preferredID() {
         return PREFERRED_ID;
     }
     
+    @Override
     public HelpCtx getHelpCtx() {
         HelpCtx retValue = new HelpCtx("org.huberb.timezone.about");
         

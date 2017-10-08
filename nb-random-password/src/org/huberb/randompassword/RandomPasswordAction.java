@@ -2,10 +2,8 @@ package org.huberb.randompassword;
 
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
-import javax.swing.ImageIcon;
 import org.openide.ErrorManager;
 import org.openide.util.NbBundle;
-import org.openide.util.Utilities;
 import org.openide.windows.TopComponent;
 import org.openide.windows.WindowManager;
 
@@ -19,6 +17,7 @@ public class RandomPasswordAction extends AbstractAction {
 //        putValue(SMALL_ICON, new ImageIcon(Utilities.loadImage("SET/PATH/TO/ICON/HERE", true)));
     }
 
+    @Override
     public void actionPerformed(ActionEvent evt) {
         TopComponent win = WindowManager.getDefault().findTopComponent("RandomPasswordTopComponent");
         if (win == null) {

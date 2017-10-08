@@ -10,9 +10,7 @@
 package org.netbeans.modules.manifestsupport;
 
 import javax.swing.text.Document;
-import org.netbeans.editor.BaseDocument;
 import org.netbeans.editor.Syntax;
-import org.netbeans.editor.SyntaxSupport;
 import org.netbeans.modules.editor.NbEditorKit;
 import org.openide.ErrorManager;
 

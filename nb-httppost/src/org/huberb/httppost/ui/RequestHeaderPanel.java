@@ -18,8 +18,8 @@ import org.huberb.httppost.model.HttpPostForm;
  */
 public class RequestHeaderPanel extends javax.swing.JPanel {
     
-    private DefaultComboBoxModel dcbm;
-    private HeadersTableModel htm;
+    private final DefaultComboBoxModel<String[]> dcbm;
+    private final HeadersTableModel htm;
     
     /** Creates new form RequestHeaderPanel */
     public RequestHeaderPanel() {

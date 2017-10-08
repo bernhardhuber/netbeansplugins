@@ -45,7 +45,7 @@ public class LabelValueBean<T> implements Serializable, Comparable {
         this.value = newValue;
     }
     
-    public void setLabelAndValue( String newLabel, T newValue ) {
+    private void setLabelAndValue( String newLabel, T newValue ) {
         this.label = newLabel;
         this.value = newValue;
     }
@@ -55,13 +55,16 @@ public class LabelValueBean<T> implements Serializable, Comparable {
      *
      * @return String the label value
      */
+    @Override
     public String toString() {
         return this.label;
     }
     
+    @Override
     public int hashCode() {
         return this.getValue().hashCode();
     }
+    @Override
     public boolean equals( Object obj ) {
         if (this == obj) {
             return true;
@@ -72,6 +75,7 @@ public class LabelValueBean<T> implements Serializable, Comparable {
         }
         return false;
     }
+    @Override
     public int compareTo(Object o) {
         if (o == this) {
             return 0;

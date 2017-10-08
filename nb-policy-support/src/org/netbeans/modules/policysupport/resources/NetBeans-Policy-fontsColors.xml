@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontscolors>
+    <fontcolor name="policy-comment" foreColor="darkGray" default="default"/>
+    <fontcolor name="policy-keyword" foreColor="blue" default="default"/>
+    <fontcolor name="policy-string" default="default"/>
+    
+    <fontcolor name="policy-specialchar" default="lightBlue"/>
+    <fontcolor name="policy-permission" foreColor="orange" default="default"/>
+</fontscolors>
