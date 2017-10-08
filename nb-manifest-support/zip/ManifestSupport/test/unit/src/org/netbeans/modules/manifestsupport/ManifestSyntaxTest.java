@@ -9,7 +9,6 @@ package org.netbeans.modules.manifestsupport;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import junit.framework.TestCase;
 import org.netbeans.editor.Syntax;
 import org.netbeans.editor.TokenID;
 import org.netbeans.modules.manifestsupport.*;

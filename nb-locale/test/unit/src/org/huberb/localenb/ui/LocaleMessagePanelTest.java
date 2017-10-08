@@ -7,28 +7,19 @@
 
 package org.huberb.localenb.ui;
 
-import junit.framework.*;
-import java.text.Format;
-import java.text.MessageFormat;
-import java.text.ParseException;
-import java.util.List;
 import java.util.Locale;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.table.TableColumnModel;
+import org.junit.Test;
 
 /**
  *
  * @author HuberB1
  */
-public class LocaleMessagePanelTest extends TestCase {
+public class LocaleMessagePanelTest{
     
-    public LocaleMessagePanelTest(String testName) {
-        super(testName);
-    }
-
     /**
      * Test of format method, of class org.huberb.localenb.ui.LocaleMessagePanel.
      */
+    @Test
     public void testFormat() {
         Locale selectedLocale = Locale.getDefault();
         LocaleMessagePanel instance = new LocaleMessagePanel();

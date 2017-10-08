@@ -17,10 +17,6 @@ package org.huberb.regexpnb.task;
 
 import java.util.regex.Matcher;
 import org.huberb.regexpnb.task.IRegexpTask.RegexpTaskRequest;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -29,25 +25,6 @@ import static org.junit.Assert.*;
  * @author berni3
  */
 public class RegexpTaskTest {
-
-    public RegexpTaskTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of doProcess method, of class RegexpTask.

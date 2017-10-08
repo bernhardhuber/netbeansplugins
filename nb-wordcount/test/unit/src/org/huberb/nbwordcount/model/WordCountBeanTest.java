@@ -4,45 +4,23 @@
  *
  * Created on 23. Jänner 2006, 23:13
  */
-
 package org.huberb.nbwordcount.model;
 
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
-import junit.framework.*;
-import org.openide.filesystems.FileObject;
-import org.openide.filesystems.FileUtil;
-import org.openide.filesystems.LocalFileSystem;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author HuberB1
  */
-public class WordCountBeanTest extends TestCase {
-    
-    public WordCountBeanTest(String testName) {
-        super(testName);
-    }
-    
-    protected void setUp() throws Exception {
-        super.setUp();
-    }
-    
-    protected void tearDown() throws Exception {
-        super.tearDown();
-    }
-    
-    public static Test suite() {
-        TestSuite suite = new TestSuite(WordCountBeanTest.class);
-        
-        return suite;
-    }
-    
+public class WordCountBeanTest {
+
     /**
-     * Test of count method, of class org.huberb.nbwordcount.model.WordCountBean.
-     * Test of setFileObject method, of class org.huberb.nbwordcount.model.WordCountBean.
-     * Test of getNamesOfCounters method, of class org.huberb.nbwordcount.model.WordCountBean.
+     * Test of count method, of class
+     * org.huberb.nbwordcount.model.WordCountBean. Test of setFileObject method,
+     * of class org.huberb.nbwordcount.model.WordCountBean. Test of
+     * getNamesOfCounters method, of class
+     * org.huberb.nbwordcount.model.WordCountBean.
      */
     // TODO fix fo = null
 //    public void testCount() throws URISyntaxException {
@@ -62,24 +40,19 @@ public class WordCountBeanTest extends TestCase {
 //
 //        assertEquals( "", instance.getNamesOfCounters() );
 //    }
-    
     /**
-     * Test of getCounters method, of class org.huberb.nbwordcount.model.WordCountBean.
+     * Test of getCounters method, of class
+     * org.huberb.nbwordcount.model.WordCountBean.
      */
+    @Test
     public void testGetCounters() {
         WordCountBean instance = new WordCountBean();
-        
+
         Long[] result = instance.getCounters();
-        
+
         final Long long0L = new Long(0);
         assertEquals(long0L, result[0]);
         assertEquals(long0L, result[1]);
         assertEquals(long0L, result[2]);
     }
-    
-    
-    public static void main(java.lang.String[] argList) {
-        junit.textui.TestRunner.run(suite());
-    }
-    
 }

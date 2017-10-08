@@ -9,8 +9,8 @@ package org.huberb.randompassword.helper;
 import java.util.ArrayList;
 import java.util.List;
 import junit.framework.AssertionFailedError;
-import static junit.framework.TestCase.assertEquals;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *

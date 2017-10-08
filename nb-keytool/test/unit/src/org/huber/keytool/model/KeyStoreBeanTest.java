@@ -4,62 +4,52 @@
  *
  * Created on 17. September 2006, 11:56
  */
-
 package org.huber.keytool.model;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import junit.framework.*;
-import java.beans.PropertyChangeSupport;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.Serializable;
 import java.security.KeyStore;
-import org.openide.ErrorManager;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
  * @author HuberB1
  */
-public class KeyStoreBeanTest extends TestCase {
-    private KeyStoreBean instance;
-    
-    public KeyStoreBeanTest(String testName) {
-        super(testName);
-    }
+public class KeyStoreBeanTest {
 
-    protected void setUp() throws Exception {
-        super.setUp();
-        
+    private KeyStoreBean instance;
+
+    @Before
+    public void setUp() throws Exception {
+
         this.instance = new KeyStoreBean();
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite(KeyStoreBeanTest.class);
-        
-        return suite;
-    }
-
     /**
-     * Test of setKeyStoreValues method, of class org.huber.keytool.model.KeyStoreBean.
-     * Test of getName method, of class org.huber.keytool.model.KeyStoreBean.
+     * Test of setKeyStoreValues method, of class
+     * org.huber.keytool.model.KeyStoreBean. Test of getName method, of class
+     * org.huber.keytool.model.KeyStoreBean.
      */
+    @Test
     public void testSetKeyStoreValues() {
         String newName = "newName";
         KeyStore newKeyStore = null;
-        char[] newPassword = { 'a', 'b', 'c' };
-        
+        char[] newPassword = {'a', 'b', 'c'};
+
         instance.setKeyStoreValues(newName, newKeyStore, newPassword);
 
-        assertEquals( "newName", instance.getName() );
-        assertEquals( null, instance.getKeyStore() );
-        assertEquals( newPassword, instance.getStorePassword() );
+        assertEquals("newName", instance.getName());
+        assertEquals(null, instance.getKeyStore());
+        assertEquals(newPassword, instance.getStorePassword());
     }
 
     /**
-     * Test of isKeyStoreLoaded method, of class org.huber.keytool.model.KeyStoreBean.
+     * Test of isKeyStoreLoaded method, of class
+     * org.huber.keytool.model.KeyStoreBean.
      */
+    @Test
     public void testIsKeyStoreLoaded() {
         boolean expResult = false;
         boolean result = instance.isKeyStoreLoaded();
@@ -67,95 +57,104 @@ public class KeyStoreBeanTest extends TestCase {
     }
 
     /**
-     * Test of addPropertyChangeListener method, of class org.huber.keytool.model.KeyStoreBean.
+     * Test of addPropertyChangeListener method, of class
+     * org.huber.keytool.model.KeyStoreBean.
      */
+    @Test
     public void testAddPropertyChangeListener() {
         java.beans.PropertyChangeListener l = new PropertyChangeListener() {
             public void propertyChange(PropertyChangeEvent evt) {
                 Object source = evt.getSource();
-                assertEquals( instance, source );
-                assertEquals( KeyStoreBean.NAME_PROPERTY, evt.getPropertyName() );
+                assertEquals(instance, source);
+                assertEquals(KeyStoreBean.NAME_PROPERTY, evt.getPropertyName());
             }
         };
         instance.addPropertyChangeListener(l);
-        
-        instance.setName( "newName3" );
+
+        instance.setName("newName3");
     }
 
     /**
-     * Test of removePropertyChangeListener method, of class org.huber.keytool.model.KeyStoreBean.
+     * Test of removePropertyChangeListener method, of class
+     * org.huber.keytool.model.KeyStoreBean.
      */
+    @Test
     public void testRemovePropertyChangeListener() {
         final Integer[] counts = new Integer[1];
         counts[0] = new Integer(0);
         java.beans.PropertyChangeListener l = new PropertyChangeListener() {
             public void propertyChange(PropertyChangeEvent evt) {
-                int newCount = counts[0].intValue() +1;
+                int newCount = counts[0].intValue() + 1;
                 counts[0] = new Integer(newCount);
             }
         };
-        instance.addPropertyChangeListener(l);        
+        instance.addPropertyChangeListener(l);
         instance.removePropertyChangeListener(l);
-        
-        instance.setName( "newName3" );
-        
-        assertEquals( 0, counts[0].intValue() );
+
+        instance.setName("newName3");
+
+        assertEquals(0, counts[0].intValue());
     }
 
     /**
      * Test of hashCode method, of class org.huber.keytool.model.KeyStoreBean.
      */
+    @Test
     public void testHashCode() {
-        instance.setName( "nameA" );
+        instance.setName("nameA");
         KeyStoreBean instance2 = new KeyStoreBean();
-        instance2.setName( "nameA" );
+        instance2.setName("nameA");
 
         int result = instance.hashCode();
-        int result2 = instance2.hashCode();        
-        assertTrue( result == result2 );
-        
-        instance2.setName( "nameB" );
+        int result2 = instance2.hashCode();
+        assertTrue(result == result2);
+
+        instance2.setName("nameB");
         result = instance.hashCode();
         result2 = instance2.hashCode();
-        assertTrue( result != result2 );
-        
+        assertTrue(result != result2);
+
     }
 
     /**
      * Test of equals method, of class org.huber.keytool.model.KeyStoreBean.
      */
+    @Test
     public void testEquals() {
-        instance.setName( "nameA" );
+        instance.setName("nameA");
         KeyStoreBean instance2 = new KeyStoreBean();
-        instance2.setName( "nameA" );
-        
+        instance2.setName("nameA");
+
         boolean result = instance.equals(instance2);
         assertEquals(true, result);
-        
-        instance2.setName( "B" );
-        result = instance.equals( instance2 );
-        assertEquals( false, result );
+
+        instance2.setName("B");
+        result = instance.equals(instance2);
+        assertEquals(false, result);
     }
 
     /**
      * Test of compareTo method, of class org.huber.keytool.model.KeyStoreBean.
      */
+    @Test
     public void testCompareTo() {
-        instance.setName( "A" );
+        instance.setName("A");
         KeyStoreBean instance2 = new KeyStoreBean();
-        instance2.setName( "B" );
-        
+        instance2.setName("B");
+
         int result = instance.compareTo(instance2);
         assertEquals(-1, result);
-        
+
     }
 
     /**
-     * Test of saveKeyStoreFile method, of class org.huber.keytool.model.KeyStoreBean.
+     * Test of saveKeyStoreFile method, of class
+     * org.huber.keytool.model.KeyStoreBean.
      */
+    @Test
     public void testSaveKeyStoreFile() {
         // TODO implement this test case
         //instance.saveKeyStoreFile();
     }
-    
+
 }
