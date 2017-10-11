@@ -1,2 +1,0 @@
-Line 1 having 5 words
-and Line 2 having some more words, totally 9
