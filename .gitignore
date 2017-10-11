@@ -10,32 +10,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/locale-nb/build/
-/locale-nb/nbproject/private/
-/nb-jdepend/build/
-/nb-jdepend/nbproject/private/
-/nb-charindex/build/
-/nb-charindex/nbproject/private/
-/nb-locale/build/
-/nb-locale/nbproject/private/
-/nb-keytool/build/
-/nb-keytool/nbproject/private/
-/nb-i18n-validator/build/
-/nb-i18n-validator/nbproject/private/
-/nb-message-digest/build/
-/nb-message-digest/nbproject/private/
-/nb-crypto-services/build/
-/nb-crypto-services/nbproject/private/
-/nb-manifest-support/build/
-/nb-manifest-support/nbproject/private/
-/nb-httppost/build/
-/nb-httppost/nbproject/private/
-/nb-random-password/build/
-/nb-random-password/nbproject/private/
-/nb-regexp/build/
-/nb-regexp/nbproject/private/
-/nb-javadoc-templates/build/
-/nb-javadoc-templates/nbproject/private/
-/nb-timezone/build/
-/nb-timezone/nbproject/private/
-/nb-javadoc-templates/xxx/
+
+/build/
+/nbproject/private/
