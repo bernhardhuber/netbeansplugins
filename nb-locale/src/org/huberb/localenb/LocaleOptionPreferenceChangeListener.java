@@ -8,9 +8,10 @@
  */
 package org.huberb.localenb;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
+import java.util.prefs.PreferenceChangeEvent;
+import java.util.prefs.PreferenceChangeListener;
 import org.huberb.localenb.options.LocaleOption;
+import org.huberb.localenb.options.StringsStringEncoderDecoder;
 import org.huberb.localenb.ui.FormatCommandInterface;
 
 /**
@@ -18,14 +19,14 @@ import org.huberb.localenb.ui.FormatCommandInterface;
  *
  * @author HuberB1
  */
-public class LocaleOptionPropertyChangeListener implements PropertyChangeListener {
+public class LocaleOptionPreferenceChangeListener implements PreferenceChangeListener {
 
     private FormatCommandInterface[] fci;
 
     /**
      * Creates a new instance of DataPatternComboboxHelper
      */
-    public LocaleOptionPropertyChangeListener(FormatCommandInterface[] fci) {
+    public LocaleOptionPreferenceChangeListener(FormatCommandInterface[] fci) {
         this.fci = fci;
     }
 
@@ -37,22 +38,21 @@ public class LocaleOptionPropertyChangeListener implements PropertyChangeListene
      * @evt the property change event sent if the user changes a pattern list
      */
     @Override
-    public void propertyChange(PropertyChangeEvent evt) {
-        if (evt != null && evt.getPropertyName() != null && evt.getNewValue() != null) {
-            // the property name
-            final String evtPropertyName = evt.getPropertyName();
-            // the new property value
-
+    public void preferenceChange(PreferenceChangeEvent evt) {
+        if (evt != null && evt.getKey() != null && evt.getNewValue() != null) {
+            final String evtPropertyName = evt.getKey();
+            final String newValue = evt.getNewValue();
+            final String[] newValueDecoded = new StringsStringEncoderDecoder().decodeToArrayString(newValue);
+            
             if (LocaleOption.PROPERTY_DATE_PATTERN_LIST.equals(evtPropertyName)) {
-                final String[] evtNewPatterns = (String[]) evt.getNewValue();
-                this.fci[0].setPatterns(evtNewPatterns);
+                this.fci[0].setPatterns(newValueDecoded);
             } else if (LocaleOption.PROPERTY_NUMBER_PATTERN_LIST.equals(evtPropertyName)) {
-                final String[] evtNewPatterns = (String[]) evt.getNewValue();
-                this.fci[1].setPatterns(evtNewPatterns);
+                this.fci[1].setPatterns(newValueDecoded);
             } else if (LocaleOption.PROPERTY_MESSAGE_PATTERN_LIST.equals(evtPropertyName)) {
-                final String[] evtNewPatterns = (String[]) evt.getNewValue();
-                this.fci[2].setPatterns(evtNewPatterns);
+                this.fci[2].setPatterns(newValueDecoded);
             }
         }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }
