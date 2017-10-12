@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 OpenIDE-Module: org.huberb.randompassword/1
-OpenIDE-Module-Implementation-Version: 2
+OpenIDE-Module-Implementation-Version: 10
 OpenIDE-Module-Layer: org/huberb/randompassword/layer.xml
 OpenIDE-Module-Localizing-Bundle: org/huberb/randompassword/Bundle.properties
 OpenIDE-Module-Requires: org.netbeans.api.javahelp.Help

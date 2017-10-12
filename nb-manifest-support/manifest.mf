@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 OpenIDE-Module: org.netbeans.modules.manifestsupport/1
-OpenIDE-Module-Implementation-Version: 5
+OpenIDE-Module-Implementation-Version: 10
 OpenIDE-Module-Layer: org/netbeans/modules/manifestsupport/layer.xml
 OpenIDE-Module-Localizing-Bundle: org/netbeans/modules/manifestsupport/Bundle.properties
 OpenIDE-Module-Install: org/netbeans/modules/manifestsupport/RestoreColoring.class

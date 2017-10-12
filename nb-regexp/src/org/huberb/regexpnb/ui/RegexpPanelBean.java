@@ -123,9 +123,11 @@ public class RegexpPanelBean implements Serializable {
         this.description = description;
     }
 
+    @Override
     public int hashCode() {
         return this.name.hashCode();
     }
+    @Override
     public boolean equals( Object obj ) {
         boolean isEqual = false;
         if (obj instanceof RegexpPanelBean) {

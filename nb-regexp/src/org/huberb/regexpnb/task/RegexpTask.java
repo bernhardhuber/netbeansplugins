@@ -30,13 +30,13 @@ public class RegexpTask implements IRegexpTask {
     public RegexpTaskResponse doProcess(RegexpTaskRequest req) {
         final String patternAsString = req.getPattern();
         final String inputAsString = req.getInputAsString();
-        int flags = req.getFlags();
+        final int flags = req.getFlags();
         final Pattern pattern = Pattern.compile(patternAsString, flags);
-        Matcher matcher = pattern.matcher(inputAsString);
+        final Matcher matcher = pattern.matcher(inputAsString);
 
         final boolean matchesResult = req.getF().apply(matcher);
-        StringBuilder sb = buildResult(matcher, matchesResult);
-        RegexpTaskResponse resp = new RegexpTaskResponse(
+        final StringBuilder sb = buildResult(matcher, matchesResult);
+        final RegexpTaskResponse resp = new RegexpTaskResponse(
                 matchesResult,
                 matcher, pattern,
                 sb.toString());
