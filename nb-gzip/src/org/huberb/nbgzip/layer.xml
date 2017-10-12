@@ -9,27 +9,11 @@
             </file>
         </folder>
     </folder>
-    <folder name="Services">
-        <file name="org-huberb-nbgzip-option-AskOption.settings" url="option/AskOption.xml">
-            <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/nbgzip/images/gzip-options.png"/>
-        </file>
-        
+    <folder name="Services">        
         <folder name="JavaHelp">
             <file name="org-huberb-nbgzip-helpset.xml" url="helpset.xml"/>
             <attr name="org-netbeans-modules-usersguide-below-regular.txt/org-huberb-nbgzip-helpset.xml" boolvalue="true"/>
         </folder>
     </folder>
-    
-    <folder name="UI">
-        <folder name="Services">
-            <!-- Display the system option under the "Testing" category in Options. -->
-            <folder name="Tools">
-                <!-- Point to the real settings file (always on the system file system). -->
-                <file name="org-huberb-nbgzip-option-AskOption.shadow">
-                    <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/huberb/nbgzip/images/gzip-options.png"/>
-                    <attr name="originalFile" stringvalue="Services/org-huberb-nbgzip-option-AskOption.settings"/>
-                </file>
-            </folder>
-        </folder>
-    </folder>
+   
 </filesystem>

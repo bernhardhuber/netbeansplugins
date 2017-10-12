@@ -6,64 +6,31 @@
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
-
 package org.huberb.nbgzip.option;
 
-import org.openide.options.SystemOption;
 import org.openide.util.HelpCtx;
 import org.openide.util.NbBundle;
+import org.openide.util.NbPreferences;
 
 /**
  * Encapsulate options in this class.
  *
  * @author HuberB1
  */
-public class AskOption extends SystemOption {
+public class AskOption {
+
     protected final static long serialVersionUID = 20060116221600L;
-        
-    /** Creates a new instance of PatternBeanSettings */
-    public AskOption() {
-    }
-    
-    public String displayName() {
-        return NbBundle.getMessage(this.getClass(), "CTL_AskOption");
-    }
-    
-    public HelpCtx getHelpCtx() {
-        //return HelpCtx.DEFAULT_HELP;
-        return new HelpCtx( "about_nbgzip" );
-    }
-    
-    //----
-    private final static String ASK_COMPRESS = "AskCompress";
-    public Boolean getAskCompress() {
-        final Boolean value = (Boolean)getProperty( ASK_COMPRESS );
-        return value;
-    }
-    public void setAskCompress( Boolean newMatchesResultMessage ) {
-        putProperty(ASK_COMPRESS, newMatchesResultMessage, true );
-    }
+    private static final AskOption INSTANCE = new AskOption();
 
     //----
+    private final static String ASK_COMPRESS = "AskCompress";
     private final static String ASK_UNCOMPRESS = "AskUncompress";
-    public Boolean getAskUncompress() {
-        final Boolean value = (Boolean)getProperty( ASK_UNCOMPRESS );
-        return value;
-    }
-    public void setAskUncompress( Boolean newMatchesResultMessage ) {
-        putProperty(ASK_UNCOMPRESS, newMatchesResultMessage, true );
-    }
-    
-    //----
     private final static String ASK_DELETE = "AskDelete";
-    public Boolean getAskDelete() {
-        final Boolean value = (Boolean)getProperty( ASK_DELETE );
-        return value;
-    }
-    public void setAskDelete( Boolean newMatchesResultMessage ) {
-        putProperty(ASK_DELETE, newMatchesResultMessage, true );
-    }
-    
+
+    private final static Boolean ASK_COMPRESS_DEFAULT = Boolean.TRUE;
+    private final static Boolean ASK_UNCOMPRESS_DEFAULT = Boolean.TRUE;
+    private final static Boolean ASK_DELETE_DEFAULT = Boolean.TRUE;
+
     //----
     /**
      * Get a default instance <code>AskOption</code>.
@@ -71,21 +38,56 @@ public class AskOption extends SystemOption {
      * @return AskOption the default locale's option
      */
     public static final AskOption getDefault() {
-        return (AskOption)findObject(AskOption.class, true);
+        return INSTANCE;
     }
-    
-    private final static Boolean ASK_COMPRESS_DEFAULT = Boolean.TRUE;
-    private final static Boolean ASK_UNCOMPRESS_DEFAULT = Boolean.TRUE;
-    private final static Boolean ASK_DELETE_DEFAULT = Boolean.TRUE;
-    
+
     /**
-     * initialize this option
+     * Creates a new instance of PatternBeanSettings
      */
-    protected void initialize() {
-        super.initialize();
-        
-        putProperty( ASK_COMPRESS, ASK_COMPRESS_DEFAULT, false );
-        putProperty( ASK_UNCOMPRESS, ASK_UNCOMPRESS_DEFAULT, false );
-        putProperty( ASK_DELETE, ASK_DELETE_DEFAULT, false );
+    private AskOption() {
+    }
+
+    public String displayName() {
+        return NbBundle.getMessage(this.getClass(), "CTL_AskOption");
+    }
+
+    public HelpCtx getHelpCtx() {
+        //return HelpCtx.DEFAULT_HELP;
+        return new HelpCtx("about_nbgzip");
+    }
+
+    public Boolean getAskCompress() {
+        final Boolean value = getPropertyBoolean(ASK_COMPRESS, ASK_COMPRESS_DEFAULT);
+        return value;
+    }
+
+    public void setAskCompress(Boolean value) {
+        setPropertyBoolean(ASK_COMPRESS, value);
+    }
+
+    public Boolean getAskUncompress() {
+        final Boolean value = getPropertyBoolean(ASK_UNCOMPRESS, ASK_UNCOMPRESS_DEFAULT);
+        return value;
+    }
+
+    public void setAskUncompress(Boolean value) {
+        setPropertyBoolean(ASK_UNCOMPRESS, value);
+    }
+
+    public Boolean getAskDelete() {
+        final Boolean value = getPropertyBoolean(ASK_DELETE, ASK_DELETE_DEFAULT);
+        return value;
+    }
+
+    public void setAskDelete(Boolean value) {
+        setPropertyBoolean(ASK_DELETE, value);
+    }
+
+    protected final Boolean getPropertyBoolean(String key, Boolean def) {
+        return NbPreferences.forModule(AskOption.class).getBoolean(key, def);
+    }
+
+    protected final void setPropertyBoolean(String key, Boolean value) {
+        NbPreferences.forModule(AskOption.class).putBoolean(key, value);
     }
 }

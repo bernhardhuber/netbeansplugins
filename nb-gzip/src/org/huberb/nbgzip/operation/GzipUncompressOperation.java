@@ -6,7 +6,6 @@
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
-
 package org.huberb.nbgzip.operation;
 
 import java.io.IOException;
@@ -29,46 +28,46 @@ import org.openide.util.NbBundle;
  * @author HuberB1
  */
 public class GzipUncompressOperation extends StreamOperation {
-    
-    /** Creates a new instance of GzipUncompressOperation */
+
+    /**
+     * Creates a new instance of GzipUncompressOperation
+     */
     public GzipUncompressOperation() {
     }
-    
+
     /**
      * Uncompress the FileObject
      *
      * @param sourceFO uncompress this source FileObject
      */
-    public boolean uncompress( FileObject sourceFO ) {
+    public boolean uncompress(FileObject sourceFO) {
         boolean success = false;
-        OutputStream os = null;
+
         FileLock fileLock = null;
-        InputStream is = null;
         ProgressHandle progressHandle = null;
-        
+
         try {
             // create target
             final String targetFilename = sourceFO.getName();
-            FileObject targetFO = FileUtil.createData( sourceFO.getParent(), targetFilename );
+            FileObject targetFO = FileUtil.createData(sourceFO.getParent(), targetFilename);
             fileLock = targetFO.lock();
-            os = targetFO.getOutputStream( fileLock );
-            
-            // get input
-            ProgressHandleWrapper phw = createProgressHandleWrapper(sourceFO);
-            is = new GZIPInputStream( phw.getProgressInputStream() );
-            
-            // process: read from input and write compressed to target
-            final Cancellable allowToCancel = phw;
-            final String progressLabel = NbBundle.getMessage( StreamOperation.class, "LBL_Uncompress" );
-            progressHandle = ProgressHandleFactory.createHandle( progressLabel, allowToCancel );
-            phw.setProgressHandle( progressHandle );            
-            success = process( phw, is, os );
+            try (OutputStream os = targetFO.getOutputStream(fileLock)) {
+                // get input
+                ProgressHandleWrapper phw = createProgressHandleWrapper(sourceFO);
+                try (InputStream is = new GZIPInputStream(phw.getProgressInputStream())) {
+
+                    // process: read from input and write compressed to target
+                    final Cancellable allowToCancel = phw;
+                    final String progressLabel = NbBundle.getMessage(StreamOperation.class, "LBL_Uncompress");
+                    progressHandle = ProgressHandleFactory.createHandle(progressLabel, allowToCancel);
+                    phw.setProgressHandle(progressHandle);
+                    success = process(phw, is, os);
+                }
+            }
         } catch (IOException ioe) {
-            ErrorManager.getDefault().notify( ioe );
+            ErrorManager.getDefault().notify(ioe);
             success = false;
         } finally {
-            closeInputStream( is );
-            closeOutputStream( os );
             releaseLock(fileLock);
 
             if (progressHandle != null) {
