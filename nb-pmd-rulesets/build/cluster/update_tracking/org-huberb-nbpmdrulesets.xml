@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module codename="org.huberb.nbpmdrulesets/1">
-<module_version install_time="1181078343313" last="true" origin="installer" specification_version="1.0.1">
-<file crc="2162285152" name="config/Modules/org-huberb-nbpmdrulesets.xml"/>
-<file crc="2120510135" name="modules/docs/org-huberb-nbpmdrulesets.jar"/>
-<file crc="3934890654" name="modules/org-huberb-nbpmdrulesets.jar"/>
-</module_version>
-</module>
