@@ -1,7 +1,6 @@
 package org.huberb.cpd.misc;
 
 import org.netbeans.api.progress.ProgressHandle;
-import org.netbeans.api.progress.ProgressHandleFactory;
 
 /**
  * Encapsulate progress handle operations.
@@ -14,10 +13,11 @@ import org.netbeans.api.progress.ProgressHandleFactory;
  * </ul>
  */
 public class ProgressHandleHelper {
+
     private final ProgressHandle ph;
     private int progressCount;
     private final int totalNumberOfProgressSteps;
-    
+
     /**
      * Create a new instance
      *
@@ -26,11 +26,11 @@ public class ProgressHandleHelper {
      */
     public ProgressHandleHelper(int totalNumberOfProgressSteps, String displayName) {
         this.totalNumberOfProgressSteps = totalNumberOfProgressSteps;
-        this.ph = ProgressHandleFactory.createHandle(displayName);
+        this.ph = ProgressHandle.createHandle(displayName);
         this.ph.start(this.totalNumberOfProgressSteps);
         this.progressCount = 1;
     }
-    
+
     /**
      * Indicate a single progress step.
      */
@@ -39,21 +39,21 @@ public class ProgressHandleHelper {
         if (this.progressCount > totalNumberOfProgressSteps) {
             this.progressCount = totalNumberOfProgressSteps;
         }
-        
+
         final int theProgressCount = this.progressCount;
-        ph.progress( theProgressCount );
+        ph.progress(theProgressCount);
     }
-    
+
     /**
-     * Change the progress label. This method does not change
-     * the progress step value
+     * Change the progress label. This method does not change the progress step
+     * value
      *
      * @param newProgressString the new progress label
      */
-    public void progress( final String newProgressString ) {
-        ph.progress( newProgressString );
+    public void progress(final String newProgressString) {
+        ph.progress(newProgressString);
     }
-    
+
     /**
      * Indicate that progress has finished
      */

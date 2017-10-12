@@ -35,11 +35,11 @@ import org.openide.util.NbBundle;
  */
 public class CpdProcessor {
     
-    private CpdSettings cpo;
-    private List<File> filesets;
+    private final CpdSettings cpo;
+    private final List<File> filesets;
     
     private CPDListener cpdListener;
-    private PrintWriter printWriter;
+    private final PrintWriter printWriter;
     
     /**
      * Creates a new instance of CpdProcessor
