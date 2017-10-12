@@ -23,7 +23,7 @@ import org.openide.filesystems.Repository;
  *
  * @author HuberB1
  */
-public class XsltFileObjectComboBoxModel extends DefaultComboBoxModel {
+public class XsltFileObjectComboBoxModel extends DefaultComboBoxModel<LabelFileObjectBean> {
     
     /**
      * Creates a new instance of XsltFileObjectComboBoxModel

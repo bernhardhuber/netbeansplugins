@@ -130,19 +130,12 @@ public class JDependProcessor {
 
         printHeader();
 
-        Collection packages = analyzer.analyze();
-
-        ArrayList packageList = new ArrayList(packages);
-
-        Collections.sort(packageList, new PackageComparator(PackageComparator
-                .byName()));
-
+        final Collection packages = analyzer.analyze();
+        final ArrayList packageList = new ArrayList(packages);
+        Collections.sort(packageList, new PackageComparator(PackageComparator.byName()));
         printPackages(packageList);
-
         printCycles(packageList);
-
         printSummary(packageList);
-
         printFooter();
 
         getWriter().flush();
@@ -151,8 +144,7 @@ public class JDependProcessor {
     protected void printPackages(Collection packages) {
         printPackagesHeader();
 
-        Iterator i = packages.iterator();
-        while (i.hasNext()) {
+        for (Iterator<JavaPackage> i = packages.iterator(); i.hasNext();) {
             printPackage((JavaPackage) i.next());
         }
 
@@ -170,33 +162,23 @@ public class JDependProcessor {
         }
 
         printStatistics(jPackage);
-
         printSectionBreak();
-
         printAbstractClasses(jPackage);
-
         printSectionBreak();
-
         printConcreteClasses(jPackage);
-
         printSectionBreak();
-
         printEfferents(jPackage);
-
         printSectionBreak();
-
         printAfferents(jPackage);
-
         printPackageFooter(jPackage);
     }
 
     protected void printAbstractClasses(JavaPackage jPackage) {
         printAbstractClassesHeader();
 
-        ArrayList members = new ArrayList(jPackage.getClasses());
+        ArrayList<JavaClass> members = new ArrayList(jPackage.getClasses());
         Collections.sort(members, new JavaClass.ClassComparator());
-        Iterator memberIter = members.iterator();
-        while (memberIter.hasNext()) {
+        for (Iterator<JavaClass> memberIter = members.iterator(); memberIter.hasNext();) {
             JavaClass jClass = (JavaClass) memberIter.next();
             if (jClass.isAbstract()) {
                 printClassName(jClass);
@@ -225,11 +207,9 @@ public class JDependProcessor {
     protected void printEfferents(JavaPackage jPackage) {
         printEfferentsHeader();
 
-        ArrayList efferents = new ArrayList(jPackage.getEfferents());
-        Collections.sort(efferents, new PackageComparator(PackageComparator
-                .byName()));
-        Iterator efferentIter = efferents.iterator();
-        while (efferentIter.hasNext()) {
+        ArrayList<JavaPackage> efferents = new ArrayList(jPackage.getEfferents());
+        Collections.sort(efferents, new PackageComparator(PackageComparator.byName()));
+        for (Iterator<JavaPackage> efferentIter = efferents.iterator(); efferentIter.hasNext();) {
             JavaPackage efferent = (JavaPackage) efferentIter.next();
             printPackageName(efferent);
         }
@@ -243,11 +223,9 @@ public class JDependProcessor {
     protected void printAfferents(JavaPackage jPackage) {
         printAfferentsHeader();
 
-        ArrayList afferents = new ArrayList(jPackage.getAfferents());
-        Collections.sort(afferents, new PackageComparator(PackageComparator
-                .byName()));
-        Iterator afferentIter = afferents.iterator();
-        while (afferentIter.hasNext()) {
+        ArrayList<JavaPackage> afferents = new ArrayList(jPackage.getAfferents());
+        Collections.sort(afferents, new PackageComparator(PackageComparator.byName()));
+        for (Iterator<JavaPackage> afferentIter = afferents.iterator(); afferentIter.hasNext();) {
             JavaPackage afferent = (JavaPackage) afferentIter.next();
             printPackageName(afferent);
         }
