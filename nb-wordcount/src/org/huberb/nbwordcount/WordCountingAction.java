@@ -13,6 +13,7 @@ import org.openide.util.actions.CookieAction;
 public final class WordCountingAction extends CookieAction {
     static final String ICON_PATH = "org/huberb/nbwordcount/images/wordCounting.gif";
     
+    @Override
     protected void performAction(final Node[] activatedNodes) {
         final WordCountingActionHelper  wcaiw = new WordCountingActionHelper();
         final Runnable task = wcaiw.createTask( activatedNodes );
@@ -22,33 +23,40 @@ public final class WordCountingAction extends CookieAction {
     }
     
     
+    @Override
     protected int mode() {
         return CookieAction.MODE_ANY;
     }
     
+    @Override
     public String getName() {
         return NbBundle.getMessage(WordCountingAction.class, "CTL_WordCountingAction");
     }
     
+    @Override
     protected Class[] cookieClasses() {
         return new Class[] {
             DataObject.class
         };
     }
     
+    @Override
     protected void initialize() {
         super.initialize();
         // see org.openide.util.actions.SystemAction.iconResource() javadoc for more details
         //putValue("noIconInMenu", Boolean.TRUE);
     }
+    @Override
     protected String iconResource() {
         return ICON_PATH;
     }
     
+    @Override
     public HelpCtx getHelpCtx() {
         return ConstantsHelper.getHelpCtx();
     }
     
+    @Override
     protected boolean asynchronous() {
         return false;
     }

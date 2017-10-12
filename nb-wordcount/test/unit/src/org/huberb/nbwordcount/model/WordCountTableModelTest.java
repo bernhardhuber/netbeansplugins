@@ -22,13 +22,7 @@ public class WordCountTableModelTest {
      */
     @Test
     public void testSetCounters() {
-        Long[] newCounters = new Long[]{
-            new Long(1),
-            new Long(2),
-            new Long(3),
-            new Long(4),
-            new Long(5),
-            new Long(6),};
+        Long[] newCounters = new Long[]{1L, 2L, 3L, 4L, 5L, 6L,};
         WordCountTableModel instance = new WordCountTableModel();
 
         instance.setCounters(newCounters);

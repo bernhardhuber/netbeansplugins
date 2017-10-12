@@ -22,6 +22,7 @@ public class WordCountAction extends AbstractAction {
         return ConstantsHelper.getHelpCtx();
     }
         
+    @Override
     public void actionPerformed(ActionEvent evt) {
         TopComponent win = WordCountTopComponent.findInstance();
         win.open();

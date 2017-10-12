@@ -17,9 +17,9 @@ import org.huberb.nbwordcount.model.counters.LineCounterIF.CounterInfo;
  * @author HuberB1
  */
 public class SimpleLineCounter implements LineCounterIF {
-    private Counter countOfCharacters;
-    private Counter countOfWords;
-    private Counter countOfLines;
+    private final Counter countOfCharacters;
+    private final Counter countOfWords;
+    private final Counter countOfLines;
     
     /** Creates a new instance of SimpleLineCounter */
     public SimpleLineCounter() {
@@ -31,13 +31,13 @@ public class SimpleLineCounter implements LineCounterIF {
     }
     
     public Number getCountOfCharacter() {
-        return Long.valueOf(this.countOfCharacters.longValue());
+        return this.countOfCharacters.longValue();
     }
     public Number getCountOfWords() {
-        return Long.valueOf(this.countOfWords.longValue());
+        return this.countOfWords.longValue();
     }
     public Number getCountOfLines() {
-        return Long.valueOf(this.countOfLines.longValue());
+        return this.countOfLines.longValue();
     }
     
     /**
@@ -45,10 +45,10 @@ public class SimpleLineCounter implements LineCounterIF {
      *
      * @param line the line
      */
+    @Override
     public void count(String line) {
         this.countOfLines.increment(1L);
-        final int lineLength = line.length();
-        this.countOfCharacters.increment( lineLength );
+        this.countOfCharacters.increment( line.length() );
         this.countOfWords.increment( this.countOfWords( line ));
     }
     
@@ -82,9 +82,11 @@ public class SimpleLineCounter implements LineCounterIF {
         return countOfWords;
     }
     
+    @Override
     public CounterInfo getCounterInfo() {
         final SimpleLineCounter slc = this;        
         final CounterInfo ci = new CounterInfo() {
+            @Override
             public Number[] getCounterValues() {
                 return new Number[] {
                     slc.getCountOfCharacter(),

@@ -6,8 +6,13 @@
  */
 package org.huberb.nbwordcount.model;
 
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.openide.filesystems.FileObject;
+import org.openide.filesystems.FileUtil;
 
 /**
  *
@@ -22,24 +27,29 @@ public class WordCountBeanTest {
      * getNamesOfCounters method, of class
      * org.huberb.nbwordcount.model.WordCountBean.
      */
-    // TODO fix fo = null
-//    public void testCount() throws URISyntaxException {
-//        WordCountBean instance = new WordCountBean();
-//
-//        URL url = this.getClass().getResource("SampleText.txt");
-//        File file = new File(url.toURI());
-//        File normalizedFile = FileUtil.normalizeFile( file );
-//        FileObject fo = FileUtil.toFileObject( normalizedFile );
-//
-//        instance.setFileObject( fo );
-//        instance.count();
-//
-//        assertTrue( instance.getCountOfCharacters() > 1 );
-//        assertEquals( 3L, instance.getCountOfLines() );
-//        assertEquals( 14L, instance.getCountOfWords() );
-//
-//        assertEquals( "", instance.getNamesOfCounters() );
-//    }
+    @Test
+    public void testCount() throws URISyntaxException {
+        WordCountBean instance = new WordCountBean();
+
+        URL url = this.getClass().getResource("SampleText.txt");
+        File file = new File(url.toURI());
+        File normalizedFile = FileUtil.normalizeFile(file);
+        assertEquals(true, normalizedFile.canRead());
+        FileObject fo = FileUtil.toFileObject(normalizedFile);
+        assertNotNull(fo);
+        assertEquals(true, fo.canRead());
+
+        instance.setFileObject(fo);
+        instance.count();
+
+        assertEquals(true, instance.getCounters()[0].longValue() > 1L);
+        assertEquals(65L, instance.getCounters()[0].longValue());
+        assertEquals(14L, instance.getCounters()[1].longValue());
+        assertEquals(2L, instance.getCounters()[2].longValue());
+
+        assertEquals("SampleText.txt", instance.getNamesOfFiles());
+    }
+
     /**
      * Test of getCounters method, of class
      * org.huberb.nbwordcount.model.WordCountBean.

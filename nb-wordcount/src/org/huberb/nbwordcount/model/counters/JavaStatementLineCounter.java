@@ -19,16 +19,16 @@ import org.huberb.nbwordcount.model.counters.LineCounterIF.CounterInfo;
  * @author HuberB1
  */
 public class JavaStatementLineCounter implements LineCounterIF {
-    private Counter lines;
-    private Counter nonWhiteSpaceLines;
-    private Counter code;
+    private final Counter lines;
+    private final Counter nonWhiteSpaceLines;
+    private final Counter code;
     
-    private Pattern RE_WHITESPACE = Pattern.compile("\\s*[*]?\\s*");
-    private Pattern RE_COMMENT1 = Pattern.compile( "\\s*[*].*" );
-    private Pattern RE_COMMENT2 = Pattern.compile( "\\s*//.*" );
-    private Pattern RE_COMMENT3 = Pattern.compile( "\\s*/[*].*" );
+    private final Pattern RE_WHITESPACE = Pattern.compile("\\s*[*]?\\s*");
+    private final Pattern RE_COMMENT1 = Pattern.compile( "\\s*[*].*" );
+    private final Pattern RE_COMMENT2 = Pattern.compile( "\\s*//.*" );
+    private final Pattern RE_COMMENT3 = Pattern.compile( "\\s*/[*].*" );
     
-    private Pattern RE_SIMPLE_STATMENT = Pattern.compile( "\\s*[:?=(){};]\\s*" );
+    private final Pattern RE_SIMPLE_STATMENT = Pattern.compile( "\\s*[:?=(){};]\\s*" );
     
     /** Creates a new instance of JavaStatementLineCounter */
     public JavaStatementLineCounter() {
@@ -44,7 +44,7 @@ public class JavaStatementLineCounter implements LineCounterIF {
      * @return Long the count of lines
      */
     public Long getCountOfLines() {
-        return Long.valueOf(this.lines.longValue() );
+        return this.lines.longValue();
     }
     
     /**
@@ -52,7 +52,7 @@ public class JavaStatementLineCounter implements LineCounterIF {
      * @return Long the count of whitespace lines
      */
     public Long getCountOfWhitspaceLines() {
-        return Long.valueOf( this.lines.longValue() - this.nonWhiteSpaceLines.longValue() );
+        return this.lines.longValue() - this.nonWhiteSpaceLines.longValue();
     }
     
     /**
@@ -60,7 +60,7 @@ public class JavaStatementLineCounter implements LineCounterIF {
      * @return Long the count of code lines
      */
     public Long getCountOfCodeLines() {
-        return Long.valueOf( this.code.longValue() );
+        return this.code.longValue();
     }
     
     /**
@@ -68,6 +68,7 @@ public class JavaStatementLineCounter implements LineCounterIF {
      *
      * @param line the line
      */
+    @Override
     public void count(String s) {
         lines.increment(1L);
         if (!RE_WHITESPACE.matcher(s).matches()) {
@@ -93,9 +94,11 @@ public class JavaStatementLineCounter implements LineCounterIF {
      *
      * @return CounterInfo the information gathered
      */
+    @Override
     public CounterInfo getCounterInfo() {
         final JavaStatementLineCounter slc = this;
         final CounterInfo ci = new CounterInfo() {
+            @Override
             public Number[] getCounterValues() {
                 return new Number[] {
                     slc.getCountOfLines(),

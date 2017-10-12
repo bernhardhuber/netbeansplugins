@@ -34,6 +34,7 @@ public class DefaultNumberRenderer extends  DefaultTableCellRenderer {
         setHorizontalAlignment(JLabel.RIGHT);
     }
     
+    @Override
     public void setValue(Object value) {
         if (formatter==null) {
             formatter = new DecimalFormat( DEFAULT_PATTERN );

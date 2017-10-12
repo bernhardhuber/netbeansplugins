@@ -37,6 +37,7 @@ class WordCountingActionHelper implements Cancellable {
     }
 
     // Implementation of Cancellable
+    @Override
     public boolean cancel() {
         this.isCancelled = true;
         return this.isCancelled;

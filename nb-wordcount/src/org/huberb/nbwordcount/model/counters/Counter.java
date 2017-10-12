@@ -46,28 +46,34 @@ public class Counter extends Number {
     }
     
     // implement abstract Number methods start
+    @Override
     public int intValue() {
         return (int) this.counterValue;
     }
     
+    @Override
     public long longValue() {
         return this.counterValue;
     }
     
+    @Override
     public float floatValue() {
         return (float) this.counterValue;
     }
     
+    @Override
     public double doubleValue() {
         return (double) this.counterValue;
     }
     // implement abstract Number methods end
     
+    @Override
     public int hashCode() {
         int hashCode = (int)this.getCounterValue();
         return hashCode;
     }
     
+    @Override
     public boolean equals( Object obj ) {
         boolean equals = false;
         if (obj == this) {
@@ -81,6 +87,7 @@ public class Counter extends Number {
         return equals;
     }
     
+    @Override
     public String toString() {
         return String.valueOf(this.counterValue);
     }

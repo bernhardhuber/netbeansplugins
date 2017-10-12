@@ -23,8 +23,8 @@ public class WordCountTableModel extends AbstractWordCountTableModel {
     
     /** Creates a new instance of WordCountTableModel */
     public WordCountTableModel() {
-        final Long COUNTER_DEFAULT = Long.valueOf(0L);
-        final Double COUNTER_DEFAULT2 = Double.valueOf(0.0);
+        final Long COUNTER_DEFAULT = 0L;
+        final Double COUNTER_DEFAULT2 = 0.0;
         counters = new Number[] {
             COUNTER_DEFAULT,
             COUNTER_DEFAULT,
@@ -50,9 +50,10 @@ public class WordCountTableModel extends AbstractWordCountTableModel {
         };
     }
     
+    @Override
     public void setCounters(Number[] newCounters ) {
         List newCountersAsList = Arrays.asList(newCounters);
-        final List<Number> countersAsList = new ArrayList<Number>();
+        final List<Number> countersAsList = new ArrayList<>();
         
         // retrieve all counters from SimpleLineCounter
         countersAsList.addAll( newCountersAsList.subList( 0, 3 ) );
@@ -65,8 +66,8 @@ public class WordCountTableModel extends AbstractWordCountTableModel {
             double charactersByLine = countOfCharacters / countOfLines;
             double wordsByLine = countOfWords / countOfLines;
             
-            countersAsList.add( Double.valueOf(charactersByLine) );
-            countersAsList.add( Double.valueOf(wordsByLine) );
+            countersAsList.add(charactersByLine);
+            countersAsList.add(wordsByLine);
         }
         
         // retrieve SimpleLineCounter #blank lines, and #code lines

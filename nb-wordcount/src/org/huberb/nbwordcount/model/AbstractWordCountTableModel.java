@@ -63,14 +63,17 @@ public abstract class AbstractWordCountTableModel extends AbstractTableModel {
     //-------------------------------------------------------------
     // AbstractTableModel implementation
     //-------------------------------------------------------------
+    @Override
     public int getRowCount() {
         return counters.length;
     }
     
+    @Override
     public int getColumnCount() {
         return 2;
     }
     
+    @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Object value = null;
         
@@ -86,6 +89,7 @@ public abstract class AbstractWordCountTableModel extends AbstractTableModel {
         return value;
     }
     
+    @Override
     public String getColumnName(int columnIndex) {
         String retValue = null;
         
@@ -97,6 +101,7 @@ public abstract class AbstractWordCountTableModel extends AbstractTableModel {
         return retValue;
     }
     
+    @Override
     public Class<?> getColumnClass(int columnIndex) {
         Class retValue = null;
         

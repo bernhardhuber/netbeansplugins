@@ -217,22 +217,27 @@ final class WordCountTopComponent extends TopComponent {
         return wctc;
     }
     
+    @Override
     public int getPersistenceType() {
         return TopComponent.PERSISTENCE_ALWAYS;
     }
     
+    @Override
     public void componentOpened() {
         // TODO add custom code on component opening
     }
     
+    @Override
     public void componentClosed() {
         // TODO add custom code on component closing
     }
     
+    @Override
     protected String preferredID() {
         return PREFERRED_ID;
     }
     
+    @Override
     public HelpCtx getHelpCtx() {
         return ConstantsHelper.getHelpCtx();
     }
@@ -245,6 +250,7 @@ final class WordCountTopComponent extends TopComponent {
         return getDefault();
     }
     
+    @Override
     public void writeExternal(ObjectOutput oo) throws IOException {
         super.writeExternal(oo);
         
@@ -262,6 +268,7 @@ final class WordCountTopComponent extends TopComponent {
         oo.writeObject(writeObject);
     }
     
+    @Override
     public void readExternal(ObjectInput oi) throws IOException, ClassNotFoundException {
         super.readExternal(oi);
         
@@ -274,7 +281,7 @@ final class WordCountTopComponent extends TopComponent {
                 }
                 final int stateLength = state.length;
                 if (stateLength > 0 && state[0] instanceof Integer) {
-                    int dividerLocation = ((Integer)state[0]).intValue();
+                    int dividerLocation = ((Integer)state[0]);
                     this.splitPane.setDividerLocation( dividerLocation );
                 }
             } catch (Exception e) {

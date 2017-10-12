@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.huberb.nbwordcount.model.counters.JavaStatementLineCounter;
 import org.huberb.nbwordcount.model.counters.LineCounterIF.CounterInfo;
@@ -30,6 +32,7 @@ import org.openide.filesystems.FileObject;
  */
 public class WordCountBean implements Serializable {
 
+    private static final Logger LOG = Logger.getLogger(WordCountBean.class.getName());
     protected final static long serialVersionUID = 20060124151400L;
 
     private FileObject fo;
@@ -72,7 +75,7 @@ public class WordCountBean implements Serializable {
             final String foName = fo.getNameExt();
             foNames.add(foName);
         } catch (IOException ioex) {
-            // ignore it
+            LOG.log(Level.INFO, "Cannot count from " + this.fo, ioex);
         }
     }
 
@@ -114,10 +117,10 @@ public class WordCountBean implements Serializable {
      * </ul>
      */
     public Long[] getCounters() {
-        CounterInfo simpleCounterInfo = this.simpleLineCounter.getCounterInfo();
-        CounterInfo javaStatementCounterInfo = this.javaStatementLineCounter.getCounterInfo();
-        Number[] simpleCounterValues = simpleCounterInfo.getCounterValues();
-        Number[] javaStatementValues = javaStatementCounterInfo.getCounterValues();
+        final CounterInfo simpleCounterInfo = this.simpleLineCounter.getCounterInfo();
+        final CounterInfo javaStatementCounterInfo = this.javaStatementLineCounter.getCounterInfo();
+        final Number[] simpleCounterValues = simpleCounterInfo.getCounterValues();
+        final Number[] javaStatementValues = javaStatementCounterInfo.getCounterValues();
 
         final Long[] counterValues = new Long[]{
             simpleCounterValues[0].longValue(),
@@ -135,9 +138,7 @@ public class WordCountBean implements Serializable {
      * @param is lines of this input stream are examined
      */
     private void count(InputStream is) throws IOException {
-
         try (BufferedReader in = new BufferedReader(new InputStreamReader(is))) {
-
             String line;
             while ((line = in.readLine()) != null) {
                 this.simpleLineCounter.count(line);
