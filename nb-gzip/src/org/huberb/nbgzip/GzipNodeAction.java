@@ -6,7 +6,6 @@
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
-
 package org.huberb.nbgzip;
 
 import java.io.File;
@@ -31,62 +30,71 @@ import org.openide.util.actions.NodeAction;
  * @author HuberB1
  */
 public class GzipNodeAction extends NodeAction {
+
     protected final static long serialVersionUID = 20060116171900L;
-    
+
     private static final String ICON_RESOURCE = "org/huberb/nbgzip/images/gzip.png";
-    
-    private static GzipNodeAction instance = new GzipNodeAction();
-    
+
+    private final static GzipNodeAction instance = new GzipNodeAction();
+
     private transient ShallWeQuestions shallWeQuestionsCompress;
     private transient ShallWeQuestions shallWeQuestionsUncompress;
     private transient ShallWeQuestions shallWeQuestionsDelete;
-    
+
     public static Action getDefault() {
         return instance;
     }
-    
-    /** Creates a new instance of TestNodeAction */
+
+    /**
+     * Creates a new instance of TestNodeAction
+     */
     private GzipNodeAction() {
     }
+
+    @Override
     public String getName() {
         final String name = NbBundle.getMessage(GzipNodeAction.class, "CTL_GzipAction");
         return name;
     }
+
+    @Override
     protected String iconResource() {
         return ICON_RESOURCE;
     }
-    
+
+    @Override
     public HelpCtx getHelpCtx() {
         //return HelpCtx.DEFAULT_HELP;
-        return new HelpCtx( "about_nbgzip" );
+        return new HelpCtx("about_nbgzip");
     }
-    
+
+    @Override
     public boolean asynchronous() {
         return true;
-    }    
-    
+    }
+
     /**
      * Compress, or uncompress the selected nodes.
      *
      * @param arr the selected nodes
      */
+    @Override
     protected void performAction(Node[] arr) {
         resetShallWeQuestion();
-        
+
         // loop over all selected nodes
-        for (int i = 0; i < arr.length; i++) {
-            final DataObject dataObject = (DataObject) arr[i].getCookie(DataObject.class);
+        for (Node arr1 : arr) {
+            final DataObject dataObject = (DataObject) arr1.getCookie(DataObject.class);
             final FileObject fo = dataObject.getPrimaryFile();
-            
             // decide to compress, or uncompress
             if (fo.isData() && fo.canRead() && !fo.isVirtual()) {
-                if (fo.hasExt( "gz" )) {
-                    doUncompress( fo );
+                if (fo.hasExt("gz")) {
+                    doUncompress(fo);
                     if (this.shallWeQuestionsUncompress.shallWeTerminateDoOperation()) {
                         break;
                     }
                 } else {
-                    doCompress( fo );
+                    doCompress(fo);
                     if (this.shallWeQuestionsCompress.shallWeTerminateDoOperation()) {
                         break;
                     }
@@ -97,20 +105,21 @@ public class GzipNodeAction extends NodeAction {
             }
         }
     }
-    
+
     /**
      * Check if this action shall be enabled for the selected nodes
-     * 
+     *
      * @param arr the selected nodes
      * @return boolean true if this action shall be enabled, else false
      */
+    @Override
     protected boolean enable(Node[] arr) {
         if ((arr == null) || (arr.length == 0)) {
             return false;
         }
-        
-        for (int i = 0; i < arr.length; i++) {
-            DataObject dataObject = (DataObject) arr[i].getCookie(DataObject.class);
+
+        for (Node arr1 : arr) {
+            DataObject dataObject = (DataObject) arr1.getCookie(DataObject.class);
             //Action is disabled for root folder eg:"/" on Linux or "C:" on Win
             if (dataObject == null) {
                 return false;
@@ -126,10 +135,9 @@ public class GzipNodeAction extends NodeAction {
                     }
                 }
             }
-            
             // Fix #14740 disable action on SystemFileSystem.
             try {
-                if(dataObject.getPrimaryFile().getFileSystem().isDefault()) {
+                if (dataObject.getPrimaryFile().getFileSystem().isDefault()) {
                     return false;
                 }
             } catch (FileStateInvalidException fsie) {
@@ -138,23 +146,23 @@ public class GzipNodeAction extends NodeAction {
         }
         return true;
     }
-    
+
     private void resetShallWeQuestion() {
         this.shallWeQuestionsCompress = new ShallWeQuestions();
         this.shallWeQuestionsUncompress = new ShallWeQuestions();
         this.shallWeQuestionsDelete = new ShallWeQuestions();
     }
-    
+
     /**
      * Uncompress the file object
      *
      * @param srcFo the file object which will be uncompressed
      */
-    private void doUncompress( FileObject srcFo ) {
+    private void doUncompress(FileObject srcFo) {
         final AskOperation askOperation = new AskOperation();
 
         if (this.shallWeQuestionsUncompress.shallWeAskQuestion()) {
-            this.shallWeQuestionsUncompress.setAskUserOption( askOperation.askUncompress( srcFo ) );
+            this.shallWeQuestionsUncompress.setAskUserOption(askOperation.askUncompress(srcFo));
         }
         if (this.shallWeQuestionsUncompress.shallWeDoOperation()) {
             final GzipUncompressOperation gzipOperation = new GzipUncompressOperation();
@@ -164,19 +172,19 @@ public class GzipNodeAction extends NodeAction {
             }
         }
     }
-    
+
     /**
      * Compress the file object
      *
      * @param srcFo the file object which will be compressed
      */
-    private void doCompress( FileObject srcFo ) {
+    private void doCompress(FileObject srcFo) {
         final AskOperation askOperation = new AskOperation();
 
         if (this.shallWeQuestionsCompress.shallWeAskQuestion()) {
-            this.shallWeQuestionsCompress.setAskUserOption( askOperation.askCompress( srcFo ) );
+            this.shallWeQuestionsCompress.setAskUserOption(askOperation.askCompress(srcFo));
         }
-        
+
         if (this.shallWeQuestionsCompress.shallWeDoOperation()) {
             final GzipCompressOperation gzipOperation = new GzipCompressOperation();
             final boolean success = gzipOperation.compress(srcFo);
@@ -185,22 +193,22 @@ public class GzipNodeAction extends NodeAction {
             }
         }
     }
-    
+
     /**
      * Delete the file object
      *
      * @param srcFo the file object which will be deleted
      */
-    private void doDelete( FileObject srcFo ) {
+    private void doDelete(FileObject srcFo) {
         final AskOperation askOperation = new AskOperation();
 
         if (this.shallWeQuestionsDelete.shallWeAskQuestion()) {
-            this.shallWeQuestionsDelete.setAskUserOption( askOperation.askDelete( srcFo ));
+            this.shallWeQuestionsDelete.setAskUserOption(askOperation.askDelete(srcFo));
         }
         if (this.shallWeQuestionsDelete.shallWeDoOperation()) {
             final DeleteOperation deleteOperation = new DeleteOperation();
-            deleteOperation.delete( srcFo );
+            deleteOperation.delete(srcFo);
         }
     }
-    
+
 }

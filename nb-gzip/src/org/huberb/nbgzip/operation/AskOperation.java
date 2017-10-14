@@ -29,7 +29,7 @@ public class AskOperation {
     }
     
     public AskUserOption askCompress(FileObject fo) {
-        if (!askOption.getAskCompress().booleanValue()) {
+        if (!askOption.getAskCompress()) {
             return AskUserOption.YES;
         }
         
@@ -42,7 +42,7 @@ public class AskOperation {
     
     public AskUserOption askUncompress(FileObject fo) {
         final AskOption askOption = AskOption.getDefault();
-        if (!askOption.getAskUncompress().booleanValue()) {
+        if (!askOption.getAskUncompress()) {
             return AskUserOption.YES;
         }
         
@@ -55,7 +55,7 @@ public class AskOperation {
     
     public AskUserOption askDelete(FileObject fo) {
         final AskOption askOption = AskOption.getDefault();
-        if (!askOption.getAskDelete().booleanValue()) {
+        if (!askOption.getAskDelete()) {
             return AskUserOption.NO;
         }
         

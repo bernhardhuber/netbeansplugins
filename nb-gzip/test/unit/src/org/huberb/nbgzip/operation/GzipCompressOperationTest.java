@@ -43,16 +43,16 @@ public class GzipCompressOperationTest {
 
         // write some data info aFileObject
         FileLock lock = aFileObject.lock();
-        OutputStream os = aFileObject.getOutputStream(lock);
-        final StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < 10; i++) {
-            sb.append("SampleDataSampleDataSampleDataSampleDataSampleData");
+        try (OutputStream os = aFileObject.getOutputStream(lock)) {
+            final StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < 10; i++) {
+                sb.append("SampleDataSampleDataSampleDataSampleDataSampleData");
+            }
+            final String sampleData = sb.toString();
+            
+            os.write(sampleData.getBytes());
+            os.flush();
         }
-        final String sampleData = sb.toString();
-
-        os.write(sampleData.getBytes());
-        os.flush();
-        os.close();
         lock.releaseLock();
 
     }
