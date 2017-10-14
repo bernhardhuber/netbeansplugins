@@ -151,6 +151,7 @@ public class JavaStatementLineCounterTest {
 
     static class CountOfCodeLinesTester extends AbstractLinesTester {
 
+        @Override
         protected void assertIt(int i, Long expected, JavaStatementLineCounter instance) {
             assertEquals(expected, instance.getCountOfCodeLines());
         }
@@ -158,6 +159,7 @@ public class JavaStatementLineCounterTest {
 
     static class CountOfWhitspaceLinesTester extends AbstractLinesTester {
 
+        @Override
         protected void assertIt(int i, Long expected, JavaStatementLineCounter instance) {
             assertEquals(expected, instance.getCountOfWhitspaceLines());
         }
