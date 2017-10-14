@@ -119,7 +119,7 @@ public class CpdSettingsTest {
     public void testGetMinimalTokenCount() {
         CpdSettings instance = new CpdSettings();
 
-        Integer expResult = Integer.valueOf(10);
+        Integer expResult = 10;
         instance.setMinimalTokenCount(expResult);
         assertEquals(expResult, instance.getMinimalTokenCount());
     }

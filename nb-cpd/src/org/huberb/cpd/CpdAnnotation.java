@@ -20,15 +20,18 @@ import org.openide.util.NbBundle;
 public class CpdAnnotation extends Annotation {
     private final String info;
     
-    /** Creates a new instance of CpdAnnotation */
+    /** Creates a new instance of CpdAnnotation
+     * @param info */
     public CpdAnnotation(String info) {
         this.info = info;
     }
     
+    @Override
     public String getAnnotationType() {
         return "org-huberb-cpd-cpd-annotation";
     }
     
+    @Override
     public String getShortDescription() {
         String message = NbBundle.getMessage(CpdAnnotation.class, "INFO_CPDANNOTATION", info);
         return message;
@@ -38,6 +41,7 @@ public class CpdAnnotation extends Annotation {
     // Implement equals/hashCode to avoid duplicate annotations for a single
     // CPD duplicate
     
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -51,6 +55,7 @@ public class CpdAnnotation extends Annotation {
         return false;
     }
     
+    @Override
     public int hashCode() {
         int retValue;
         retValue = this.info.hashCode();

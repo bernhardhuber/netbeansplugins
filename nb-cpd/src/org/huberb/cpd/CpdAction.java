@@ -45,8 +45,8 @@ public final class CpdAction extends CookieAction {
                     cpdTask.addFile( dataObject );
                 } else {
                     // analyzer all selected jars
-                    for (int i = 0; i < activatedNodes.length; i++ ) {
-                        final DataObject dataObject = (DataObject)activatedNodes[i].getLookup().lookup(DataObject.class);
+                    for (Node activatedNode : activatedNodes) {
+                        final DataObject dataObject = (DataObject) activatedNode.getLookup().lookup(DataObject.class);
                         cpdTask.addFile( dataObject );
                     }
                 }

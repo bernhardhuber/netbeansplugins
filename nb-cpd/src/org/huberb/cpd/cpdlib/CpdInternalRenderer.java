@@ -15,7 +15,7 @@ import net.sourceforge.pmd.cpd.Renderer;
 import net.sourceforge.pmd.cpd.TokenEntry;
 
 /**
- * Need to do some reendering at all???
+ * Need to do some rendering at all???
  * @author HuberB1
  */
 public class CpdInternalRenderer implements Renderer {
@@ -24,6 +24,7 @@ public class CpdInternalRenderer implements Renderer {
     public CpdInternalRenderer() {
     }
     
+    @Override
     public String render(Iterator matches) {
         while (matches.hasNext()) {
             Match match = (Match) matches.next();
