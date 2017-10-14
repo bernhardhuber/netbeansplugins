@@ -217,7 +217,7 @@ final class JDependPanel extends javax.swing.JPanel {
         
         this.analyzeInnerClassesCheckBox.setSelected( settings.getAnalyzerInnerClasses().booleanValue() );
         
-        final DefaultListModel dlm = (DefaultListModel)this.filterPackagesList.getModel();
+        final DefaultListModel<String> dlm = (DefaultListModel)this.filterPackagesList.getModel();
         dlm.clear();
         final String []filterPackages = settings.getFilterPackages();
         for (int i = 0; i < filterPackages.length; i++ ) {

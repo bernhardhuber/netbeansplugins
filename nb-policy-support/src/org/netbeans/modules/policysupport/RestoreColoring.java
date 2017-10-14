@@ -35,7 +35,7 @@ public class RestoreColoring extends ModuleInstall {
     }
     
     /**
-     * Uninstalls properties options.
+     * Uninstall properties options.
      * And cleans up editor settings copy.
      * Overrides superclass method.
      */

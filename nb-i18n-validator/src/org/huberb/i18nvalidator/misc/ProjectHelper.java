@@ -29,9 +29,9 @@ public class ProjectHelper {
         
         while (project == null && theNode != null) {
             Lookup lookup = theNode.getLookup();
-            project = (Project)lookup.lookup(Project.class);
+            project = lookup.lookup(Project.class);
             if (project == null) {
-                project = (Project)theNode.getCookie(Project.class);
+                project = theNode.getCookie(Project.class);
             }
             theNode = theNode.getParentNode();
         }

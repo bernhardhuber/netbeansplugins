@@ -40,16 +40,19 @@ public class RegisterCatalog implements CatalogReader, CatalogDescriptor, Entity
     public RegisterCatalog() {
     }
     
+    @Override
     public Iterator getPublicIDs() {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.add(RULESET_ID);
         
         return list.listIterator();
     }
     
+    @Override
     public void refresh() {
     }
     
+    @Override
     public String getSystemID(String publicId) {
         if(publicId.equals(RULESET_ID)) {
             return RULESET_URL;
@@ -58,38 +61,48 @@ public class RegisterCatalog implements CatalogReader, CatalogDescriptor, Entity
         }
     }
     
+    @Override
     public String resolveURI(String string) {
         return null;
     }
     
+    @Override
     public String resolvePublic(String string) {
         return null;
     }
     
+    @Override
     public void addCatalogListener(CatalogListener catalogListener) {
     }
     
+    @Override
     public void removeCatalogListener(CatalogListener catalogListener) {
     }
     
+    @Override
     public Image getIcon(int i) {
         return Utilities.loadImage("org/huberb/nbpmdrulesets/resources/PMDOptionsSettingsIcon.gif");
     }
     
+    @Override
     public String getDisplayName() {
         return "PMD Ruleset Catalog";
     }
     
+    @Override
     public String getShortDescription() {
         return "XML Catalog for PMD Ruleset Schema";
     }
     
+    @Override
     public void addPropertyChangeListener(PropertyChangeListener propertyChangeListener) {
     }
     
+    @Override
     public void removePropertyChangeListener(PropertyChangeListener propertyChangeListener) {
     }
     
+    @Override
     public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
         if (RULESET.equals(systemId)){
             return new org.xml.sax.InputSource(RULESET_URL);

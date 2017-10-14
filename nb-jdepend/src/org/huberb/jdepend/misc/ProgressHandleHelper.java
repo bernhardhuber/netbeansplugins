@@ -1,7 +1,6 @@
 package org.huberb.jdepend.misc;
 
 import org.netbeans.api.progress.ProgressHandle;
-import org.netbeans.api.progress.ProgressHandleFactory;
 
 /**
  * Encapsulate progress handle operations.
@@ -26,7 +25,7 @@ public class ProgressHandleHelper {
      */
     public ProgressHandleHelper(int totalNumberOfProgressSteps, String displayName) {
         this.totalNumberOfProgressSteps = totalNumberOfProgressSteps;
-        this.ph = ProgressHandleFactory.createHandle(displayName);
+        this.ph = ProgressHandle.createHandle(displayName);
         this.ph.start(this.totalNumberOfProgressSteps);
         this.progressCount = 1;
     }

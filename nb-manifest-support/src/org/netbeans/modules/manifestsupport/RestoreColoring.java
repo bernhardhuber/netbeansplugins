@@ -35,7 +35,7 @@ public class RestoreColoring extends ModuleInstall {
     }
     
     /**
-     * Uninstalls properties options.
+     * Uninstall properties options.
      * And cleans up editor settings copy.
      * Overrides superclass method.
      */
@@ -62,7 +62,7 @@ public class RestoreColoring extends ModuleInstall {
         });
     }
     
-    /** Uninstalls properties editor and print options. */
+    /** Uninstall properties editor and print options. */
     public void uninstallOptions() {
         // remove localizer
         LocaleSupport.removeLocalizer(localizer);
