@@ -60,9 +60,8 @@ public class TimeZoneHelper {
     public List<LabelTimeZoneBean> getTimeZoneIds() {
         final List<LabelTimeZoneBean> labelTimeZoneBeanList = new ArrayList<>();
         final String[] timeZoneIds = TimeZone.getAvailableIDs();
-        for (int i = 0; i < timeZoneIds.length; i++) {
-            final TimeZone tz = TimeZone.getTimeZone(timeZoneIds[i]);
-
+        for (String timeZoneId : timeZoneIds) {
+            final TimeZone tz = TimeZone.getTimeZone(timeZoneId);
             final LabelTimeZoneBean lbv = new LabelTimeZoneBean(tz.getID(), tz);
             labelTimeZoneBeanList.add(lbv);
         }
